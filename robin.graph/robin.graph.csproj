@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6237B584-EAB9-467F-9238-D90A2A03FFAE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>robin.graph</RootNamespace>
+    <AssemblyName>robin.graph</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Area.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SourcedPlotElement.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\robin.core\robin.csproj">
+      <Project>{02EBB351-0232-4D19-86D9-0B98E7621658}</Project>
+      <Name>robin</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PlotElement.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CDef.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommentText.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="RrdGraphConstants.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ValueScaler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Def.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HRule.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LegendText.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Rule.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Line.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LegendComposer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="RrdGraphDef.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Stack.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SDef.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PercentileDef.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Source.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="TimeAxisSetting.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ValueAxisSetting.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="TimeAxis.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PrintText.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="RrdGraph.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ImageParameters.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ImageWorker.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="VRule.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Mapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ValueAxis.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PathIterator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="RrdGraphInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PDef.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ValueAxisLogarithmic.cs" />
+    <Compile Include="ValueAxisMrtg.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

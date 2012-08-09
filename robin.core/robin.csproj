@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{02EBB351-0232-4D19-86D9-0B98E7621658}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>robin</RootNamespace>
+    <AssemblyName>robin</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\Aggregates.cs" />
+    <Compile Include="Data\Aggregator.cs" />
+    <Compile Include="Data\CDef.cs" />
+    <Compile Include="Data\CubicSplineInterpolator.cs" />
+    <Compile Include="Data\DataProcessor.cs" />
+    <Compile Include="Data\Def.cs" />
+    <Compile Include="Data\LinearInterpolator.cs" />
+    <Compile Include="Data\Normalizer.cs" />
+    <Compile Include="Data\PDef.cs" />
+    <Compile Include="Data\PercentileDef.cs" />
+    <Compile Include="Data\Plottable.cs" />
+    <Compile Include="Data\RpnCalculator.cs" />
+    <Compile Include="Data\SDef.cs" />
+    <Compile Include="Data\Source.cs" />
+    <Compile Include="Data\Utils\LinkedHashMap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\DateTimeExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\ArcDef.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\ConsolidationFunction.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\RrdException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\DsDef.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\DataSourceType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\RrdPrimitive.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\RrdBackend.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\RrdDb.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\IRrdUpdater.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\RrdAllocator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Header.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\RrdString.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\RrdInt.cs" />
+    <Compile Include="Core\RrdLong.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\RrdDef.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\DataImporter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\DataSource.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\RrdDouble.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Archive.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\ArcState.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Robin.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\RrdDoubleArray.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\FetchData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\FetchRequest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\RrdBackendFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Sample.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\RrdDbPool.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\TimeSpec\TimeParser.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\TimeSpec\TimeSpec.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\TimeSpec\TimeToken.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\TimeSpec\TimeScanner.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\RrdToolReader.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\jrrd\RRDatabase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\jrrd\Header.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\jrrd\Constants.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\jrrd\Archive.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\jrrd\CDPStatusBlock.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\jrrd\ConsolidationFunctionType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\jrrd\RRDFile.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\jrrd\DataSource.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\jrrd\PrimaryDataPointStatusBlock.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\jrrd\DataSourceType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\jrrd\DataChunk.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\RrdFileBackendFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\RrdFileBackend.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\RrdJRobin14FileBackend.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\RrdJRobin14FileBackendFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\RrdMemoryBackend.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\RrdMemoryBackendFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\RrdToolkit.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

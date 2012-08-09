@@ -1,0 +1,1193 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="livetemplates.csharp.usevar">False</setting>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Data/f:PercentileDef.cs" caret="1086" fromTop="0" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Data/f:Plottable.cs" caret="1569" fromTop="32" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Data/f:SDef.cs" caret="1595" fromTop="41" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Data/f:Source.cs" caret="1071" fromTop="13" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:DsDef.cs" caret="8679" fromTop="31" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdDef.cs" caret="16157" fromTop="31" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:ArcState.cs" caret="4331" fromTop="22" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdBackendFactory.cs" caret="9364" fromTop="22" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdJRobin14FileBackendFactory.cs" caret="2587" fromTop="22" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Utils/f:DateTimeExtensions.cs" caret="548" fromTop="24" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:ArcDef.cs" caret="2829" fromTop="13" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:DataSource.cs" caret="5639" fromTop="23" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdPrimitive.cs" caret="2309" fromTop="0" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdDouble.cs" caret="1694" fromTop="35" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdInt.cs" caret="1736" fromTop="38" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdLong.cs" caret="1865" fromTop="38" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdString.cs" caret="1743" fromTop="44" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:FetchRequest.cs" caret="1701" fromTop="23" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdDoubleArray.cs" caret="1847" fromTop="13" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Sample.cs" caret="6885" fromTop="36" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Archive.cs" caret="9784" fromTop="36" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Data/f:DataProcessor.cs" caret="3910" fromTop="16" />
+      <File id="6237B584-EAB9-467F-9238-D90A2A03FFAE/f:TimeAxis.cs" caret="5857" fromTop="15" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Util.cs" caret="10601" fromTop="7" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Header.cs" caret="4682" fromTop="22" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdDb.cs" caret="12148" fromTop="27" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Data/f:RpnCalculator.cs" caret="7246" fromTop="22" />
+      <File id="6237B584-EAB9-467F-9238-D90A2A03FFAE/f:CommentText.cs" caret="1929" fromTop="22" />
+      <File id="6237B584-EAB9-467F-9238-D90A2A03FFAE/f:PrintText.cs" caret="2062" fromTop="19" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="874" fromTop="24" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="6465" fromTop="26" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Sample.cs" caret="7920" fromTop="24" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Sample.cs" caret="7949" fromTop="26" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="8734" fromTop="34" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="5838" fromTop="20" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdDb.cs" caret="19100" fromTop="20" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="5882" fromTop="9" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Sample.cs" caret="6704" fromTop="29" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Sample.cs" caret="6297" fromTop="10" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Sample.cs" caret="6887" fromTop="37" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="7900" fromTop="36" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="8734" fromTop="38" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="7900" fromTop="28" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="8731" fromTop="37" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="7777" fromTop="25" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="8045" fromTop="28" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="8725" fromTop="41" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="6974" fromTop="34" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="8899" fromTop="38" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Data/f:DataProcessor.cs" caret="3910" fromTop="16" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="8899" fromTop="13" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="8899" fromTop="16" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="8961" fromTop="37" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Util.cs" caret="10820" fromTop="13" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Data/f:RpnCalculator.cs" caret="7274" fromTop="22" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="8899" fromTop="26" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="8956" fromTop="15" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="178" fromTop="6" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="874" fromTop="23" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="834" fromTop="23" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="static" priority="5" />
+      <Item value="ConsolFuns`0" priority="42" />
+      <Item value="override" priority="26" />
+      <Item value="ArcDef`0" priority="4" />
+      <Item value="foreach" priority="18" />
+      <Item value="string" priority="13" />
+      <Item value="in" priority="6" />
+      <Item value="CONSOL_FUNS" priority="0" />
+      <Item value="Int32`0" priority="0" />
+      <Item value="i" priority="11" />
+      <Item value="Debug`0" priority="6" />
+      <Item value="getLong`0" priority="0" />
+      <Item value="Int64`0" priority="0" />
+      <Item value="updater" priority="0" />
+      <Item value="false" priority="4" />
+      <Item value="int" priority="23" />
+      <Item value="throw" priority="14" />
+      <Item value="new" priority="109" />
+      <Item value="NotImplementedException" priority="7" />
+      <Item value="FileInfo`0" priority="1" />
+      <Item value="MemoryStream`0" priority="2" />
+      <Item value="StringWriter`0" priority="0" />
+      <Item value="StringBuilder" priority="1" />
+      <Item value="StreamReader`0" priority="1" />
+      <Item value="StreamWriter`0" priority="1" />
+      <Item value="StreamWriter" priority="0" />
+      <Item value="Console`0" priority="2" />
+      <Item value="time" priority="0" />
+      <Item value="GetType`0" priority="5" />
+      <Item value="GetHashCode`0" priority="6" />
+      <Item value="Path`0" priority="11" />
+      <Item value="getPath`0" priority="2" />
+      <Item value="IEnumerable" priority="11" />
+      <Item value="IEnumerator" priority="3" />
+      <Item value="DsDef`0" priority="4" />
+      <Item value="null" priority="8" />
+      <Item value="if" priority="35" />
+      <Item value="found" priority="1" />
+      <Item value="dsDefs" priority="0" />
+      <Item value="dsDef" priority="0" />
+      <Item value="break" priority="4" />
+      <Item value="Count`1" priority="1" />
+      <Item value="Length" priority="27" />
+      <Item value="StringBuilder`0" priority="1" />
+      <Item value="public" priority="65" />
+      <Item value="DsTypes`0" priority="1" />
+      <Item value="NotImplementedException`0" priority="0" />
+      <Item value="internal" priority="36" />
+      <Item value="InvalidOperationException`0" priority="1" />
+      <Item value="Dictionary" priority="5" />
+      <Item value="MethodImplOptions`0" priority="3" />
+      <Item value="Array`0" priority="0" />
+      <Item value="for" priority="9" />
+      <Item value="PathTooLongException`0" priority="0" />
+      <Item value="tokenCount" priority="1" />
+      <Item value="j" priority="2" />
+      <Item value="IDictionary" priority="2" />
+      <Item value="System" priority="13" />
+      <Item value="Collections" priority="2" />
+      <Item value="Generic" priority="0" />
+      <Item value="Specialized" priority="1" />
+      <Item value="OrderedDictionary`0" priority="1" />
+      <Item value="private" priority="32" />
+      <Item value="pixelValues" priority="3" />
+      <Item value="Double`0" priority="3" />
+      <Item value="x" priority="10" />
+      <Item value="DateTime`0" priority="56" />
+      <Item value="long" priority="11" />
+      <Item value="name" priority="4" />
+      <Item value="base" priority="10" />
+      <Item value="T`0" priority="5" />
+      <Item value="IList" priority="0" />
+      <Item value="KeyValuePair" priority="2" />
+      <Item value="HashSet" priority="0" />
+      <Item value="sources" priority="0" />
+      <Item value="sourceName" priority="0" />
+      <Item value="byte" priority="3" />
+      <Item value="Epoch" priority="4" />
+      <Item value="timestamp" priority="2" />
+      <Item value="getDate`0" priority="0" />
+      <Item value="Diagnostics" priority="1" />
+      <Item value="true" priority="13" />
+      <Item value="Math`0" priority="1" />
+      <Item value="gc" priority="1" />
+      <Item value="getTimestamp`0" priority="0" />
+      <Item value="DateTime" priority="5" />
+      <Item value="year" priority="2" />
+      <Item value="month" priority="2" />
+      <Item value="day" priority="1" />
+      <Item value="min" priority="2" />
+      <Item value="hour" priority="1" />
+      <Item value="readonly" priority="4" />
+      <Item value="char" priority="2" />
+      <Item value="pos" priority="1" />
+      <Item value="Globalization" priority="4" />
+      <Item value="CultureInfo`0" priority="2" />
+      <Item value="arg" priority="0" />
+      <Item value="InvariantCultureIgnoreCase" priority="5" />
+      <Item value="value" priority="16" />
+      <Item value="double" priority="33" />
+      <Item value="ptsCount" priority="0" />
+      <Item value="dsCount" priority="1" />
+      <Item value="values" priority="22" />
+      <Item value="None" priority="1" />
+      <Item value="Random`0" priority="3" />
+      <Item value="random" priority="3" />
+      <Item value="Random" priority="1" />
+      <Item value="tokens" priority="6" />
+      <Item value="StringComparer`0" priority="0" />
+      <Item value="object" priority="0" />
+      <Item value="Monitor`0" priority="3" />
+      <Item value="Exception`0" priority="0" />
+      <Item value="String`0" priority="9" />
+      <Item value="StringComparison`0" priority="0" />
+      <Item value="r" priority="1" />
+      <Item value="g" priority="1" />
+      <Item value="HexNumber" priority="0" />
+      <Item value="Environment`0" priority="3" />
+      <Item value="Directory`0" priority="4" />
+      <Item value="homeDirPath" priority="2" />
+      <Item value="return" priority="39" />
+      <Item value="path1" priority="0" />
+      <Item value="path2" priority="0" />
+      <Item value="FormatException`0" priority="2" />
+      <Item value="timeStr" priority="0" />
+      <Item value="RrdException`0" priority="1" />
+      <Item value="ISO_DATE_FORMAT" priority="0" />
+      <Item value="Threading" priority="3" />
+      <Item value="Thread`0" priority="2" />
+      <Item value="Constants`0" priority="3" />
+      <Item value="index" priority="12" />
+      <Item value="TextWriter`0" priority="6" />
+      <Item value="DataSource`0" priority="4" />
+      <Item value="dataSources" priority="1" />
+      <Item value="ds" priority="2" />
+      <Item value="printInfo`0" priority="0" />
+      <Item value="s" priority="4" />
+      <Item value="numberFormat" priority="5" />
+      <Item value="archives" priority="1" />
+      <Item value="toXml`0" priority="0" />
+      <Item value="Archive`0" priority="4" />
+      <Item value="cdpStatusBlocks" priority="1" />
+      <Item value="Util`0" priority="6" />
+      <Item value="dateFormat" priority="0" />
+      <Item value="rowCount" priority="0" />
+      <Item value="const" priority="27" />
+      <Item value="debug" priority="0" />
+      <Item value="reader" priority="11" />
+      <Item value="Begin" priority="4" />
+      <Item value="file" priority="0" />
+      <Item value="Encoding`0" priority="6" />
+      <Item value="n" priority="0" />
+      <Item value="Current" priority="2" />
+      <Item value="skip" priority="0" />
+      <Item value="UnicodeEncoding`0" priority="0" />
+      <Item value="BitConverter`0" priority="1" />
+      <Item value="tx" priority="0" />
+      <Item value="data" priority="11" />
+      <Item value="rows" priority="1" />
+      <Item value="endCal" priority="2" />
+      <Item value="aDateTime" priority="1" />
+      <Item value="SeekOrigin`0" priority="7" />
+      <Item value="FileStream`0" priority="2" />
+      <Item value="File`0" priority="17" />
+      <Item value="path" priority="8" />
+      <Item value="readOnly" priority="3" />
+      <Item value="FileMode`0" priority="2" />
+      <Item value="b" priority="2" />
+      <Item value="length" priority="6" />
+      <Item value="DeleteOnClose" priority="0" />
+      <Item value="fileSecurity" priority="0" />
+      <Item value="FileAccess`0" priority="0" />
+      <Item value="try" priority="6" />
+      <Item value="LockMode`0" priority="0" />
+      <Item value="m_openFiles" priority="0" />
+      <Item value="ReaderWriterLock`0" priority="0" />
+      <Item value="PlatformID`0" priority="1" />
+      <Item value="WriterLockTimeout" priority="0" />
+      <Item value="m_readWritelock" priority="4" />
+      <Item value="Exception" priority="0" />
+      <Item value="MethodImpl" priority="1" />
+      <Item value="TestInitialize" priority="0" />
+      <Item value="cal" priority="13" />
+      <Item value="Assert`0" priority="27" />
+      <Item value="TestMethod" priority="44" />
+      <Item value="now" priority="1" />
+      <Item value="TimeSpan`0" priority="1" />
+      <Item value="TimeSpan" priority="0" />
+      <Item value="setSubDayFieldsZero`0" priority="2" />
+      <Item value="ref" priority="0" />
+      <Item value="start" priority="5" />
+      <Item value="using" priority="4" />
+      <Item value="jrrd" priority="0" />
+      <Item value="startDate" priority="23" />
+      <Item value="setSubHourFieldsZero`0" priority="1" />
+      <Item value="endDate" priority="4" />
+      <Item value="seconds" priority="0" />
+      <Item value="Date`0" priority="0" />
+      <Item value="this" priority="0" />
+      <Item value="changeMonth`0" priority="1" />
+      <Item value="changeDay`0" priority="1" />
+      <Item value="changeYear`0" priority="1" />
+      <Item value="switch" priority="3" />
+      <Item value="changeHour`0" priority="1" />
+      <Item value="changeDayOfWeek`0" priority="0" />
+      <Item value="DayOfWeek`0" priority="4" />
+      <Item value="minute" priority="0" />
+      <Item value="changeMinute`0" priority="0" />
+      <Item value="clearTime`0" priority="0" />
+      <Item value="clearMinutesSecondsAndMiliseconds`0" priority="0" />
+      <Item value="TestClass" priority="0" />
+      <Item value="tests" priority="0" />
+      <Item value="ParameterizedThreadStart`0" priority="1" />
+      <Item value="tempFile" priority="2" />
+      <Item value="assembly" priority="0" />
+      <Item value="ExpectedException" priority="1" />
+      <Item value="RrdException" priority="8" />
+      <Item value="finally" priority="0" />
+      <Item value="fileStream" priority="0" />
+      <Item value="padding" priority="0" />
+      <Item value="ASCIIEncoding`0" priority="0" />
+      <Item value="rrdFile" priority="1" />
+      <Item value="write64BitBigEndianHeaderToFloatCookie`0" priority="0" />
+      <Item value="write32BitBigEndianHeaderToFloatCookie`0" priority="0" />
+      <Item value="dest" priority="0" />
+      <Item value="backupPath" priority="2" />
+      <Item value="source" priority="3" />
+      <Item value="sourcePath" priority="3" />
+      <Item value="destPath" priority="2" />
+      <Item value="directory" priority="1" />
+      <Item value="fileList" priority="0" />
+      <Item value="extension" priority="0" />
+      <Item value="recursive" priority="0" />
+      <Item value="subDir" priority="0" />
+      <Item value="robin" priority="4" />
+      <Item value="core" priority="2" />
+      <Item value="RrdDef`0" priority="4" />
+      <Item value="RrdDef" priority="3" />
+      <Item value="def" priority="25" />
+      <Item value="RrdDb`0" priority="8" />
+      <Item value="RrdDb" priority="5" />
+      <Item value="db" priority="18" />
+      <Item value="while" priority="0" />
+      <Item value="ThreadStaticAttribute`0" priority="2" />
+      <Item value="Sample`0" priority="1" />
+      <Item value="sample" priority="7" />
+      <Item value="FetchRequest`0" priority="2" />
+      <Item value="request" priority="3" />
+      <Item value="FetchData`0" priority="1" />
+      <Item value="srcName" priority="0" />
+      <Item value="color" priority="1" />
+      <Item value="OperatingSystem`0" priority="3" />
+      <Item value="Unix" priority="0" />
+      <Item value="RrdGraphConstants`0" priority="4" />
+      <Item value="Color`0" priority="3" />
+      <Item value="text" priority="1" />
+      <Item value="Graphics`0" priority="6" />
+      <Item value="FontFamily`0" priority="0" />
+      <Item value="Bold" priority="0" />
+      <Item value="Font`0" priority="1" />
+      <Item value="colorName" priority="0" />
+      <Item value="rrdGraph" priority="0" />
+      <Item value="gdef" priority="12" />
+      <Item value="calendar" priority="4" />
+      <Item value="DateTimeOffset`0" priority="0" />
+      <Item value="DateTimeOffset" priority="0" />
+      <Item value="Compiled" priority="0" />
+      <Item value="Match`0" priority="0" />
+      <Item value="matcher" priority="0" />
+      <Item value="Graphics" priority="0" />
+      <Item value="GC`0" priority="1" />
+      <Item value="Bitmap`0" priority="1" />
+      <Item value="Bitmap" priority="0" />
+      <Item value="worker" priority="1" />
+      <Item value="Image`0" priority="5" />
+      <Item value="Font" priority="1" />
+      <Item value="FontStyle`0" priority="1" />
+      <Item value="font" priority="4" />
+      <Item value="Brush`0" priority="9" />
+      <Item value="SolidBrush`0" priority="14" />
+      <Item value="y" priority="2" />
+      <Item value="Region" priority="0" />
+      <Item value="Rectangle" priority="3" />
+      <Item value="Pen`0" priority="6" />
+      <Item value="Pen" priority="13" />
+      <Item value="hr" priority="2" />
+      <Item value="shade1" priority="0" />
+      <Item value="borderStroke1" priority="0" />
+      <Item value="borderStroke2" priority="0" />
+      <Item value="width" priority="1" />
+      <Item value="height" priority="1" />
+      <Item value="Format64bppArgb" priority="0" />
+      <Item value="ColorMatrix`0" priority="0" />
+      <Item value="enable" priority="0" />
+      <Item value="angle" priority="0" />
+      <Item value="float" priority="2" />
+      <Item value="aftInitial" priority="0" />
+      <Item value="paint" priority="8" />
+      <Item value="Point`0" priority="0" />
+      <Item value="Point" priority="1" />
+      <Item value="points" priority="1" />
+      <Item value="gd" priority="0" />
+      <Item value="GetPoints`0" priority="0" />
+      <Item value="img" priority="4" />
+      <Item value="ImageConverter`0" priority="0" />
+      <Item value="converter" priority="1" />
+      <Item value="ImageConverter" priority="0" />
+      <Item value="stream" priority="0" />
+      <Item value="ImageFormat`0" priority="0" />
+      <Item value="saveImage`0" priority="1" />
+      <Item value="ms" priority="5" />
+      <Item value="type" priority="2" />
+      <Item value="quality" priority="1" />
+      <Item value="MemoryStream" priority="0" />
+      <Item value="buffer" priority="2" />
+      <Item value="imageFile" priority="0" />
+      <Item value="brush" priority="0" />
+      <Item value="ImageWorker`0" priority="0" />
+      <Item value="aLegendComposer" priority="0" />
+      <Item value="legendComposer" priority="4" />
+      <Item value="GRID_STROKE" priority="2" />
+      <Item value="date" priority="5" />
+      <Item value="format" priority="0" />
+      <Item value="Robin`0" priority="0" />
+      <Item value="graph" priority="3" />
+      <Item value="RrdGraph" priority="1" />
+      <Item value="RrdGraphDef`0" priority="1" />
+      <Item value="RrdGraphDef" priority="1" />
+      <Item value="RrdGraphInfo`0" priority="0" />
+      <Item value="info" priority="0" />
+      <Item value="List" priority="1" />
+      <Item value="List&lt;KeyValuePair&lt;T,V&gt;&gt;" priority="0" />
+      <Item value="item" priority="5" />
+      <Item value="Dictionary&lt;T,V&gt;" priority="0" />
+      <Item value="array" priority="0" />
+      <Item value="arrayIndex" priority="0" />
+      <Item value="key" priority="7" />
+      <Item value="V`0" priority="0" />
+      <Item value="KeyValuePair&lt;T,V&gt;" priority="1" />
+      <Item value="keyValuePair" priority="2" />
+      <Item value="yield break" priority="2" />
+      <Item value="List&lt;T&gt;" priority="0" />
+      <Item value="keys" priority="1" />
+      <Item value="default" priority="0" />
+      <Item value="ValueType`0" priority="0" />
+      <Item value="theOpenFileDialog" priority="1" />
+      <Item value="DialogResult" priority="0" />
+      <Item value="theRRdDb" priority="6" />
+      <Item value="theRrdtreeView" priority="1" />
+      <Item value="TreeNode`0" priority="1" />
+      <Item value="dataSourceNode" priority="0" />
+      <Item value="dsName" priority="4" />
+      <Item value="UriBuilder`0" priority="0" />
+      <Item value="Close`0" priority="3" />
+      <Item value="archive" priority="13" />
+      <Item value="abstract" priority="1" />
+      <Item value="virtual" priority="7" />
+      <Item value="v" priority="1" />
+      <Item value="TreeNode" priority="0" />
+      <Item value="dataSource" priority="6" />
+      <Item value="node" priority="3" />
+      <Item value="ArchiveUserControl`0" priority="1" />
+      <Item value="DataSourceUpdateMode`0" priority="0" />
+      <Item value="sourceTextBox" priority="0" />
+      <Item value="archiveTextBox" priority="1" />
+      <Item value="e" priority="2" />
+      <Item value="else" priority="3" />
+      <Item value="rightPanel" priority="2" />
+      <Item value="UserControl`0" priority="0" />
+      <Item value="is" priority="1" />
+      <Item value="Datasource`0" priority="1" />
+      <Item value="DataSourceUserControl`0" priority="0" />
+      <Item value="DataSource" priority="0" />
+      <Item value="as" priority="0" />
+      <Item value="UriFormat`0" priority="0" />
+      <Item value="Archive" priority="0" />
+      <Item value="aP0" priority="2" />
+      <Item value="Fill" priority="0" />
+      <Item value="aControl" priority="0" />
+      <Item value="SetUserControl`0" priority="0" />
+      <Item value="Enum`0" priority="6" />
+      <Item value="typeof" priority="1" />
+      <Item value="ConsolidationFunctionType`0" priority="0" />
+      <Item value="DataSourceType`0" priority="18" />
+      <Item value="AbandonedMutexException" priority="0" />
+      <Item value="InvalidCastException`0" priority="0" />
+      <Item value="PDPStatusBlock" priority="0" />
+      <Item value="IDisposable`0" priority="5" />
+      <Item value="Dispose`0" priority="0" />
+      <Item value="offset" priority="0" />
+      <Item value="origin" priority="0" />
+      <Item value="close`0" priority="0" />
+      <Item value="getDataSources`0" priority="1" />
+      <Item value="enum" priority="0" />
+      <Item value="AppDomainManagerInitializationOptions`0" priority="0" />
+      <Item value="case" priority="0" />
+      <Item value="thr" priority="1" />
+      <Item value="rrdException" priority="0" />
+      <Item value="funs" priority="2" />
+      <Item value="consolFun" priority="4" />
+      <Item value="AVERAGE" priority="3" />
+      <Item value="dsType" priority="2" />
+      <Item value="primitiveDsType" priority="2" />
+      <Item value="t" priority="0" />
+      <Item value="ConsolidationFunction`0" priority="24" />
+      <Item value="average" priority="0" />
+      <Item value="first" priority="1" />
+      <Item value="last" priority="1" />
+      <Item value="max" priority="0" />
+      <Item value="total" priority="0" />
+      <Item value="Obsolete" priority="0" />
+      <Item value="consolFunString" priority="1" />
+      <Item value="consolidationFunction" priority="0" />
+      <Item value="filter" priority="0" />
+      <Item value="steps" priority="2" />
+      <Item value="RrdBackendFactory`0" priority="0" />
+      <Item value="Create`0" priority="0" />
+      <Item value="rrdDef" priority="1" />
+      <Item value="factory" priority="3" />
+      <Item value="bool" priority="0" />
+      <Item value="Open`0" priority="0" />
+      <Item value="DataImporter`0" priority="0" />
+      <Item value="rrdPath" priority="0" />
+      <Item value="externalPath" priority="0" />
+      <Item value="instance" priority="3" />
+      <Item value="minValue" priority="1" />
+      <Item value="maxValue" priority="1" />
+      <Item value="arcDefs" priority="0" />
+      <Item value="result" priority="11" />
+      <Item value="protected" priority="0" />
+      <Item value="out" priority="2" />
+      <Item value="timeToken" priority="0" />
+      <Item value="dateTime" priority="0" />
+      <Item value="valueStr" priority="0" />
+      <Item value="Max`0" priority="0" />
+      <Item value="ReferenceEquals`0" priority="0" />
+      <Item value="Min" priority="0" />
+      <Item value="tmpFileName" priority="0" />
+      <Item value="void" priority="3" />
+      <Item value="RrdMemoryBackend`0" priority="0" />
+      <Item value="RrdMemoryBackendFactory`0" priority="0" />
+      <Item value="GAUGE" priority="1" />
+      <Item value="dsHeartbeat" priority="1" />
+      <Item value="DsDef" priority="1" />
+      <Item value="heartbeat" priority="0" />
+      <Item value="aTimeStamp" priority="0" />
+      <Item value="updateDate" priority="0" />
+      <Item value="sampleDate" priority="1" />
+      <Item value="lastUpdate" priority="0" />
+      <Item value="Get`0" priority="5" />
+      <Item value="ConsoleTraceListener`0" priority="0" />
+      <Item value="List&lt;double&gt;" priority="0" />
+      <Item value="Set`0" priority="0" />
+      <Item value="ArgumentException`0" priority="0" />
+      <Item value="RrdPrimitive`0" priority="0" />
+      <Item value="params" priority="0" />
+      <Item value="fetchRequest" priority="0" />
+      <Item value="FetchRequest" priority="0" />
+      <Item value="req" priority="2" />
+      <Item value="forr" priority="0" />
+      <Item value="continue" priority="0" />
+      <Item value="MidpointRounding`0" priority="0" />
+      <Item value="RrdGraph`0" priority="0" />
+      <Item value="SAMPLE" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Double">
+      <Item value="IsNaN`0" priority="2" />
+      <Item value="NaN" priority="16" />
+      <Item value="PositiveInfinity" priority="0" />
+      <Item value="NegativeInfinity" priority="0" />
+      <Item value="MaxValue" priority="1" />
+      <Item value="Parse`0" priority="3" />
+      <Item value="TryParse`0" priority="5" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="Equals`0" priority="8" />
+      <Item value="GetHashCode`0" priority="0" />
+      <Item value="Length" priority="19" />
+      <Item value="Split`0" priority="2" />
+      <Item value="length`0" priority="1" />
+      <Item value="ToUpper`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Diagnostics.Debug">
+      <Item value="Assert`0" priority="2" />
+      <Item value="WriteLine`0" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.BitConverter">
+      <Item value="Int64BitsToDouble`0" priority="0" />
+      <Item value="ToDouble`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Int64">
+      <Item value="MaxValue" priority="6" />
+      <Item value="Parse`0" priority="5" />
+      <Item value="TryParse`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Nullable`1">
+      <Item value="Value" priority="5" />
+      <Item value="HasValue" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.core.RrdUpdater">
+      <Item value="GetType`0" priority="5" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Type">
+      <Item value="Name" priority="13" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Int32">
+      <Item value="Parse`0" priority="8" />
+      <Item value="MaxValue" priority="3" />
+      <Item value="MinValue" priority="0" />
+      <Item value="TryParse`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.FileInfo">
+      <Item value="FullName" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Text.StringBuilder">
+      <Item value="ToString`0" priority="1" />
+      <Item value="AppendLine`0" priority="0" />
+      <Item value="Append`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.StringWriter">
+      <Item value="ToString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="WriteLine`0" priority="3" />
+      <Item value="ReadLine`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.Path">
+      <Item value="GetFileName`0" priority="1" />
+      <Item value="GetFullPath`0" priority="3" />
+      <Item value="PathSeparator" priority="0" />
+      <Item value="GetTempFileName`0" priority="2" />
+      <Item value="GetDirectoryName`0" priority="0" />
+      <Item value="Combine`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
+      <Item value="Count" priority="19" />
+      <Item value="GetEnumerator`0" priority="5" />
+      <Item value="Remove`0" priority="1" />
+      <Item value="Sort`0" priority="0" />
+      <Item value="ToArray`0" priority="0" />
+      <Item value="Add`0" priority="3" />
+      <Item value="Clear`0" priority="0" />
+      <Item value="Contains`0" priority="0" />
+      <Item value="CopyTo`0" priority="0" />
+      <Item value="RemoveAt`0" priority="0" />
+      <Item value="SingleOrDefault`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerator`1">
+      <Item value="MoveNext`0" priority="0" />
+      <Item value="Current" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Runtime.CompilerServices.MethodImplOptions">
+      <Item value="Synchronized" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.Dictionary`2">
+      <Item value="Add`0" priority="4" />
+      <Item value="Clear`0" priority="0" />
+      <Item value="Remove`0" priority="1" />
+      <Item value="ContainsKey`0" priority="0" />
+      <Item value="Keys" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Array">
+      <Item value="Copy`0" priority="1" />
+      <Item value="ForEach`1" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.DateTime">
+      <Item value="UtcNow" priority="3" />
+      <Item value="Now" priority="13" />
+      <Item value="Parse`0" priority="0" />
+      <Item value="ParseExact`0" priority="0" />
+      <Item value="MaxValue" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Math">
+      <Item value="Ceiling`0" priority="11" />
+      <Item value="Max`0" priority="0" />
+      <Item value="Round`0" priority="1" />
+      <Item value="Log10`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.Data.Utils.LinkedHashMap`2">
+      <Item value="Values" priority="1" />
+      <Item value="Keys" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.DateTime">
+      <Item value="AddSeconds`0" priority="12" />
+      <Item value="Year" priority="3" />
+      <Item value="Month" priority="4" />
+      <Item value="Day" priority="5" />
+      <Item value="Hour" priority="8" />
+      <Item value="Minute" priority="9" />
+      <Item value="Second" priority="10" />
+      <Item value="AddDays`0" priority="15" />
+      <Item value="ToString`0" priority="1" />
+      <Item value="AddMilliseconds`0" priority="1" />
+      <Item value="Millisecond" priority="6" />
+      <Item value="TimeOfDay" priority="2" />
+      <Item value="SecondsFromEpoch`0" priority="31" />
+      <Item value="AddMinutes`0" priority="8" />
+      <Item value="AddHours`0" priority="7" />
+      <Item value="Subtract`0" priority="2" />
+      <Item value="MilisecondsFromEpoch`0" priority="6" />
+      <Item value="AddMonths`0" priority="8" />
+      <Item value="AddYears`0" priority="3" />
+      <Item value="DayOfWeek" priority="2" />
+      <Item value="Add`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Char">
+      <Item value="IsWhiteSpace`0" priority="0" />
+      <Item value="IsDigit`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Globalization.CultureInfo">
+      <Item value="CurrentCulture" priority="0" />
+      <Item value="InvariantCulture" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Globalization.CultureInfo">
+      <Item value="CompareInfo" priority="0" />
+      <Item value="DateTimeFormat" priority="2" />
+      <Item value="NumberFormat" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Random">
+      <Item value="Next`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.StringComparison">
+      <Item value="InvariantCultureIgnoreCase" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Threading.Monitor">
+      <Item value="Wait`0" priority="1" />
+      <Item value="PulseAll`0" priority="0" />
+      <Item value="Enter`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="Empty" priority="1" />
+      <Item value="Format`0" priority="8" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Drawing.Color">
+      <Item value="FromArgb`0" priority="0" />
+      <Item value="Black" priority="0" />
+      <Item value="Red" priority="1" />
+      <Item value="LightGray" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Environment">
+      <Item value="GetFolderPath`0" priority="0" />
+      <Item value="NewLine" priority="0" />
+      <Item value="OSVersion" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Environment+SpecialFolder">
+      <Item value="MyDocuments" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.Directory">
+      <Item value="Exists`0" priority="1" />
+      <Item value="CreateDirectory`0" priority="0" />
+      <Item value="GetFiles`0" priority="0" />
+      <Item value="GetDirectories`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.File">
+      <Item value="Create`0" priority="2" />
+      <Item value="OpenRead`0" priority="0" />
+      <Item value="Exists`0" priority="3" />
+      <Item value="Open`0" priority="1" />
+      <Item value="Delete`0" priority="4" />
+      <Item value="WriteAllBytes`0" priority="1" />
+      <Item value="OpenWrite`0" priority="0" />
+      <Item value="Move`0" priority="1" />
+      <Item value="Copy`0" priority="0" />
+      <Item value="ReadAllBytes`0" priority="0" />
+      <Item value="GetLastWriteTime`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Threading.Thread">
+      <Item value="CurrentThread" priority="2" />
+      <Item value="Sleep`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Threading.Thread">
+      <Item value="CurrentCulture" priority="2" />
+      <Item value="Abort`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Double">
+      <Item value="ToString`0" priority="7" />
+      <Item value="Equals`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.TimeSpan">
+      <Item value="TotalSeconds" priority="5" />
+      <Item value="TotalMilliseconds" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.core.RrdInt">
+      <Item value="get`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Int64">
+      <Item value="ToString`0" priority="8" />
+      <Item value="ToDateTime`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.TextWriter">
+      <Item value="Write`0" priority="1" />
+      <Item value="WriteLine`0" priority="2" />
+      <Item value="println`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.Stream">
+      <Item value="Seek`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Text.Encoding">
+      <Item value="Unicode" priority="5" />
+      <Item value="ASCII" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Text.Encoding">
+      <Item value="GetString`0" priority="2" />
+      <Item value="GetBytes`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.FileStream">
+      <Item value="Seek`0" priority="2" />
+      <Item value="Position" priority="1" />
+      <Item value="Close`0" priority="1" />
+      <Item value="Length" priority="1" />
+      <Item value="WriteByte`0" priority="4" />
+      <Item value="Write`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@robin.core.Util">
+      <Item value="getDate`0" priority="1" />
+      <Item value="getCanonicalPath`0" priority="0" />
+      <Item value="getTimestamp`0" priority="0" />
+      <Item value="GetDateTime`0" priority="2" />
+      <Item value="ParseColor`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.SeekOrigin">
+      <Item value="Begin" priority="6" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.core.jrrd.RRDFile">
+      <Item value="reader" priority="2" />
+      <Item value="close`0" priority="1" />
+      <Item value="FilePointer" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.FileMode">
+      <Item value="Open" priority="0" />
+      <Item value="Create" priority="0" />
+      <Item value="OpenOrCreate" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.FileAccess">
+      <Item value="ReadWrite" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Threading.ReaderWriterLock">
+      <Item value="AcquireWriterLock`0" priority="0" />
+      <Item value="IsWriterLockHeld" priority="0" />
+      <Item value="ReleaseWriterLock`0" priority="1" />
+      <Item value="AcquireReaderLock`0" priority="0" />
+      <Item value="IsReaderLockHeld" priority="0" />
+      <Item value="ReleaseReaderLock`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Microsoft.VisualStudio.TestTools.UnitTesting.Assert">
+      <Item value="IsTrue`0" priority="2" />
+      <Item value="AreEqual`0" priority="23" />
+      <Item value="Equals`0" priority="0" />
+      <Item value="IsFalse`0" priority="0" />
+      <Item value="IsNotNull`0" priority="2" />
+      <Item value="IsNull`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Int32">
+      <Item value="CompareTo`0" priority="0" />
+      <Item value="ToString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.tests.TimeParserTest">
+      <Item value="setSubDayFieldsZero`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.DayOfWeek">
+      <Item value="Thursday" priority="1" />
+      <Item value="Friday" priority="1" />
+      <Item value="Monday" priority="0" />
+      <Item value="Tuesday" priority="0" />
+      <Item value="Wednesday" priority="0" />
+      <Item value="Saturday" priority="0" />
+      <Item value="Sunday" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Constants">
+      <Item value="COOKIE" priority="0" />
+      <Item value="VERSION3" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.core.RrdDef">
+      <Item value="addDatasource`0" priority="0" />
+      <Item value="addArchive`0" priority="0" />
+      <Item value="AddDatasource`0" priority="3" />
+      <Item value="DsCount" priority="0" />
+      <Item value="ArcCount" priority="1" />
+      <Item value="AddArchive`0" priority="1" />
+      <Item value="DsDefs" priority="3" />
+      <Item value="ArcDefs" priority="2" />
+      <Item value="ArchiveDefinitions" priority="1" />
+      <Item value="Path" priority="0" />
+      <Item value="RemoveDatasource`0" priority="1" />
+      <Item value="RemoveAllDatasources`0" priority="0" />
+      <Item value="RemoveArchive`0" priority="0" />
+      <Item value="Step" priority="1" />
+      <Item value="StartTime" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.core.RrdDb">
+      <Item value="close`0" priority="2" />
+      <Item value="createSample`0" priority="0" />
+      <Item value="createFetchRequest`0" priority="0" />
+      <Item value="getDsNames`0" priority="1" />
+      <Item value="getDatasources`0" priority="0" />
+      <Item value="getArchives`0" priority="0" />
+      <Item value="Header" priority="2" />
+      <Item value="LastUpdateTime" priority="2" />
+      <Item value="DataSources" priority="1" />
+      <Item value="CreateSample`0" priority="1" />
+      <Item value="Archives" priority="5" />
+      <Item value="FetchData`0" priority="1" />
+      <Item value="CreateFetchRequest`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.core.Sample">
+      <Item value="setAndUpdate`0" priority="0" />
+      <Item value="setTime`0" priority="0" />
+      <Item value="setValue`0" priority="0" />
+      <Item value="update`0" priority="0" />
+      <Item value="SetValue`0" priority="0" />
+      <Item value="Update`0" priority="0" />
+      <Item value="Time" priority="0" />
+      <Item value="Values" priority="0" />
+      <Item value="SetAndUpdate`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.core.FetchRequest">
+      <Item value="getConsolFun`0" priority="0" />
+      <Item value="fetchData`0" priority="0" />
+      <Item value="dump`0" priority="0" />
+      <Item value="ConsolidationFunction" priority="0" />
+      <Item value="FetchStart" priority="0" />
+      <Item value="FetchEnd" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.core.FetchData">
+      <Item value="getValues`0" priority="0" />
+      <Item value="Timestamps" priority="1" />
+      <Item value="Values" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Globalization.DateTimeFormatInfo">
+      <Item value="FirstDayOfWeek" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.OperatingSystem">
+      <Item value="Platform" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Drawing.Graphics">
+      <Item value="MeasureString`0" priority="3" />
+      <Item value="DrawImage`0" priority="1" />
+      <Item value="Transform" priority="2" />
+      <Item value="ResetTransform`0" priority="0" />
+      <Item value="RotateTransform`0" priority="2" />
+      <Item value="Clip" priority="0" />
+      <Item value="ResetClip`0" priority="2" />
+      <Item value="SetClip`0" priority="1" />
+      <Item value="DrawPolygon`0" priority="1" />
+      <Item value="SmoothingMode" priority="0" />
+      <Item value="TranslateTransform`0" priority="0" />
+      <Item value="FillRectangle`0" priority="0" />
+      <Item value="FillPolygon`0" priority="0" />
+      <Item value="DrawLines`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Text.RegularExpressions.Regex">
+      <Item value="Replace`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.DateTimeOffset">
+      <Item value="Day" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Text.RegularExpressions.Regex">
+      <Item value="Match`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Text.RegularExpressions.Match">
+      <Item value="Success" priority="0" />
+      <Item value="Groups" priority="0" />
+      <Item value="Value" priority="0" />
+      <Item value="Index" priority="1" />
+      <Item value="Length" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Drawing.Graphics">
+      <Item value="FromImage`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Drawing.Image">
+      <Item value="FromFile`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.graph.RrdGraphDef">
+      <Item value="overlayImage" priority="0" />
+      <Item value="base_renamed" priority="0" />
+      <Item value="setFilename`0" priority="0" />
+      <Item value="filename" priority="2" />
+      <Item value="antiAliasing" priority="0" />
+      <Item value="datasource`0" priority="1" />
+      <Item value="setEndTime`0" priority="0" />
+      <Item value="setStartTime`0" priority="0" />
+      <Item value="imageFormat" priority="0" />
+      <Item value="line`0" priority="1" />
+      <Item value="width" priority="0" />
+      <Item value="height" priority="0" />
+      <Item value="area`0" priority="0" />
+      <Item value="showSignature" priority="1" />
+      <Item value="startTime" priority="0" />
+      <Item value="endTime" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Drawing.FontStyle">
+      <Item value="Regular" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Drawing.Font">
+      <Item value="FontFamily" priority="1" />
+      <Item value="GetHeight`0" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.graph.HRule">
+      <Item value="color" priority="1" />
+      <Item value="width" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Drawing.SizeF">
+      <Item value="Width" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.graph.SourcedPlotElement">
+      <Item value="color" priority="1" />
+      <Item value="GetType`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.graph.ImageWorker">
+      <Item value="gd" priority="0" />
+      <Item value="getStringWidth`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Drawing.Drawing2D.SmoothingMode">
+      <Item value="AntiAlias" priority="0" />
+      <Item value="HighSpeed" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Drawing.ImageConverter">
+      <Item value="StandardValuesCollection`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Drawing.Image">
+      <Item value="Save`0" priority="0" />
+      <Item value="Height" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Drawing.Imaging.ImageFormat">
+      <Item value="Png" priority="0" />
+      <Item value="Gif" priority="0" />
+      <Item value="Jpeg" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.MemoryStream">
+      <Item value="Seek`0" priority="0" />
+      <Item value="Length" priority="0" />
+      <Item value="Read`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.graph.Line">
+      <Item value="width" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@robin.graph.RrdGraphConstants">
+      <Item value="COLOR_CANVAS" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.graph.LegendComposer+Line">
+      <Item value="legendComposer" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.graph.RrdGraph">
+      <Item value="getRrdGraphInfo`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.graph.RrdGraphInfo">
+      <Item value="width" priority="0" />
+      <Item value="getFilename`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.KeyValuePair`2">
+      <Item value="Key" priority="4" />
+      <Item value="Value" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.graph.LegendComposer">
+      <Item value="legX" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.OpenFileDialog">
+      <Item value="ShowDialog`0" priority="0" />
+      <Item value="FileName" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.DialogResult">
+      <Item value="OK" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.TreeView">
+      <Item value="Nodes" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.TreeNodeCollection">
+      <Item value="Clear`0" priority="0" />
+      <Item value="Add`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.TreeNode">
+      <Item value="NodeFont" priority="0" />
+      <Item value="Nodes" priority="0" />
+      <Item value="Tag" priority="5" />
+      <Item value="Text" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.core.Datasource">
+      <Item value="setDsName`0" priority="2" />
+      <Item value="getDsName`0" priority="0" />
+      <Item value="dump`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.core.Archive">
+      <Item value="getConsolFun`0" priority="2" />
+      <Item value="getRobin`0" priority="0" />
+      <Item value="getArcStep`0" priority="0" />
+      <Item value="getXff`0" priority="0" />
+      <Item value="getSteps`0" priority="0" />
+      <Item value="getRows`0" priority="0" />
+      <Item value="dump`0" priority="0" />
+      <Item value="ConsolidationFunction" priority="0" />
+      <Item value="Steps" priority="0" />
+      <Item value="GetStartTime`0" priority="0" />
+      <Item value="GetEndTime`0" priority="1" />
+      <Item value="Step" priority="1" />
+      <Item value="GetArcState`0" priority="0" />
+      <Item value="GetRobin`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.TextBox">
+      <Item value="Text" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.TreeViewEventArgs">
+      <Item value="Node" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Panel">
+      <Item value="Controls" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Control+ControlCollection">
+      <Item value="Clear`0" priority="1" />
+      <Item value="Add`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.UserControl">
+      <Item value="Dock" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Enum">
+      <Item value="Parse`0" priority="0" />
+      <Item value="TryParse`1" priority="5" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@robin.core.jrrd.DataSourceType">
+      <Item value="TryParse`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.core.jrrd.RRDatabase">
+      <Item value="Dispose`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@robin.Core.TimeSpec.TimeSpecType">
+      <Item value="Absolute" priority="3" />
+      <Item value="Start" priority="2" />
+      <Item value="End" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.core.ArcDef">
+      <Item value="Rows" priority="1" />
+      <Item value="ConsolFun" priority="0" />
+      <Item value="Steps" priority="1" />
+      <Item value="Xff" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@robin.core.ConsolFuns">
+      <Item value="AVERAGE" priority="4" />
+      <Item value="MAX" priority="5" />
+      <Item value="MIN" priority="4" />
+      <Item value="LAST" priority="3" />
+      <Item value="FIRST" priority="0" />
+      <Item value="TOTAL" priority="0" />
+      <Item value="NONE" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.core.ConsolFuns">
+      <Item value="ToString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.core.RrdString">
+      <Item value="get`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@robin.core.DataSourceType">
+      <Item value="GAUGE" priority="2" />
+      <Item value="ABSOLUTE" priority="0" />
+      <Item value="DERIVE" priority="1" />
+      <Item value="COUNTER" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.core.DataSourceType">
+      <Item value="ToString`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.core.DsDef">
+      <Item value="MinValue" priority="2" />
+      <Item value="Name" priority="1" />
+      <Item value="Type" priority="2" />
+      <Item value="Heartbeat" priority="1" />
+      <Item value="MaxValue" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@robin.core.ConsolidationFunction">
+      <Item value="AVERAGE" priority="0" />
+      <Item value="MIN" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
+      <Item value="ToArray`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.core.DataSource">
+      <Item value="Name" priority="0" />
+      <Item value="AccumulatedValue" priority="1" />
+      <Item value="LastValue" priority="1" />
+      <Item value="NanSeconds" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@robin.core.RrdDb">
+      <Item value="Open`0" priority="17" />
+      <Item value="Create`0" priority="9" />
+      <Item value="Import`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.data.Aggregates">
+      <Item value="getAverage`0" priority="0" />
+      <Item value="ToString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@robin.core.DsDef">
+      <Item value="FromRrdToolDefinition`0" priority="0" />
+      <Item value="FromRrdToolString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.core.Header">
+      <Item value="Step" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@robin.core.ArcDef">
+      <Item value="FromRrdToolString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Globalization.NumberStyles">
+      <Item value="Float" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.core.Robin">
+      <Item value="GetValue`0" priority="1" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>
