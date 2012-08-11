@@ -5,6 +5,8 @@ RRDTool for C# (port of [jrobin.org] 1.5.14)
 
 Creating rrd files and updates values is working fine, the graph part still need some works.
 
+API is NOT yet stable, but it should not change a lot before v 1.0
+
 Example :
 
     RrdDef def = new RrdDef(SAMPLE);
