@@ -20,6 +20,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
+using System.Xml;
 
 namespace robin.core
 {
@@ -326,79 +328,85 @@ namespace robin.core
 			throw new RrdException("Could not find archive " + consolFun + "/" + steps);
 		}
 
-		/**
-	 * Exports RrdDef object to output stream in XML format. Generated XML code can be parsed
-	 * with {@link RrdDefTemplate} class.
-	 *
-	 * @param out Output stream
-	 */
-		//public void exportXmlTemplate( OutputStream outxml) {
-		//  XmlWriter xml = new XmlWriter(outxml);
-		//xml.startTag("rrd_def");
-		//xml.writeTag("path", getPath());
-		//xml.writeTag("step", getStep());
-		//xml.writeTag("start", getStartTime());
-		//for ( DsDef dsDef : getDsDefs()) {
-		//   xml.startTag("datasource");
-		//   xml.writeTag("name", dsDef.getDsName());
-		//   xml.writeTag("type", dsDef.getDsType());
-		//   xml.writeTag("heartbeat", dsDef.getHeartbeat());
-		//   xml.writeTag("min", dsDef.getMinValue(), "U");
-		//   xml.writeTag("max", dsDef.getMaxValue(), "U");
-		//   xml.closeTag(); // datasource
-		//}
-		//for (ArcDef arcDef : getArcDefs()) {
-		//   xml.startTag("archive");
-		//   xml.writeTag("cf", arcDef.getConsolFun());
-		//   xml.writeTag("xff", arcDef.getXff());
-		//   xml.writeTag("steps", arcDef.getSteps());
-		//   xml.writeTag("rows", arcDef.getRows());
-		//   xml.closeTag(); // archive
-		//}
-		//xml.closeTag(); // rrd_def
-		//xml.flush();
-		//}
+		/// <summary>
+		/// Exports RrdDef object to output stream in XML format.
+		/// </summary>
+		/// <param name="outxml">Output stream</param>
+		public void ExportXmlTemplate(Stream outxml)
+		{
+			using(XmlWriter xml = XmlWriter.Create(outxml,new XmlWriterSettings{Encoding = Encoding.UTF8,CloseOutput = false}))
+			{
+				xml.WriteStartElement("rrd_def");
+				xml.WriteElementString("path", Path);
+				xml.WriteElementString("step", Step.ToString());
+				xml.WriteElementString("start", StartTime.ToString());
+				foreach (DsDef dsDef in DataSourceDefinitions)
+				{
+					xml.WriteStartElement("datasource");
+					xml.WriteElementString("name", dsDef.Name);
+					xml.WriteElementString("type", dsDef.Type.ToString());
+					xml.WriteElementString("heartbeat", dsDef.Heartbeat.ToString());
+					xml.WriteElementString("min", dsDef.MinValue.ToString());
+					xml.WriteElementString("max", dsDef.MaxValue.ToString());
+					xml.WriteEndElement(); // datasource
+				}
+				foreach (ArcDef arcDef in ArchiveDefinitions)
+				{
+					xml.WriteStartElement("archive");
+					xml.WriteElementString("cf", arcDef.ConsolFun.ToString());
+					xml.WriteElementString("xff", arcDef.Xff.ToString());
+					xml.WriteElementString("steps", arcDef.Steps.ToString());
+					xml.WriteElementString("rows", arcDef.Rows.ToString());
+					xml.WriteEndElement(); // archive
+				}
+				xml.WriteEndElement(); // rrd_def
+				xml.Flush();
+			}
+		}
 
-		/**
-	 * Exports RrdDef object to string in XML format. Generated XML string can be parsed
-	 * with {@link RrdDefTemplate} class.
-	 *
-	 * @return XML formatted string representing this RrdDef object
-	 */
-		//public String exportXmlTemplate() {
-		//  ByteArrayOutputStream o = new ByteArrayOutputStream();
-		//exportXmlTemplate(o);
-		//return out.toString();
-		//}
+		/// <summary>
+		/// Exports RrdDef object to string in XML format.
+		/// </summary>
+		/// <returns>XML formatted string representing this RrdDef object</returns>
+		public String ExportXmlTemplate()
+		{
+			using (MemoryStream stream = new MemoryStream())
+			{
+				ExportXmlTemplate(stream);
+				stream.Seek(0, SeekOrigin.Begin);
+				using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
+				{
+					return reader.ReadToEnd();
+				}
+			}
+		}
 
-		/**
-	 * Exports RrdDef object to a file in XML format. Generated XML code can be parsed
-	 * with {@link RrdDefTemplate} class.
-	 *
-	 * @param filePath Path to the file
-	 */
-		//public void exportXmlTemplate( String filePath)  {
-		//  FileOutputStream out = new FileOutputStream(filePath, false);
-		//exportXmlTemplate(out);
-		//out.close();
-		//}
+		/// <summary>
+		/// Exports RrdDef object to a file in XML format.
+		/// </summary>
+		/// <param name="filePath">Path to the file</param>
+		public void ExportXmlTemplate( String filePath)
+		{
+			using (FileStream writer = File.OpenWrite(filePath))
+			{
+				ExportXmlTemplate(writer);
+			}
+		}
 
-		/**
-	 * Returns the number of storage bytes required to create RRD from this
-	 * RrdDef object.
-	 *
-	 * @return Estimated byte count of the underlying RRD storage.
-	 */
-
-		public long getEstimatedSize()
+		/// <summary>
+		/// Returns the number of storage bytes required to create RRD from this
+		/// RrdDef object.
+		/// </summary>
+		/// <returns></returns>
+		public long GetEstimatedSize()
 		{
 			int dsCount = dsDefs.Count;
 			int arcCount = arcDefs.Count;
 			int rowsCount = arcDefs.Sum(arcDef => arcDef.Rows);
-			return calculateSize(dsCount, arcCount, rowsCount);
+			return CalculateSize(dsCount, arcCount, rowsCount);
 		}
 
-		internal static long calculateSize(int dsCount, int arcCount, int rowsCount)
+		internal static long CalculateSize(int dsCount, int arcCount, int rowsCount)
 		{
 			return (24L + 48L*dsCount + 16L*arcCount +
 			        20L*dsCount*arcCount + 8L*dsCount*rowsCount) +
@@ -432,13 +440,13 @@ namespace robin.core
 				return false;
 			}
 			// check datasources
-			DsDef[] dsDefs = DataSourceDefinitions;
+			DsDef[] dsDefs1 = DataSourceDefinitions;
 			DsDef[] dsDefs2 = rrdDef2.DataSourceDefinitions;
-			if (dsDefs.Length != dsDefs2.Length)
+			if (dsDefs1.Length != dsDefs2.Length)
 			{
 				return false;
 			}
-			foreach (DsDef dsDef in dsDefs)
+			foreach (DsDef dsDef in dsDefs1)
 			{
 				bool matched = false;
 				foreach (DsDef dsDef2 in dsDefs2)
@@ -456,18 +464,18 @@ namespace robin.core
 				}
 			}
 			// check archives
-			ArcDef[] arcDefs = ArchiveDefinitions;
+			ArcDef[] arcDefs1 = ArchiveDefinitions;
 			ArcDef[] arcDefs2 = rrdDef2.ArchiveDefinitions;
-			if (arcDefs.Length != arcDefs2.Length)
+			if (arcDefs1.Length != arcDefs2.Length)
 			{
 				return false;
 			}
-			foreach (ArcDef arcDef in arcDefs)
+			foreach (ArcDef arcDef1 in arcDefs1)
 			{
 				bool matched = false;
 				foreach (ArcDef arcDef2 in arcDefs2)
 				{
-					if (arcDef.ExactlyEqual(arcDef2))
+					if (arcDef1.ExactlyEqual(arcDef2))
 					{
 						matched = true;
 						break;

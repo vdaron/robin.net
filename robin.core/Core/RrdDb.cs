@@ -148,7 +148,7 @@ namespace robin.core
 			backend = factory.Open(path, false);
 			try
 			{
-				backend.SetLength(rrdDef.getEstimatedSize());
+				backend.SetLength(rrdDef.GetEstimatedSize());
 				// create header
 				header = new Header(this, rrdDef);
 				// create datasources

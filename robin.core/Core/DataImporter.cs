@@ -87,7 +87,7 @@ namespace robin.core
 			{
 				rowCount += GetArchiveRows(i);
 			}
-			return RrdDef.calculateSize(dsCount, arcCount, rowCount);
+			return RrdDef.CalculateSize(dsCount, arcCount, rowCount);
 		}
 	}
 }
