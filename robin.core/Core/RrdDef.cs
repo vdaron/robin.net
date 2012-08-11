@@ -78,14 +78,11 @@ namespace robin.core
 			this.Path = path;
 		}
 
-		/**
-	 * <p>Creates new RRD definition object with the given path and step.</p>
-	 *
-	 * @param path Path to new RRD.
-	 * @param step RRD step.
-	 * @ Thrown if supplied parameters are invalid.
-	 */
-
+		/// <summary>
+		/// Creates new RRD definition object with the given path and step.
+		/// </summary>
+		/// <param name="path">Path to new RRD.</param>
+		/// <param name="step">RRD step.</param>
 		public RrdDef(String path, long step)
 			: this(path)
 		{
