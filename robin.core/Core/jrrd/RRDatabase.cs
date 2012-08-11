@@ -229,8 +229,8 @@ namespace robin.core.jrrd
 
 			startCal.AddDays(-1);
 
-			long end = endCal.SecondsFromEpoch();
-			long start = startCal.SecondsFromEpoch();
+			long end = endCal.GetTimestamp();
+			long start = startCal.GetTimestamp();
 			Archive archive = FindBestArchive(start, end, step, possibleArchives);
 
 			// Tune the parameters
@@ -249,7 +249,7 @@ namespace robin.core.jrrd
 
 			// Find start and end offsets
 			// This is terrible - some of this should be encapsulated in Archive - CT.
-			long lastUpdateLong = LastUpdate.SecondsFromEpoch();
+			long lastUpdateLong = LastUpdate.GetTimestamp();
 			long archiveEndTime = lastUpdateLong - (lastUpdateLong%step);
 			long archiveStartTime = archiveEndTime - (step*(archive.RowCount - 1));
 			var startOffset = (int) ((start - archiveStartTime)/step);
@@ -281,7 +281,7 @@ namespace robin.core.jrrd
 			Archive archive = null;
 			Archive bestFullArchive = null;
 			Archive bestPartialArchive = null;
-			long lastUpdateLong = LastUpdate.SecondsFromEpoch();
+			long lastUpdateLong = LastUpdate.GetTimestamp();
 			int firstPart = 1;
 			int firstFull = 1;
 			long bestMatch = 0;
@@ -370,7 +370,7 @@ namespace robin.core.jrrd
 			s.Write("step = ");
 			s.WriteLine(Header.PrimaryDataPointStep);
 			s.Write("last_update = ");
-			s.WriteLine(LastUpdate.SecondsFromEpoch());
+			s.WriteLine(LastUpdate.GetTimestamp());
 
 			foreach (DataSource ds in dataSources)
 			{
@@ -405,7 +405,7 @@ namespace robin.core.jrrd
 			s.Write(Header.PrimaryDataPointStep);
 			s.WriteLine(" </step> <!-- Seconds -->");
 			s.Write("\t<lastupdate> ");
-			s.Write(LastUpdate.SecondsFromEpoch());
+			s.Write(LastUpdate.GetTimestamp());
 			s.Write(" </lastupdate> <!-- ");
 			s.Write(LastUpdate.ToString());
 			s.WriteLine(" -->");

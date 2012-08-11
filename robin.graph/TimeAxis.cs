@@ -75,7 +75,7 @@ class TimeAxis  {
 			int y0 = rrdGraph.im.yorigin, y1 = y0 - rrdGraph.im.ysize;
 			for (int status = getTimeShift(); status <= 0; status = getTimeShift()) {
 				if (status == 0) {
-					long time = calendar.SecondsFromEpoch();
+					long time = calendar.GetTimestamp();
 					int x = rrdGraph.mapper.xtr(time);
 					rrdGraph.worker.drawLine(x, y0 - 1, x, y0 + 1,new Pen(color,RrdGraphConstants.TICK_STROKE));
 					rrdGraph.worker.drawLine(x, y0, x, y1, new Pen(color, RrdGraphConstants.GRID_STROKE));
@@ -91,7 +91,7 @@ class TimeAxis  {
 		int y0 = rrdGraph.im.yorigin, y1 = y0 - rrdGraph.im.ysize;
 		for (int status = getTimeShift(); status <= 0; status = getTimeShift()) {
 			if (status == 0) {
-				long time = calendar.SecondsFromEpoch();
+				long time = calendar.GetTimestamp();
 				int x = rrdGraph.mapper.xtr(time);
 				rrdGraph.worker.drawLine(x, y0 - 2, x, y0 + 2, new Pen(color, RrdGraphConstants.TICK_STROKE));
 				rrdGraph.worker.drawLine(x, y0, x, y1, new Pen(color, RrdGraphConstants.GRID_STROKE));
@@ -109,7 +109,7 @@ class TimeAxis  {
 		int y = rrdGraph.im.yorigin + (int) rrdGraph.worker.getFontHeight(font) + 2;
 		for (int status = getTimeShift(); status <= 0; status = getTimeShift()) {
 			String label = formatLabel(labelFormat, DateTime.Now);
-			long time = calendar.SecondsFromEpoch();
+			long time = calendar.GetTimestamp();
 			int x1 = rrdGraph.mapper.xtr(time);
 			int x2 = rrdGraph.mapper.xtr(time + tickSetting.labelSpan);
 			int labelWidth = (int) rrdGraph.worker.getStringWidth(label, font);
@@ -161,7 +161,7 @@ class TimeAxis  {
 	}
 
 	private int getTimeShift() {
-		long time = calendar.SecondsFromEpoch();
+		long time = calendar.GetTimestamp();
 		return (time < rrdGraph.im.start) ? -1 : (time > rrdGraph.im.end) ? +1 : 0;
 	}
 

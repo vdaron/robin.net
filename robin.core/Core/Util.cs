@@ -166,7 +166,7 @@ namespace robin.core
 		/// <returns></returns>
 		public static long GetTimestamp(DateTime date)
 		{
-			return date.SecondsFromEpoch();
+			return date.GetTimestamp();
 		}
 
 		/// <summary>

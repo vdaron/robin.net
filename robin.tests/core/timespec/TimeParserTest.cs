@@ -156,8 +156,8 @@ public class TimeParserTest {
 		long start = result[0];
 		long end = result[1];
 
-		Assert.AreEqual(startDate.SecondsFromEpoch(), start);
-		Assert.AreEqual(endDate.SecondsFromEpoch(), end);
+		Assert.AreEqual(startDate.GetTimestamp(), start);
+		Assert.AreEqual(endDate.GetTimestamp(), end);
 	}
 	
 	//**
@@ -171,7 +171,7 @@ public class TimeParserTest {
 	   long[] result = this.parseTimes("midnight", "16");
 	   long start = result[0];
 
-	   Assert.AreEqual(startDate.SecondsFromEpoch(), start);
+	   Assert.AreEqual(startDate.GetTimestamp(), start);
 
 	}
 
@@ -187,7 +187,7 @@ public class TimeParserTest {
 	   long[] result = this.parseTimes("noon", "16");
 	   long start = result[0];
 
-	   Assert.AreEqual(startDate.SecondsFromEpoch(), start);
+	   Assert.AreEqual(startDate.GetTimestamp(), start);
 
 	}
 
@@ -209,8 +209,8 @@ public class TimeParserTest {
 	   long start = result[0];
 	   long end = result[1];
 
-		Assert.AreEqual(startDate.SecondsFromEpoch(), start);
-		Assert.AreEqual(endDate.SecondsFromEpoch(), end);
+		Assert.AreEqual(startDate.GetTimestamp(), start);
+		Assert.AreEqual(endDate.GetTimestamp(), end);
 
 	}
 
@@ -232,8 +232,8 @@ public class TimeParserTest {
 	   long start = result[0];
 	   long end = result[1];
 
-		Assert.AreEqual(startDate.SecondsFromEpoch(), start);
-		Assert.AreEqual(endDate.SecondsFromEpoch(), end);
+		Assert.AreEqual(startDate.GetTimestamp(), start);
+		Assert.AreEqual(endDate.GetTimestamp(), end);
 
 	}
 
@@ -258,8 +258,8 @@ public class TimeParserTest {
 	   long start = result[0];
 	   long end = result[1];
 
-		Assert.AreEqual(startDate.SecondsFromEpoch(), start);
-		Assert.AreEqual(endDate.SecondsFromEpoch(), end);
+		Assert.AreEqual(startDate.GetTimestamp(), start);
+		Assert.AreEqual(endDate.GetTimestamp(), end);
 	}
 
 
@@ -283,8 +283,8 @@ public class TimeParserTest {
 	   long start = result[0];
 	   long end = result[1];
 
-		Assert.AreEqual(startDate.SecondsFromEpoch(), start);
-		Assert.AreEqual(endDate.SecondsFromEpoch(), end);
+		Assert.AreEqual(startDate.GetTimestamp(), start);
+		Assert.AreEqual(endDate.GetTimestamp(), end);
 	}
 
 	//**
@@ -306,8 +306,8 @@ public class TimeParserTest {
 		long start = result[0]*1000;
 		long end = result[1]*1000;
 
-		assertTimestampsEqualWithEpsilon(endDate.MilisecondsFromEpoch(), end, 1000, "end");
-		assertTimestampsEqualWithEpsilon(startDate.MilisecondsFromEpoch(), start, 1000, "start");
+		assertTimestampsEqualWithEpsilon(endDate.GetMilisecondsTimestamp(), end, 1000, "end");
+		assertTimestampsEqualWithEpsilon(startDate.GetMilisecondsTimestamp(), start, 1000, "start");
 	}
 
  	//**
@@ -326,8 +326,8 @@ public class TimeParserTest {
 	   long start = result[0] * 1000;
 	   long end = result[1] * 1000;
 
-		assertTimestampsEqualWithEpsilon(endDate.MilisecondsFromEpoch(), end, 1000, "end");
-		assertTimestampsEqualWithEpsilon(startDate.MilisecondsFromEpoch(), start, 1000, "start");
+		assertTimestampsEqualWithEpsilon(endDate.GetMilisecondsTimestamp(), end, 1000, "end");
+		assertTimestampsEqualWithEpsilon(startDate.GetMilisecondsTimestamp(), start, 1000, "start");
 
 	}
 
@@ -348,8 +348,8 @@ public class TimeParserTest {
 	   long start = result[0] * 1000;
 	   long end = result[1] * 1000;
 
-		assertTimestampsEqualWithEpsilon(endDate.MilisecondsFromEpoch(), end, 1000, "end");
-		assertTimestampsEqualWithEpsilon(startDate.MilisecondsFromEpoch(), start, 1000, "start");
+		assertTimestampsEqualWithEpsilon(endDate.GetMilisecondsTimestamp(), end, 1000, "end");
+		assertTimestampsEqualWithEpsilon(startDate.GetMilisecondsTimestamp(), start, 1000, "start");
 	}
 
 	//**
@@ -367,8 +367,8 @@ public class TimeParserTest {
 	   long start = result[0] * 1000;
 	   long end = result[1] * 1000;
 
-		assertTimestampsEqualWithEpsilon(endDate.MilisecondsFromEpoch(), end, 1000, "end");
-		assertTimestampsEqualWithEpsilon(startDate.MilisecondsFromEpoch(), start, 1000, "start");
+		assertTimestampsEqualWithEpsilon(endDate.GetMilisecondsTimestamp(), end, 1000, "end");
+		assertTimestampsEqualWithEpsilon(startDate.GetMilisecondsTimestamp(), start, 1000, "start");
 
 	}
 
@@ -387,8 +387,8 @@ public class TimeParserTest {
 	   long start = result[0] * 1000;
 	   long end = result[1] * 1000;
 
-		assertTimestampsEqualWithEpsilon(endDate.MilisecondsFromEpoch(), end, 1000, "end");
-		assertTimestampsEqualWithEpsilon(startDate.MilisecondsFromEpoch(), start, 1000, "start");
+		assertTimestampsEqualWithEpsilon(endDate.GetMilisecondsTimestamp(), end, 1000, "end");
+		assertTimestampsEqualWithEpsilon(startDate.GetMilisecondsTimestamp(), start, 1000, "start");
 	}
 
 	//**
@@ -415,8 +415,8 @@ public class TimeParserTest {
 	   long start = result[0];
 	   long end = result[1];
 
-	   Assert.AreEqual(startDate.SecondsFromEpoch(), start);
-		Assert.AreEqual(endDate.SecondsFromEpoch(), end);
+	   Assert.AreEqual(startDate.GetTimestamp(), start);
+		Assert.AreEqual(endDate.GetTimestamp(), end);
 
 	}
 	
@@ -433,8 +433,8 @@ public class TimeParserTest {
 	   long start = result[0];
 	   long end = result[1];
 
-		Assert.AreEqual(startDate.SecondsFromEpoch(), start);
-		Assert.AreEqual(endDate.SecondsFromEpoch(), end);
+		Assert.AreEqual(startDate.GetTimestamp(), start);
+		Assert.AreEqual(endDate.GetTimestamp(), end);
 	}
 
 	/**
@@ -451,8 +451,8 @@ public class TimeParserTest {
 		long start = result[0];
 		long end = result[1];
 
-		Assert.AreEqual(startDate.SecondsFromEpoch(), start);
-		Assert.AreEqual(endDate.SecondsFromEpoch(), end);
+		Assert.AreEqual(startDate.GetTimestamp(), start);
+		Assert.AreEqual(endDate.GetTimestamp(), end);
 	}
 
  	/**
@@ -469,8 +469,8 @@ public class TimeParserTest {
 		long start = result[0];
 		long end = result[1];
 
-		Assert.AreEqual(startDate.SecondsFromEpoch(), start);
-		Assert.AreEqual(endDate.SecondsFromEpoch(), end);
+		Assert.AreEqual(startDate.GetTimestamp(), start);
+		Assert.AreEqual(endDate.GetTimestamp(), end);
 	}
 
  	/**
@@ -499,8 +499,8 @@ public class TimeParserTest {
 	   long start = result[0];
 	   long end = result[1];
 
-		Assert.AreEqual(startDate.SecondsFromEpoch(), start);
-		Assert.AreEqual(endDate.SecondsFromEpoch(), end);
+		Assert.AreEqual(startDate.GetTimestamp(), start);
+		Assert.AreEqual(endDate.GetTimestamp(), end);
 	}
 
 	/**
@@ -527,8 +527,8 @@ public class TimeParserTest {
 		long start = result[0];
 		long end = result[1];
 
-		Assert.AreEqual(startDate.SecondsFromEpoch(), start);
-		Assert.AreEqual(endDate.SecondsFromEpoch(), end);
+		Assert.AreEqual(startDate.GetTimestamp(), start);
+		Assert.AreEqual(endDate.GetTimestamp(), end);
 
 	}
 	
@@ -558,8 +558,8 @@ public class TimeParserTest {
 		long start = result[0];
 		long end = result[1];
 
-		Assert.AreEqual(startDate.SecondsFromEpoch(), start);
-		Assert.AreEqual(endDate.SecondsFromEpoch(), end);
+		Assert.AreEqual(startDate.GetTimestamp(), start);
+		Assert.AreEqual(endDate.GetTimestamp(), end);
 	}
 
  	/**
@@ -583,8 +583,8 @@ public class TimeParserTest {
 		long start = result[0];
 		long end = result[1];
 
-		Assert.AreEqual(startDate.SecondsFromEpoch(), start);
-		Assert.AreEqual(endDate.SecondsFromEpoch(), end);
+		Assert.AreEqual(startDate.GetTimestamp(), start);
+		Assert.AreEqual(endDate.GetTimestamp(), end);
 	}
 	
 	/**
@@ -601,8 +601,8 @@ public class TimeParserTest {
 		long start = result[0];
 		long end = result[1];
 
-		Assert.AreEqual(startDate.SecondsFromEpoch(), start);
-		Assert.AreEqual(endDate.SecondsFromEpoch(), end);
+		Assert.AreEqual(startDate.GetTimestamp(), start);
+		Assert.AreEqual(endDate.GetTimestamp(), end);
 
 	}
 	
@@ -623,8 +623,8 @@ public class TimeParserTest {
 		long start = result[0];
 		long end = result[1];
 
-		Assert.AreEqual(startDate.SecondsFromEpoch(), start);
-		Assert.AreEqual(endDate.SecondsFromEpoch(), end);
+		Assert.AreEqual(startDate.GetTimestamp(), start);
+		Assert.AreEqual(endDate.GetTimestamp(), end);
 	}
 
 	/**
@@ -646,8 +646,8 @@ public class TimeParserTest {
 		long start = result[0];
 		long end = result[1];
 
-		Assert.AreEqual(startDate.SecondsFromEpoch(), start);
-		Assert.AreEqual(endDate.SecondsFromEpoch(), end);
+		Assert.AreEqual(startDate.GetTimestamp(), start);
+		Assert.AreEqual(endDate.GetTimestamp(), end);
 
 	}
 
@@ -669,8 +669,8 @@ public class TimeParserTest {
 		long start = result[0];
 		long end = result[1];
 
-		Assert.AreEqual(startDate.SecondsFromEpoch(), start);
-		Assert.AreEqual(endDate.SecondsFromEpoch(), end);
+		Assert.AreEqual(startDate.GetTimestamp(), start);
+		Assert.AreEqual(endDate.GetTimestamp(), end);
 	}
 	
 	/**
@@ -687,7 +687,7 @@ public class TimeParserTest {
 	   long[] result = this.parseTimes("noon yesterday -3hours", "now");
 	   long start = result[0];
 
-		Assert.AreEqual(startDate.SecondsFromEpoch(), start); 
+		Assert.AreEqual(startDate.GetTimestamp(), start); 
 	}
 	
 	/**
@@ -703,7 +703,7 @@ public class TimeParserTest {
 	   long[] result = this.parseTimes("-5h45min", "now");
 	   long start = result[0];
 
-		Assert.AreEqual(startDate.SecondsFromEpoch(), start); 
+		Assert.AreEqual(startDate.GetTimestamp(), start); 
 	}
 
 	/**
@@ -719,7 +719,7 @@ public class TimeParserTest {
 	   long[] result = this.parseTimes("-5mon1w2d", "now");
 		long start = result[0];
 
-		Assert.AreEqual(startDate.SecondsFromEpoch(), start); 
+		Assert.AreEqual(startDate.GetTimestamp(), start); 
 	}
 
 	

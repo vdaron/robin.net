@@ -114,7 +114,7 @@ namespace robin.core.jrrd
 			DateTime end = DateTime.Now;
 			DateTime start = end.AddDays(-1);
 
-			LoadData(chunk, start.SecondsFromEpoch(), end.SecondsFromEpoch());
+			LoadData(chunk, start.GetTimestamp(), end.GetTimestamp());
 			return chunk;
 		}
 
@@ -254,7 +254,7 @@ namespace robin.core.jrrd
 
 				db.rrdFile.Seek(dataOffset + (row + 1)*16, SeekOrigin.Begin);
 
-				long lastUpdate = db.LastUpdate.SecondsFromEpoch();
+				long lastUpdate = db.LastUpdate.GetTimestamp();
 				int pdpStep = db.Header.PrimaryDataPointStep;
 				const string numberFormat = "E";
 				const string dateFormat = "yyyy-MM-dd HH:mm:ss z";

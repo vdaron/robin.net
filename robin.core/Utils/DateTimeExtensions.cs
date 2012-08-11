@@ -9,12 +9,12 @@ namespace System
 	{
 		private static readonly DateTime Epoch = new DateTime(1970, 1, 1);
 
-		public static long SecondsFromEpoch(this DateTime aDateTime)
+		public static long GetTimestamp(this DateTime aDateTime)
 		{
 			return (long)(aDateTime - Epoch).TotalSeconds;
 		}
 
-		public static long MilisecondsFromEpoch(this DateTime aDateTime)
+		public static long GetMilisecondsTimestamp(this DateTime aDateTime)
 		{
 			return (long)(aDateTime - Epoch).TotalMilliseconds;
 		}

@@ -82,7 +82,7 @@ namespace robin.tests.core
 			DateTime start = new DateTime(2000, 2, 1, 2, 3, 4);
 			RrdDef def = new RrdDef(SAMPLE);
 			def.Step = 10;
-			def.StartTime = start.SecondsFromEpoch();
+			def.StartTime = start.GetTimestamp();
 			def.AddDatasource(DsDef.FromRrdToolString("DS:input:GAUGE:600:0:U"));
 			def.AddArchive(ArcDef.FromRrdToolString("RRA:AVERAGE:0.5:10:1000"));
 			using(RrdDb db = RrdDb.Create(def))
@@ -117,7 +117,7 @@ namespace robin.tests.core
 			DateTime start = new DateTime(2000, 2, 1, 2, 3, 0); // Start at 0 seconds to align on the step parameter
 			RrdDef def = new RrdDef(SAMPLE);
 			def.Step = 10;
-			def.StartTime = start.SecondsFromEpoch();
+			def.StartTime = start.GetTimestamp();
 			def.AddDatasource(DsDef.FromRrdToolString("DS:input:GAUGE:600:0:U"));
 			def.AddArchive(ArcDef.FromRrdToolString("RRA:AVERAGE:0.5:2:1000"));
 			def.AddArchive(ArcDef.FromRrdToolString("RRA:MAX:0.5:2:1000"));
@@ -127,7 +127,7 @@ namespace robin.tests.core
 			using (RrdDb db = RrdDb.Create(def))
 			{
 				DateTime sampleDate = start.AddSeconds(def.Step);
-				Sample sample = db.CreateSample(sampleDate.SecondsFromEpoch());
+				Sample sample = db.CreateSample(sampleDate.GetTimestamp());
 				sample.Values = new double[] { 10 };
 				sample.Update();
 
@@ -137,7 +137,7 @@ namespace robin.tests.core
 				Assert.AreEqual(10, db.Archives[0].GetArcState(0).AccumulatedValue);
 
 				sampleDate = sampleDate.AddSeconds(def.Step);
-				sample.Time = sampleDate.SecondsFromEpoch();
+				sample.Time = sampleDate.GetTimestamp();
 				sample.Values = new double[] { 20 };
 				sample.Update();
 
