@@ -38,7 +38,7 @@ namespace robin.core
 		/// <param name="readOnly">True, if file should be open in a read-only mode. False otherwise</param>
 		public RrdFileBackend(String path, bool readOnly) : base(path, readOnly)
 		{
-			File = System.IO.File.Open(path, readOnly ? FileMode.Open : FileMode.Create);
+			File = System.IO.File.Open(path, FileMode.OpenOrCreate, readOnly ? FileAccess.Read : FileAccess.ReadWrite);
 		}
 
 	/// <summary>
