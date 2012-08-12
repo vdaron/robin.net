@@ -217,15 +217,15 @@ namespace robin.core
 			       " arcCount:" + ArchiveCount + "\n";
 		}
 
-		//private void appendXml(XmlWriter writer)
-		//{
-		//   writer.writeComment(signature.get());
-		//   writer.writeTag("version", RRDTOOL_VERSION);
-		//   writer.writeComment("Seconds");
-		//   writer.writeTag("step", step.get());
-		//   writer.writeComment(Util.getDate(lastUpdateTime.get()));
-		//   writer.writeTag("lastupdate", lastUpdateTime.get());
-		//}
+		internal void AppendXml(XmlWriter writer)
+		{
+			writer.WriteComment(signature.Get());
+			writer.WriteElementString("version", RRDTOOL_VERSION);
+			writer.WriteComment("Seconds");
+			writer.WriteElementString("step", step.Get().ToString());
+			writer.WriteComment(LastUpdateTime.ToDateTime().ToString());
+			writer.WriteElementString("lastupdate", lastUpdateTime.Get().ToString());
+		}
 
 		private bool IsJRobinHeader
 		{

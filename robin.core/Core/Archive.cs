@@ -20,6 +20,7 @@
 using System;
 using System.Diagnostics;
 using System.Text;
+using System.Xml;
 
 namespace robin.core
 {
@@ -427,42 +428,43 @@ namespace robin.core
 					values[i][ptIndex] = value;
 				}
 			}
-			var fetchData = new FetchData(this, request);
-			fetchData.Timestamps = timestamps;
-			fetchData.Values = values;
-			return fetchData;
+			return new FetchData(this, request) {Timestamps = timestamps, Values = values};
 		}
 
-		//private void appendXml(XmlWriter writer)
-		//{
-		//   writer.startTag("rra");
-		//   writer.writeTag("cf", consolFun.get());
-		//   writer.writeComment(getArcStep() + " seconds");
-		//   writer.writeTag("pdp_per_row", steps.get());
-		//   writer.writeTag("xff", xff.get());
-		//   writer.startTag("cdp_prep");
-		//   for ( ArcState state : states) {
-		//      state.AppendXml(writer);
-		//   }
-		//   writer.closeTag(); // cdp_prep
-		//   writer.startTag("database");
-		//    long startTime = getStartTime();
-		//   for (int i = 0; i < rows.get(); i++) {
-		//       long time = startTime + i * getArcStep();
-		//      writer.writeComment(Util.getDate(time) + " / " + time);
-		//      writer.startTag("row");
-		//      for ( Robin robin : robins) {
-		//         writer.writeTag("v", robin.getValue(i));
-		//      }
-		//      writer.closeTag(); // row
-		//   }
-		//   writer.closeTag(); // database
-		//   writer.closeTag(); // rra
-		//}
+		internal void AppendXml(XmlWriter writer)
+		{
+			writer.WriteStartElement("rra");
+			writer.WriteElementString("cf", consolFun.ToString());
+			writer.WriteComment(TimeStep + " seconds");
+			writer.WriteElementString("pdp_per_row", steps.Get().ToString());
+			writer.WriteElementString("xff", xff.Get().ToString("E"));
+			writer.WriteStartElement("cdp_prep");
+			foreach (ArcState state in states)
+			{
+				state.AppendXml(writer);
+			}
+			writer.WriteEndElement(); // cdp_prep
+			writer.WriteStartElement("database");
+			long startTime = GetStartTime();
+			for (int i = 0; i < rows.Get(); i++)
+			{
+				long time = startTime + i*TimeStep;
+				writer.WriteComment(time.ToDateTime() + " / " + time);
+				writer.WriteStartElement("row");
+				foreach (Robin robin in robins)
+				{
+					writer.WriteElementString("v", robin.GetValue(i).ToString("E"));
+				}
+				writer.WriteEndElement(); // row
+			}
+			writer.WriteEndElement(); // database
+			writer.WriteEndElement(); // rra
+		}
 
 		public override String ToString()
 		{
-			return "Archive@" + GetHashCode().ToString("X") + "[parentDb=" + parentDb + ",consolFun=" + consolFun + ",xff=" + xff + ",steps=" +
+			return "Archive@" + GetHashCode().ToString("X") + "[parentDb=" + parentDb + ",consolFun=" + consolFun + ",xff=" + xff +
+			       ",steps=" +
 			       steps + ",rows=" + rows + ",robins=" + robins + ",states=" + states + "]";
 		}
 	}

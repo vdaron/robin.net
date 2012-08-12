@@ -25,7 +25,7 @@ namespace robin.core
 	/// <summary>
 	/// Class to represent single datasource within RRD. Each datasource object holds the
 	/// following information: datasource definition (once set, never changed) and
-	/// datasource state variables (changed whenever RRD gets updated).<p>
+	/// datasource state variables (changed whenever RRD gets updated).
 	/// 
 	/// Normally, you don't need to manipluate Datasource objects directly, it's up to
 	/// JRobin framework to do it for you.
@@ -78,7 +78,7 @@ namespace robin.core
 				lastValue.Set(Double.NaN);
 				accumValue.Set(0.0);
 				Header header = parentDb.Header;
-				nanSeconds.Set(header.LastUpdateTime % header.Step);
+				nanSeconds.Set(header.LastUpdateTime%header.Step);
 			}
 		}
 
@@ -94,64 +94,6 @@ namespace robin.core
 			lastValue.Set(reader.GetDataSourceLastValue(dsIndex));
 			accumValue.Set(reader.GetDataSourceAccumulatedValue(dsIndex));
 			nanSeconds.Set(reader.GetDataSourceNanSeconds(dsIndex));
-		}
-
-		#region IRrdUpdater Members
-
-		/// <summary>
-		/// Copies object's internal state to another ArcState object.
-		/// </summary>
-		/// <param name="updater"> New ArcState object to copy state to</param>
-		public void CopyStateTo(IRrdUpdater other)
-		{
-			if (!(other is DataSource))
-			{
-				throw new RrdException("Cannot copy Datasource object to " + other.GetType().Name);
-			}
-			var datasource = (DataSource) other;
-			if (!datasource.dsName.Get().Equals(dsName.Get()))
-			{
-				throw new RrdException("Incomaptible datasource names");
-			}
-			if (!datasource.dsType.Get().Equals(dsType.Get()))
-			{
-				throw new RrdException("Incomaptible datasource types");
-			}
-			datasource.lastValue.Set(lastValue.Get());
-			datasource.nanSeconds.Set(nanSeconds.Get());
-			datasource.accumValue.Set(accumValue.Get());
-		}
-
-		/// <summary>
-		/// Returns the underlying storage (backend) object which actually performs all
-		/// I/O operations.
-		/// </summary>
-		/// <returns></returns>
-		public RrdBackend GetRrdBackend()
-		{
-			return parentDb.GetRrdBackend();
-		}
-
-		/// <summary>
-		/// Returns the underlying storage (backend) object which actually performs all
-		/// I/O operations.
-		/// </summary>
-		/// <returns></returns>
-		public RrdAllocator GetRrdAllocator()
-		{
-			return parentDb.GetRrdAllocator();
-		}
-
-		#endregion
-
-		public String Dump()
-		{
-			return "== DATASOURCE ==\n" +
-			       "DS:" + dsName.Get() + ":" + dsType.Get() + ":" +
-			       heartbeat.Get() + ":" + minValue.Get() + ":" +
-			       maxValue.Get() + "\nlastValue:" + lastValue.Get() +
-			       " nanSeconds:" + nanSeconds.Get() +
-			       " accumValue:" + accumValue.Get() + "\n";
 		}
 
 		/// <summary>
@@ -186,8 +128,8 @@ namespace robin.core
 				if (!primitiveDsType.HasValue)
 				{
 					DataSourceType t;
-					if(!Enum.TryParse(dsType.Get(), true,out t))
-						throw  new RrdException("Invalid DataSource type");
+					if (!Enum.TryParse(dsType.Get(), true, out t))
+						throw new RrdException("Invalid DataSource type");
 					primitiveDsType = t;
 				}
 				return primitiveDsType.Value;
@@ -275,6 +217,83 @@ namespace robin.core
 			get { return nanSeconds.Get(); }
 		}
 
+		/// <summary>
+		/// Index of this Datasource object in the RRD.
+		/// </summary>
+		/// <value></value>
+		public int Index
+		{
+			get
+			{
+				try
+				{
+					return parentDb.GetDataSourceIndex(dsName.Get());
+				}
+				catch (RrdException)
+				{
+					return -1;
+				}
+			}
+		}
+
+		#region IRrdUpdater Members
+
+		/// <summary>
+		/// Copies object's internal state to another ArcState object.
+		/// </summary>
+		/// <param name="other"> New ArcState object to copy state to</param>
+		public void CopyStateTo(IRrdUpdater other)
+		{
+			if (!(other is DataSource))
+			{
+				throw new RrdException("Cannot copy Datasource object to " + other.GetType().Name);
+			}
+			var datasource = (DataSource) other;
+			if (!datasource.dsName.Get().Equals(dsName.Get()))
+			{
+				throw new RrdException("Incomaptible datasource names");
+			}
+			if (!datasource.dsType.Get().Equals(dsType.Get()))
+			{
+				throw new RrdException("Incomaptible datasource types");
+			}
+			datasource.lastValue.Set(lastValue.Get());
+			datasource.nanSeconds.Set(nanSeconds.Get());
+			datasource.accumValue.Set(accumValue.Get());
+		}
+
+		/// <summary>
+		/// Returns the underlying storage (backend) object which actually performs all
+		/// I/O operations.
+		/// </summary>
+		/// <returns></returns>
+		public RrdBackend GetRrdBackend()
+		{
+			return parentDb.GetRrdBackend();
+		}
+
+		/// <summary>
+		/// Returns the underlying storage (backend) object which actually performs all
+		/// I/O operations.
+		/// </summary>
+		/// <returns></returns>
+		public RrdAllocator GetRrdAllocator()
+		{
+			return parentDb.GetRrdAllocator();
+		}
+
+		#endregion
+
+		public String Dump()
+		{
+			return "== DATASOURCE ==\n" +
+			       "DS:" + dsName.Get() + ":" + dsType.Get() + ":" +
+			       heartbeat.Get() + ":" + minValue.Get() + ":" +
+			       maxValue.Get() + "\nlastValue:" + lastValue.Get() +
+			       " nanSeconds:" + nanSeconds.Get() +
+			       " accumValue:" + accumValue.Get() + "\n";
+		}
+
 		internal void Process(long newTime, double newValue)
 		{
 			Header header = parentDb.Header;
@@ -311,7 +330,7 @@ namespace robin.core
 			if (newTime - oldTime <= heartbeat.Get())
 			{
 				DataSourceType type;
-				if(!Enum.TryParse(dsType.Get(),true,out type))
+				if (!Enum.TryParse(dsType.Get(), true, out type))
 					throw new RrdException("Invalid DataSourceType");
 
 				if (type == DataSourceType.GAUGE)
@@ -399,38 +418,19 @@ namespace robin.core
 			return totalValue;
 		}
 
-		//private void appendXml(XmlWriter writer)
-		//{
-		//   writer.startTag("ds");
-		//   writer.writeTag("name", dsName.get());
-		//   writer.writeTag("type", dsType.get());
-		//   writer.writeTag("minimal_heartbeat", heartbeat.get());
-		//   writer.writeTag("min", minValue.get());
-		//   writer.writeTag("max", maxValue.get());
-		//   writer.writeComment("PDP Status");
-		//   writer.writeTag("last_ds", lastValue.get(), "UNKN");
-		//   writer.writeTag("value", accumValue.get());
-		//   writer.writeTag("unknown_sec", nanSeconds.get());
-		//   writer.closeTag();  // ds
-		//}
-
-		/// <summary>
-		/// Index of this Datasource object in the RRD.
-		/// </summary>
-		/// <value></value>
-		public int Index
+		internal void AppendXml(XmlWriter writer)
 		{
-			get
-			{
-				try
-				{
-					return parentDb.GetDataSourceIndex(dsName.Get());
-				}
-				catch (RrdException e)
-				{
-					return -1;
-				}
-			}
+			writer.WriteStartElement("ds");
+			writer.WriteElementString("name", dsName.Get());
+			writer.WriteElementString("type", dsType.Get());
+			writer.WriteElementString("minimal_heartbeat", heartbeat.Get().ToString());
+			writer.WriteElementString("min", minValue.Get().ToString());
+			writer.WriteElementString("max", maxValue.Get().ToString());
+			writer.WriteComment("PDP Status");
+			writer.WriteElementString("last_ds", (double.IsNaN(lastValue.Get()) ? "UNKN" : lastValue.Get().ToString("E")));
+			writer.WriteElementString("value", accumValue.Get().ToString());
+			writer.WriteElementString("unknown_sec", nanSeconds.Get().ToString());
+			writer.WriteEndElement(); // ds
 		}
 
 		/// <summary>
@@ -438,23 +438,23 @@ namespace robin.core
 		/// argment is set to true, all archived values less then <code>minValue</code> will
 		/// be fixed to NaN.
 		/// </summary>
-		/// <param name="minValue">New minimal value. Specify <code>Double.NaN</code> if no minimal value should be set</param>
+		/// <param name="min">New minimal value. Specify <code>Double.NaN</code> if no minimal value should be set</param>
 		/// <param name="filterArchivedValues">true, if archived datasource values should be fixed; false, otherwise.</param>
-		public void SetMinValue(double minValue, bool filterArchivedValues)
+		public void SetMinValue(double min, bool filterArchivedValues)
 		{
-			double maxValue = this.maxValue.Get();
-			if (!Double.IsNaN(minValue) && !Double.IsNaN(maxValue) && minValue >= maxValue)
+			double max = maxValue.Get();
+			if (!Double.IsNaN(min) && !Double.IsNaN(max) && min >= max)
 			{
-				throw new RrdException("Invalid min/max values: " + minValue + "/" + maxValue);
+				throw new RrdException("Invalid min/max values: " + min + "/" + max);
 			}
-			this.minValue.Set(minValue);
-			if (!Double.IsNaN(minValue) && filterArchivedValues)
+			minValue.Set(min);
+			if (!Double.IsNaN(min) && filterArchivedValues)
 			{
 				int dsIndex = Index;
 				Archive[] archives = parentDb.Archives;
 				foreach (Archive archive in archives)
 				{
-					archive.GetRobin(dsIndex).FilterValues(minValue, Double.NaN);
+					archive.GetRobin(dsIndex).FilterValues(min, Double.NaN);
 				}
 			}
 		}
@@ -464,23 +464,23 @@ namespace robin.core
 		/// argment is set to true, all archived values greater then <code>maxValue</code> will
 		/// be fixed to NaN.
 		/// </summary>
-		/// <param name="maxValue">New maximal value. Specify <code>Double.NaN</code> if no max value should be set.</param>
+		/// <param name="max">New maximal value. Specify <code>Double.NaN</code> if no max value should be set.</param>
 		/// <param name="filterArchivedValues">true, if archived datasource values should be fixed; false, otherwise.</param>
-		public void SetMaxValue(double maxValue, bool filterArchivedValues)
+		public void SetMaxValue(double max, bool filterArchivedValues)
 		{
-			double minValue = this.minValue.Get();
-			if (!Double.IsNaN(minValue) && !Double.IsNaN(maxValue) && minValue >= maxValue)
+			double min = minValue.Get();
+			if (!Double.IsNaN(min) && !Double.IsNaN(max) && min >= max)
 			{
-				throw new RrdException("Invalid min/max values: " + minValue + "/" + maxValue);
+				throw new RrdException("Invalid min/max values: " + min + "/" + max);
 			}
-			this.maxValue.Set(maxValue);
-			if (!Double.IsNaN(maxValue) && filterArchivedValues)
+			maxValue.Set(max);
+			if (!Double.IsNaN(max) && filterArchivedValues)
 			{
 				int dsIndex = Index;
 				Archive[] archives = parentDb.Archives;
 				foreach (Archive archive in archives)
 				{
-					archive.GetRobin(dsIndex).FilterValues(Double.NaN, maxValue);
+					archive.GetRobin(dsIndex).FilterValues(Double.NaN, max);
 				}
 			}
 		}
@@ -490,24 +490,24 @@ namespace robin.core
 		/// argment is set to true, all archived values less then <code>minValue</code> or
 		/// greater then <code>maxValue</code> will be fixed to NaN.
 		/// </summary>
-		/// <param name="minValue">New minimal value. Specify <code>Double.NaN</code> if no min value should be set.</param>
-		/// <param name="maxValue">New maximal value. Specify <code>Double.NaN</code> if no max value should be set.</param>
+		/// <param name="min">New minimal value. Specify <code>Double.NaN</code> if no min value should be set.</param>
+		/// <param name="max">New maximal value. Specify <code>Double.NaN</code> if no max value should be set.</param>
 		/// <param name="filterArchivedValues">true, if archived datasource values should be fixed; false, otherwise.</param>
-		public void SetMinMaxValue(double minValue, double maxValue, bool filterArchivedValues)
+		public void SetMinMaxValue(double min, double max, bool filterArchivedValues)
 		{
-			if (!Double.IsNaN(minValue) && !Double.IsNaN(maxValue) && minValue >= maxValue)
+			if (!Double.IsNaN(min) && !Double.IsNaN(max) && min >= max)
 			{
-				throw new RrdException("Invalid min/max values: " + minValue + "/" + maxValue);
+				throw new RrdException("Invalid min/max values: " + min + "/" + max);
 			}
-			this.minValue.Set(minValue);
-			this.maxValue.Set(maxValue);
-			if (!(Double.IsNaN(minValue) && Double.IsNaN(maxValue)) && filterArchivedValues)
+			minValue.Set(min);
+			maxValue.Set(max);
+			if (!(Double.IsNaN(min) && Double.IsNaN(max)) && filterArchivedValues)
 			{
 				int dsIndex = Index;
 				Archive[] archives = parentDb.Archives;
 				foreach (Archive archive in archives)
 				{
-					archive.GetRobin(dsIndex).FilterValues(minValue, maxValue);
+					archive.GetRobin(dsIndex).FilterValues(min, max);
 				}
 			}
 		}

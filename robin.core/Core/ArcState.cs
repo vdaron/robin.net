@@ -53,7 +53,27 @@ namespace robin.core
 			}
 		}
 
-		#region RrdUpdater Members
+		/// <summary>
+		/// Number of currently accumulated NaN steps.
+		/// </summary>
+		/// <value></value>
+		public long NanSteps
+		{
+			set { nanSteps.Set(value); }
+			get { return nanSteps.Get(); }
+		}
+
+		/// <summary>
+		/// Returns the value accumulated so far.
+		/// </summary>
+		/// <value></value>
+		public double AccumulatedValue
+		{
+			set { accumumatedValue.Set(value); }
+			get { return accumumatedValue.Get(); }
+		}
+
+		#region IRrdUpdater Members
 
 		/// <summary>
 		/// Copies object's internal state to another ArcState object.
@@ -98,26 +118,6 @@ namespace robin.core
 		}
 
 		/// <summary>
-		/// Number of currently accumulated NaN steps.
-		/// </summary>
-		/// <value></value>
-		public long NanSteps
-		{
-			set { nanSteps.Set(value); }
-			get { return nanSteps.Get(); }
-		}
-
-		/// <summary>
-		/// Returns the value accumulated so far.
-		/// </summary>
-		/// <value></value>
-		public double AccumulatedValue
-		{
-			set { accumumatedValue.Set(value); }
-			get { return accumumatedValue.Get(); }
-		}
-
-		/// <summary>
 		/// Returns the Archive object to which this ArcState object belongs.
 		/// </summary>
 		/// <returns></returns>
@@ -126,17 +126,18 @@ namespace robin.core
 			return parentArc;
 		}
 
-		//private void appendXml(XmlWriter writer)
-		//{
-		//   writer.startTag("ds");
-		//   writer.writeTag("value", accumValue.get());
-		//   writer.writeTag("unknown_datapoints", nanSteps.get());
-		//   writer.closeTag(); // ds
-		//}
+		internal void AppendXml(XmlWriter writer)
+		{
+			writer.WriteStartElement("ds");
+			writer.WriteElementString("value", accumumatedValue.Get().ToString("E"));
+			writer.WriteElementString("unknown_datapoints", nanSteps.Get().ToString());
+			writer.WriteEndElement(); // ds
+		}
 
 		public override String ToString()
 		{
-			return "ArcState@" + GetHashCode().ToString("X") + "[parentArc=" + parentArc + ",accumValue=" + accumumatedValue + ",nanSteps=" +
+			return "ArcState@" + GetHashCode().ToString("X") + "[parentArc=" + parentArc + ",accumValue=" + accumumatedValue +
+			       ",nanSteps=" +
 			       nanSteps + "]";
 		}
 	}

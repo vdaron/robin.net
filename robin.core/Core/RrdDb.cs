@@ -22,6 +22,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Xml;
 
 namespace robin.core
 {
@@ -726,24 +727,24 @@ namespace robin.core
 	 * @throws IOException Thrown in case of I/O related error
 	 */
 
-		//[MethodImpl(MethodImplOptions.Synchronized)]
-		//public void dumpXml(Stream destination)
-		//{
-		//   XmlWriter writer = new XmlWriter(destination);
-		//   writer.startTag("rrd");
-		//   // dump header
-		//   header.appendXml(writer);
-		//   // dump datasources
-		//   for (Datasource datasource : datasources) {
-		//      datasource.appendXml(writer);
-		//   }
-		//   // dump archives
-		//   for (Archive archive : archives) {
-		//      archive.appendXml(writer);
-		//   }
-		//   writer.closeTag();
-		//   writer.flush();
-		//}
+		[MethodImpl(MethodImplOptions.Synchronized)]
+		public void dumpXml(Stream destination)
+		{
+		   XmlWriter writer = XmlWriter.Create(destination);
+		   writer.WriteStartElement("rrd");
+		   // dump header
+		   header.AppendXml(writer);
+		   // dump datasources
+		   foreach (DataSource datasource in datasources) {
+		      datasource.AppendXml(writer);
+		   }
+		   // dump archives
+		   foreach (Archive archive in archives) {
+		      archive.AppendXml(writer);
+		   }
+		   writer.WriteEndElement();
+		   writer.Flush();
+		}
 
 		/**
 	 * This method is just an alias for {@link #dumpXml(OutputStream) dumpXml} method.

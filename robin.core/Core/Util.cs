@@ -18,10 +18,12 @@
  *******************************************************************************/
 
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Xml;
 using robin.Core.TimeSpec;
 
 namespace robin.core
@@ -372,171 +374,83 @@ namespace robin.core
 			return Path.GetTempFileName();
 		}
 
-		/**
-	 * Various DOM utility functions
-	 */
-//   public static class Xml {
-//      public static Node[] getChildNodes( Node parentNode) {
-//         return getChildNodes(parentNode, null);
-//      }
+		internal static class Xml
+		{
+			internal static string GetValue(XmlNode parentNode, bool trim)
+			{
+				if (parentNode == null) return String.Empty;
 
-//      public static Node[] getChildNodes( Node parentNode,  String childName) {
-//           ArrayList<Node> nodes = new ArrayList<Node>();
-//          NodeList nodeList = parentNode.getChildNodes();
-//         for (int i = 0; i < nodeList.getLength(); i++) {
-//             Node node = nodeList.item(i);
-//            if (childName == null || node.getNodeName().equals(childName)) {
-//               nodes.add(node);
-//            }
-//         }
-//         return nodes.toArray(new Node[0]);
-//      }
+				return trim ? parentNode.Value.Trim() : parentNode.Value;
+			}
 
-//      public static Node getFirstChildNode( Node parentNode,  String childName) {
-//           Node[] childs = getChildNodes(parentNode, childName);
-//         if (childs.length > 0) {
-//            return childs[0];
-//         }
-//         throw new RrdException("XML Error, no such child: " + childName);
-//      }
+			internal static string GetChildValue(XmlNode parent, string name, bool trim = false)
+			{
+				if (parent == null) return String.Empty;
 
-//      public static bool hasChildNode( Node parentNode,  String childName) {
-//           Node[] childs = getChildNodes(parentNode, childName);
-//         return childs.length > 0;
-//      }
+				XmlNode node = parent.SelectSingleNode(name);
+				if (node != null)
+					return trim ? node.Value.Trim() : node.Value;
+				return null;
+			}
 
-//      // -- Wrapper around getChildValue with trim
-//      public static String getChildValue( Node parentNode,  String childName) {
-//         return getChildValue(parentNode, childName, true);
-//      }
+			internal static long GetChildValueAsLong(XmlNode parent, string name)
+			{
+				if (parent == null) return 0;
 
-//      public static String getChildValue( Node parentNode,  String childName,  bool trim) {
-//           NodeList children = parentNode.getChildNodes();
-//         for (int i = 0; i < children.getLength(); i++) {
-//             Node child = children.item(i);
-//            if (child.getNodeName().equals(childName)) {
-//               return getValue(child, trim);
-//            }
-//         }
-//         throw new RrdException("XML Error, no such child: " + childName);
-//      }
+				XmlNode node = parent.SelectSingleNode(name);
+				if (node != null)
+					return long.Parse(node.Value);
+				return 0;
+			}
 
-//      // -- Wrapper around getValue with trim
-//      public static String getValue( Node node) {
-//         return getValue(node, true);
-//      }
+			internal static int GetChildValueAsInt(XmlNode parent, string name)
+			{
+				if (parent == null) return 0;
 
-//      public static String getValue( Node node,  bool trimValue) {
-//         String value = null;
-//          Node child = node.getFirstChild();
-//         if (child != null) {
-//            value = child.getNodeValue();
-//            if (value != null && trimValue) {
-//               value = value.trim();
-//            }
-//         }
-//         return value;
-//      }
+				XmlNode node = parent.SelectSingleNode(name);
+				if (node != null)
+					return int.Parse(node.Value);
+				return 0;
+			}
 
-//      public static int getChildValueAsInt( Node parentNode,  String childName) {
-//           String valueStr = getChildValue(parentNode, childName);
-//         return Integer.parseInt(valueStr);
-//      }
+			internal static double GetChildValueAsDouble(XmlNode parent, string name)
+			{
+				if (parent == null) return 0;
 
-//      public static int getValueAsInt( Node node) {
-//         return Integer.parseInt(getValue(node));
-//      }
+				XmlNode node = parent.SelectSingleNode(name);
+				if (node != null)
+					return double.Parse(node.Value);
+				return double.NaN;
+			}
 
-//      public static long getChildValueAsLong( Node parentNode,  String childName) {
-//          String valueStr = getChildValue(parentNode, childName);
-//         return Long.parseLong(valueStr);
-//      }
+			internal static T GetChildValueAsEnum<T>(XmlNode parent, string name)
+			{
+				if (parent == null) return default(T);
 
-//      public static long getValueAsLong( Node node) {
-//         return Long.parseLong(getValue(node));
-//      }
+				XmlNode node = parent.SelectSingleNode(name);
+				if (node != null)
+					return (T)Enum.Parse(typeof(T), node.Value);
+				return default(T);
+			}
 
-//      public static double getChildValueAsDouble( Node parentNode,  String childName) {
-//         return Util.parseDouble(getChildValue(parentNode, childName));
-//      }
+			internal static XmlNode GetFirstChildNode(XmlNode parent, string name)
+			{
+				XmlNode[] list = GetChildNodes(parent, name);
+				return list.Length > 0 ? list[0] : null;
+			}
 
-//      public static double getValueAsDouble( Node node) {
-//         return Util.parseDouble(getValue(node));
-//      }
+			internal static bool HasChildNode(XmlNode parent, string name)
+			{
+				XmlNode[] list = GetChildNodes(parent, name);
+				return list.Length > 0;
+			}
 
-//      public static bool getChildValueAsbool( Node parentNode,  String childName) {
-//         return Util.parsebool(getChildValue(parentNode, childName));
-//      }
-
-//      public static bool getValueAsbool( Node node) {
-//         return Util.parsebool(getValue(node));
-//      }
-
-//   //   public static Element getRootElement( InputSource inputSource) {
-//   //        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-//   //      factory.setValidating(false);
-//   //      factory.setNamespaceAware(false);
-//   //      try {
-//   //           DocumentBuilder builder = factory.newDocumentBuilder();
-//   //           Document doc = builder.parse(inputSource);
-//   //         return doc.getDocumentElement();
-//   //      }
-//   //      catch ( ParserConfigurationException e) {
-//   //         throw new RrdException(e);
-//   //      }
-//   //      catch ( SAXException e) {
-//   //         throw new RrdException(e);
-//   //      }
-//   //   }
-
-//   //   public static Element getRootElement( String xmlString){
-//   //      return getRootElement(new InputSource(new StringReader(xmlString)));
-//   //   }
-
-//   //   public static Element getRootElement( File xmlFile) {
-//   //      Reader reader = null;
-//   //      try {
-//   //         reader = new FileReader(xmlFile);
-//   //         return getRootElement(new InputSource(reader));
-//   //      }
-//   //      finally {
-//   //         if (reader != null) {
-//   //            reader.close();
-//   //         }
-//   //      }
-//   //   }
-//   //}
-
-//   private static DateTime lastLap = DateTime.UtcNow;
-
-//   /**
-//    * Function used for debugging purposes and performance bottlenecks detection.
-//    * Probably of no use for end users of JRobin.
-//    *
-//    * @return String representing time in seconds since last
-//    *         <code>getLapTime()</code> method call.
-//    */
-//   public static String getLapTime() {
-//       DateTime newLap = DateTime.UtcNow;
-//       double seconds = (newLap - lastLap).TotalSeconds;
-//      lastLap = newLap;
-//      return "[" + seconds + " sec]";
-//   }
-
-//   /**
-//    * Returns the root directory of the JRobin distribution. Useful in some demo applications,
-//    * probably of no use anywhere else.<p>
-//    * <p/>
-//    * The function assumes that all JRobin .class files are placed under
-//    * the &lt;root&gt;/classes subdirectory and that all jars (libraries) are placed in the
-//    * &lt;root&gt;/lib subdirectory (the original JRobin directory structure).<p>
-//    *
-//    * @return absolute path to JRobin's home directory
-//    */
-//   public static String getJRobinHomeDirectory() {
-//      throw new NotImplementedException();
-//   }
-
+			internal static XmlNode[] GetChildNodes(XmlNode parentNode, string name)
+			{
+				XmlNodeList nodeList = parentNode.SelectNodes(name ?? ".");
+				return nodeList != null ? nodeList.Cast<XmlNode>().ToArray() : new XmlNode[0];
+			}
+		}
 
 		/// <summary>
 		/// Returns canonical file path for the given file path
