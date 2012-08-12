@@ -165,18 +165,18 @@ namespace robin.data
 		/// external data (from XML dump, RRD file or RRDTool's binary RRD file).<p>
 		/// <ul>
 		/// <li>If the file with the path specified is already open,
-		/// the method blocks until the file is closed.
+		/// the method blocks until the file is closed.</li>
 		/// <li>If the file is not already open and the number of already open RRD files is less than
 		/// {@link #INITIAL_CAPACITY}, a new RRD file will be created and a its RrdDb reference will be returned.
 		/// If the file is not already open and the number of already open RRD files is equal to
-		/// {@link #INITIAL_CAPACITY}, the method blocks until some RRD file is closed.
+		/// {@link #INITIAL_CAPACITY}, the method blocks until some RRD file is closed.</li>
 		/// </ul>
 		/// </summary>
 		/// <param name="path">Path to RRD file which should be created</param>
 		/// <param name="sourcePath">Path to external data which is to be converted to JRobin's native RRD file format</param>
 		/// <returns>Reference to the newly created RRD file</returns>
 		[MethodImpl(MethodImplOptions.Synchronized)]
-		public RrdDb RequestRrdDb(String path, String sourcePath)
+		public RrdDb RequestRrdDb(String path, DataImporter sourcePath)
 		{
 			String canonicalPath = Util.GetCanonicalPath(path);
 			while (rrdMap.ContainsKey(canonicalPath) || rrdMap.Count >= capacity)

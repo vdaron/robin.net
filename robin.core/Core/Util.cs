@@ -380,7 +380,7 @@ namespace robin.core
 			{
 				if (parentNode == null) return String.Empty;
 
-				return trim ? parentNode.Value.Trim() : parentNode.Value;
+				return trim ? parentNode.FirstChild.Value.Trim() : parentNode.FirstChild.Value;
 			}
 
 			internal static string GetChildValue(XmlNode parent, string name, bool trim = false)
@@ -389,7 +389,7 @@ namespace robin.core
 
 				XmlNode node = parent.SelectSingleNode(name);
 				if (node != null)
-					return trim ? node.Value.Trim() : node.Value;
+					return trim ? node.FirstChild.Value.Trim() : node.FirstChild.Value;
 				return null;
 			}
 
@@ -399,7 +399,7 @@ namespace robin.core
 
 				XmlNode node = parent.SelectSingleNode(name);
 				if (node != null)
-					return long.Parse(node.Value);
+					return long.Parse(node.FirstChild.Value);
 				return 0;
 			}
 
@@ -409,7 +409,7 @@ namespace robin.core
 
 				XmlNode node = parent.SelectSingleNode(name);
 				if (node != null)
-					return int.Parse(node.Value);
+					return int.Parse(node.FirstChild.Value);
 				return 0;
 			}
 
@@ -419,7 +419,10 @@ namespace robin.core
 
 				XmlNode node = parent.SelectSingleNode(name);
 				if (node != null)
-					return double.Parse(node.Value);
+				{
+					double v;
+					return double.TryParse(node.FirstChild.Value, out v) ? v : double.NaN;
+				}
 				return double.NaN;
 			}
 
@@ -429,7 +432,7 @@ namespace robin.core
 
 				XmlNode node = parent.SelectSingleNode(name);
 				if (node != null)
-					return (T)Enum.Parse(typeof(T), node.Value);
+					return (T)Enum.Parse(typeof(T), node.FirstChild.Value);
 				return default(T);
 			}
 

@@ -211,7 +211,7 @@
     <Compile Include="Core\RrdToolkit.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\XmlReader.cs" />
+    <Compile Include="Core\XmlImporter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\RrdDefTemplate.cs" />

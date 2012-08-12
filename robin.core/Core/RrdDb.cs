@@ -60,17 +60,8 @@ namespace robin.core
 	/// </summary>
 	public class RrdDb : IRrdUpdater, IDisposable
 	{
-		/// <summary>
-		/// prefix to identify external XML file source used in various RrdDb constructors
-		/// </summary>
-		public static String PREFIX_XML = "xml:/";
-		/// <summary>
-		/// prefix to identify external RRDTool file source used in various RrdDb constructors
-		/// </summary>
-		public static String PREFIX_RRDTool = "rrdtool:/";
-
 		// static  String RRDTOOL = "rrdtool";
-		private static int XML_INITIAL_BUFFER_CAPACITY = 100000; // bytes
+		private const int XML_INITIAL_BUFFER_CAPACITY = 100000; // bytes
 
 		private readonly RrdAllocator allocator = new RrdAllocator();
 
@@ -78,37 +69,6 @@ namespace robin.core
 		private readonly RrdBackend backend;
 		private readonly DataSource[] datasources;
 		private readonly Header header;
-
-		private bool closed;
-
-		public static RrdDb Create(RrdDef rrdDef)
-		{
-			return Create(rrdDef, RrdBackendFactory.GetDefaultFactory());
-		}
-		public static RrdDb Create(RrdDef rrdDef, RrdBackendFactory factory)
-		{
-			return new RrdDb(rrdDef,factory);
-		}
-		public static RrdDb Open(string path, bool readOnly = false)
-		{
-			return Open(path, readOnly, RrdBackendFactory.GetDefaultFactory());
-		}
-		public static RrdDb Open(string path,RrdBackendFactory factory)
-		{
-			return new RrdDb(path, false, factory);
-		}
-		public static RrdDb Open(string path, bool readOnly, RrdBackendFactory factory)
-		{
-			return new RrdDb(path,readOnly,factory);
-		}
-		public static RrdDb Import(string rrdPath, string externalPath)
-		{
-			return new RrdDb(rrdPath, externalPath, RrdBackendFactory.GetDefaultFactory());
-		}
-		public static RrdDb Import(string rrdPath, string externalPath, RrdBackendFactory factory)
-		{
-			return new RrdDb(rrdPath, externalPath, factory);
-		}
 
 		/// <summary>
 		/// <p>Constructor used to create new RRD object from the definition object but with a storage
@@ -274,30 +234,10 @@ namespace robin.core
 		/// between XML and RRDTool's binary sources. If no prefix is supplied, XML format is assumed</p>
 		/// </summary>
 		/// <param name="rrdPath">Path to RRD which will be created</param>
-		/// <param name="externalPath">
-		/// Path to an external file which should be imported, with an optional
-		///                     <code>xml:/</code> or <code>rrdtool:/</code> prefix.
-		/// </param>
+		/// <param name="reader">DataImporter to use for importation</param>
 		/// <param name="factory">Backend factory which will be used to create storage (backend) for this RRD.</param>
-		private RrdDb(String rrdPath, String externalPath, RrdBackendFactory factory)
+		private RrdDb(String rrdPath, DataImporter reader, RrdBackendFactory factory)
 		{
-			DataImporter reader;
-			if (externalPath.StartsWith(PREFIX_RRDTool))
-			{
-				String rrdToolPath = externalPath.Substring(PREFIX_RRDTool.Length);
-				reader = new RrdToolReader(rrdToolPath);
-			}
-			else if (externalPath.StartsWith(PREFIX_XML))
-			{
-				externalPath = externalPath.Substring(PREFIX_XML.Length);
-				throw new NotImplementedException();
-				//reader = new XmlReader(externalPath);
-			}
-			else
-			{
-				throw new NotImplementedException();
-				//reader = new XmlReader(externalPath);
-			}
 			backend = factory.Open(rrdPath, false);
 			try
 			{
@@ -316,7 +256,6 @@ namespace robin.core
 				{
 					archives[i] = new Archive(this, reader, i);
 				}
-				reader.Dispose();
 			}
 			catch (RrdException)
 			{
@@ -329,6 +268,68 @@ namespace robin.core
 				throw new RrdException(e);
 			}
 		}
+
+		/// <summary>
+		/// Returns true if the RRD is closed.
+		/// </summary>
+		/// <value></value>
+		public bool Closed { get; private set; }
+
+		/// <summary>
+		/// Returns RRD header.
+		/// </summary>
+		/// <value></value>
+		public Header Header
+		{
+			get { return header; }
+		}
+
+		/// <summary>
+		/// Datasource names defined in RRD
+		/// </summary>
+		/// <value></value>
+		public string[] DataSourceNames
+		{
+			get
+			{
+				int n = datasources.Length;
+				var dsNames = new String[n];
+				for (int i = 0; i < n; i++)
+				{
+					dsNames[i] = datasources[i].Name;
+				}
+				return dsNames;
+			}
+		}
+
+		public DataSource[] DataSources
+		{
+			get { return datasources; }
+		}
+
+		public Archive[] Archives
+		{
+			get { return archives; }
+		}
+
+		/// <summary>
+		/// time of last update operation as timestamp (in seconds).
+		/// </summary>
+		/// <value></value>
+		public long LastUpdateTime
+		{
+			[MethodImpl(MethodImplOptions.Synchronized)]
+			get { return header.LastUpdateTime; }
+		}
+
+		#region IDisposable Members
+
+		public void Dispose()
+		{
+			Close();
+		}
+
+		#endregion
 
 		#region IRrdUpdater Members
 
@@ -386,35 +387,52 @@ namespace robin.core
 
 		#endregion
 
+		public static RrdDb Create(RrdDef rrdDef)
+		{
+			return Create(rrdDef, RrdBackendFactory.GetDefaultFactory());
+		}
+
+		public static RrdDb Create(RrdDef rrdDef, RrdBackendFactory factory)
+		{
+			return new RrdDb(rrdDef, factory);
+		}
+
+		public static RrdDb Open(string path, bool readOnly = false)
+		{
+			return Open(path, readOnly, RrdBackendFactory.GetDefaultFactory());
+		}
+
+		public static RrdDb Open(string path, RrdBackendFactory factory)
+		{
+			return new RrdDb(path, false, factory);
+		}
+
+		public static RrdDb Open(string path, bool readOnly, RrdBackendFactory factory)
+		{
+			return new RrdDb(path, readOnly, factory);
+		}
+
+		public static RrdDb Import(string rrdPath, DataImporter externalPath)
+		{
+			return new RrdDb(rrdPath, externalPath, RrdBackendFactory.GetDefaultFactory());
+		}
+
+		public static RrdDb Import(string rrdPath, DataImporter externalPath, RrdBackendFactory factory)
+		{
+			return new RrdDb(rrdPath, externalPath, factory);
+		}
+
 		/// <summary>
 		/// Closes RRD. No further operations are allowed on this RrdDb object.
 		/// </summary>
 		[MethodImpl(MethodImplOptions.Synchronized)]
 		public void Close()
 		{
-			if (!closed)
+			if (!Closed)
 			{
-				closed = true;
+				Closed = true;
 				backend.Close();
 			}
-		}
-
-		/// <summary>
-		/// Returns true if the RRD is closed.
-		/// </summary>
-		/// <value></value>
-		public bool Closed
-		{
-			get { return closed; }
-		}
-
-		/// <summary>
-		/// Returns RRD header.
-		/// </summary>
-		/// <value></value>
-		public Header Header
-		{
-			get { return header; }
 		}
 
 		/// <summary>
@@ -426,7 +444,7 @@ namespace robin.core
 		{
 			return datasources[dsIndex];
 		}
-		
+
 		/// <summary>
 		/// Archive object for the given archive index.
 		/// </summary>
@@ -435,24 +453,6 @@ namespace robin.core
 		public Archive GetArchive(int arcIndex)
 		{
 			return archives[arcIndex];
-		}
-
-		/// <summary>
-		/// Datasource names defined in RRD
-		/// </summary>
-		/// <value></value>
-		public string[] DataSourceNames
-		{
-			get
-			{
-				int n = datasources.Length;
-				var dsNames = new String[n];
-				for (int i = 0; i < n; i++)
-				{
-					dsNames[i] = datasources[i].Name;
-				}
-				return dsNames;
-			}
 		}
 
 		/// <summary>
@@ -514,7 +514,7 @@ namespace robin.core
 		[MethodImpl(MethodImplOptions.Synchronized)]
 		internal void Store(Sample sample)
 		{
-			if (closed)
+			if (Closed)
 			{
 				throw new RrdException("RRD already closed, cannot store this  sample");
 			}
@@ -537,7 +537,7 @@ namespace robin.core
 		[MethodImpl(MethodImplOptions.Synchronized)]
 		internal FetchData FetchData(FetchRequest request)
 		{
-			if (closed)
+			if (Closed)
 			{
 				throw new RrdException("RRD already closed, cannot fetch data");
 			}
@@ -612,7 +612,6 @@ namespace robin.core
 		/// <returns>Reference to the best matching archive.</returns>
 		public Archive FindStartMatchArchive(String consolFun, long startTime, long resolution)
 		{
-			long arcStep, diff;
 			int fallBackIndex = 0;
 			int arcIndex = -1;
 			long minDiff = long.MaxValue;
@@ -622,8 +621,8 @@ namespace robin.core
 			{
 				if (archives[i].ConsolidationFunction.Equals(consolFun))
 				{
-					arcStep = archives[i].TimeStep;
-					diff = Math.Abs(resolution - arcStep);
+					long arcStep = archives[i].TimeStep;
+					long diff = Math.Abs(resolution - arcStep);
 
 					// Now compare start time, see if this archive encompasses the requested interval
 					if (startTime >= archives[i].GetStartTime())
@@ -649,7 +648,7 @@ namespace robin.core
 
 			return (arcIndex >= 0 ? archives[arcIndex] : archives[fallBackIndex]);
 		}
-		
+
 		/// <summary>
 		/// <p>Returns string representing complete internal RRD state. The returned
 		/// string can be printed to <code>stdout</code> and/or used for debugging purposes.</p>
@@ -708,144 +707,76 @@ namespace robin.core
 			return datasources.Any(datasource => datasource.Name == dsName);
 		}
 
-		public DataSource[] DataSources
-		{
-			get { return datasources; }
-		}
-
-		public Archive[] Archives
-		{
-			get { return archives; }
-		}
-
-		/**
-	 * <p>Writes the RRD content to OutputStream using XML format. This format
-	 * is fully compatible with RRDTool's XML dump format and can be used for conversion
-	 * purposes or debugging.</p>
-	 *
-	 * @param destination Output stream to receive XML data
-	 * @throws IOException Thrown in case of I/O related error
-	 */
-
+		/// <summary>
+		/// <p>Writes the RRD content to OutputStream using XML format. This format
+		/// is fully compatible with RRDTool's XML dump format and can be used for conversion
+		/// purposes or debugging.</p>
+		/// </summary>
+		/// <param name="destination">Output stream to receive XML data</param>
 		[MethodImpl(MethodImplOptions.Synchronized)]
-		public void dumpXml(Stream destination)
+		public void ToXml(Stream destination)
 		{
-		   XmlWriter writer = XmlWriter.Create(destination);
-		   writer.WriteStartElement("rrd");
-		   // dump header
-		   header.AppendXml(writer);
-		   // dump datasources
-		   foreach (DataSource datasource in datasources) {
-		      datasource.AppendXml(writer);
-		   }
-		   // dump archives
-		   foreach (Archive archive in archives) {
-		      archive.AppendXml(writer);
-		   }
-		   writer.WriteEndElement();
-		   writer.Flush();
+			XmlWriter writer = XmlWriter.Create(destination);
+			writer.WriteStartElement("rrd");
+			// dump header
+			header.AppendXml(writer);
+			// dump datasources
+			foreach (DataSource datasource in datasources)
+			{
+				datasource.AppendXml(writer);
+			}
+			// dump archives
+			foreach (Archive archive in archives)
+			{
+				archive.AppendXml(writer);
+			}
+			writer.WriteEndElement();
+			writer.Flush();
 		}
-
-		/**
-	 * This method is just an alias for {@link #dumpXml(OutputStream) dumpXml} method.
-	 *
-	 * @throws IOException Thrown in case of I/O related error
-	 */
-
-		//[MethodImpl(MethodImplOptions.Synchronized)]
-		//public void exportXml(StringWriter destination)
-		//{
-		//   dumpXml(destination);
-		//}
-
-		/**
-	 * <p>Returns string representing internal RRD state in XML format. This format
-	 * is fully compatible with RRDTool's XML dump format and can be used for conversion
-	 * purposes or debugging.</p>
-	 *
-	 * @return Internal RRD state in XML format.
-	 * @throws IOException  Thrown in case of I/O related error
-	 * @ Thrown in case of JRobin specific error
-	 */
-
-		//[MethodImpl(MethodImplOptions.Synchronized)]
-		//public String getXml()
-		//{
-		//   StringWriter destination = new StringWriter(new StringBuilder(XML_INITIAL_BUFFER_CAPACITY));
-		//   dumpXml(destination);
-		//   return destination.ToString();
-		//}
-
-		/**
-	 * This method is just an alias for {@link #getXml() getXml} method.
-	 *
-	 * @return Internal RRD state in XML format.
-	 * @throws IOException  Thrown in case of I/O related error
-	 * @ Thrown in case of JRobin specific error
-	 */
-
-		//[MethodImpl(MethodImplOptions.Synchronized)]
-		//public String exportXml()
-		//{
-		//   return getXml();
-		//}
-
-		/**
-	 * <p>Dumps internal RRD state to XML file.
-	 * Use this XML file to convert your JRobin RRD to RRDTool format.</p>
-	 * <p/>
-	 * <p>Suppose that you have a JRobin RRD file <code>original.rrd</code> and you want
-	 * to convert it to RRDTool format. First, execute the following java code:</p>
-	 * <p/>
-	 * <code>RrdDb rrd = new RrdDb("original.rrd");
-	 * rrd.dumpXml("original.xml");</code>
-	 * <p/>
-	 * <p>Use <code>original.xml</code> file to create the corresponding RRDTool file
-	 * (from your command line):
-	 * <p/>
-	 * <code>rrdtool restore copy.rrd original.xml</code>
-	 *
-	 * @param filename Path to XML file which will be created.
-	 * @throws IOException  Thrown in case of I/O related error.
-	 * @ Thrown in case of JRobin related error.
-	 */
-
-		//[MethodImpl(MethodImplOptions.Synchronized)]
-		//public void dumpXml(String filename)
-		//{
-		//   StreamWriter outputStream = null;
-		//   try {
-		//      outputStream = new FileOutputStream(filename, false);
-		//      dumpXml(outputStream);
-		//   }
-		//   finally {
-		//      if (outputStream != null) {
-		//         outputStream.close();
-		//      }
-		//   }
-		//}
-
-		/**
-	 * This method is just an alias for {@link #dumpXml(String) dumpXml(String)} method.
-	 *
-	 * @throws IOException  Thrown in case of I/O related error
-	 * @ Thrown in case of JRobin specific error
-	 */
-
-		//[MethodImpl(MethodImplOptions.Synchronized)]
-		//public void exportXml(String filename)
-		//{
-		//   dumpXml(filename);
-		//}
 
 		/// <summary>
-		/// time of last update operation as timestamp (in seconds).
+		/// <p>Returns string representing internal RRD state in XML format. This format
+		/// is fully compatible with RRDTool's XML dump format and can be used for conversion
+		/// purposes or debugging.</p>
 		/// </summary>
-		/// <value></value>
-		public long LastUpdateTime
+		/// <returns>Internal RRD state in XML format.</returns>
+		[MethodImpl(MethodImplOptions.Synchronized)]
+		public String ToXml()
 		{
-			[MethodImpl(MethodImplOptions.Synchronized)]
-			get { return header.LastUpdateTime; }
+			using (var ms = new MemoryStream(XML_INITIAL_BUFFER_CAPACITY))
+			{
+				ToXml(ms);
+				ms.Seek(0, SeekOrigin.Begin);
+				using (TextReader reader = new StreamReader(ms))
+				{
+					return reader.ReadToEnd();
+				}
+			}
+		}
+
+		/// <summary>
+		/// <p>Dumps internal RRD state to XML file.
+		/// Use this XML file to convert your JRobin RRD to RRDTool format.</p>
+		/// <p/>
+		/// <p>Suppose that you have a JRobin RRD file <code>original.rrd</code> and you want
+		/// to convert it to RRDTool format. First, execute the following java code:</p>
+		/// <p/>
+		/// <code>RrdDb rrd = new RrdDb("original.rrd");
+		/// rrd.DumpXml("original.xml");</code>
+		/// <p/>
+		/// Use <code>original.xml</code> file to create the corresponding RRDTool file
+		/// (from your command line):
+		/// <p/>
+		/// <code>rrdtool restore copy.rrd original.xml</code>
+		/// </summary>
+		/// <param name="filename">Path to XML file which will be created.</param>
+		[MethodImpl(MethodImplOptions.Synchronized)]
+		public void ToXml(String filename)
+		{
+			using (FileStream outputStream = File.Create(filename))
+			{
+				ToXml(outputStream);
+			}
 		}
 
 		/// <summary>
@@ -889,11 +820,6 @@ namespace robin.core
 				rrdDef.AddArchive(arcDef);
 			}
 			return rrdDef;
-		}
-
-		public void Dispose()
-		{
-			Close();
 		}
 
 		/// <summary>

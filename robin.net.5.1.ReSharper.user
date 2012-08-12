@@ -9,68 +9,68 @@
   </SettingsComponent>
   <RecentFiles>
     <RecentFiles>
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Data/f:PercentileDef.cs" caret="1086" fromTop="0" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Data/f:Plottable.cs" caret="1569" fromTop="32" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Data/f:SDef.cs" caret="1595" fromTop="41" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Data/f:Source.cs" caret="1071" fromTop="13" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:DsDef.cs" caret="8679" fromTop="31" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdDef.cs" caret="16157" fromTop="31" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:ArcState.cs" caret="4331" fromTop="22" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdBackendFactory.cs" caret="9364" fromTop="22" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdJRobin14FileBackendFactory.cs" caret="2587" fromTop="22" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Utils/f:DateTimeExtensions.cs" caret="548" fromTop="24" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:ArcDef.cs" caret="2829" fromTop="13" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:DataSource.cs" caret="5639" fromTop="23" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdPrimitive.cs" caret="2309" fromTop="0" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdDouble.cs" caret="1694" fromTop="35" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdInt.cs" caret="1736" fromTop="38" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdLong.cs" caret="1865" fromTop="38" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdString.cs" caret="1743" fromTop="44" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:FetchRequest.cs" caret="1701" fromTop="23" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdDoubleArray.cs" caret="1847" fromTop="13" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Sample.cs" caret="6885" fromTop="36" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Archive.cs" caret="9784" fromTop="36" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Data/f:DataProcessor.cs" caret="3910" fromTop="16" />
-      <File id="6237B584-EAB9-467F-9238-D90A2A03FFAE/f:TimeAxis.cs" caret="5857" fromTop="15" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Util.cs" caret="10601" fromTop="7" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Header.cs" caret="4682" fromTop="22" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdDb.cs" caret="12148" fromTop="27" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Data/f:RpnCalculator.cs" caret="7246" fromTop="22" />
-      <File id="6237B584-EAB9-467F-9238-D90A2A03FFAE/f:CommentText.cs" caret="1929" fromTop="22" />
-      <File id="6237B584-EAB9-467F-9238-D90A2A03FFAE/f:PrintText.cs" caret="2062" fromTop="19" />
-      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="874" fromTop="24" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:DsDef.cs" caret="1652" fromTop="22" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:FetchRequest.cs" caret="1600" fromTop="22" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/d:jrrd/f:Archive.cs" caret="1316" fromTop="22" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/d:jrrd/f:CDPStatusBlock.cs" caret="1242" fromTop="22" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/d:jrrd/f:DataChunk.cs" caret="1190" fromTop="22" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/d:jrrd/f:DataSource.cs" caret="1243" fromTop="22" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/d:jrrd/f:PrimaryDataPointStatusBlock.cs" caret="1218" fromTop="22" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/d:jrrd/f:RRDatabase.cs" caret="1355" fromTop="22" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/d:jrrd/f:RRDFile.cs" caret="1524" fromTop="22" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Robin.cs" caret="1760" fromTop="22" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdDef.cs" caret="2224" fromTop="22" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdException.cs" caret="1332" fromTop="22" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:data/f:PercentileDefTest.cs" caret="1425" fromTop="22" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/d:timespec/f:TimeParserTest.cs" caret="1696" fromTop="22" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Sample.cs" caret="2445" fromTop="28" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:XmlTemplate.cs" caret="4895" fromTop="29" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdDefTemplate.cs" caret="7635" fromTop="18" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Archive.cs" caret="13708" fromTop="35" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:ArcDef.cs" caret="1853" fromTop="22" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:ArcState.cs" caret="4060" fromTop="23" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:IRrdUpdater.cs" caret="0" fromTop="0" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdDbPool.cs" caret="7182" fromTop="31" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:DataImporter.cs" caret="1292" fromTop="10" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Header.cs" caret="2833" fromTop="12" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:DataSource.cs" caret="3705" fromTop="25" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Util.cs" caret="14755" fromTop="17" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="3124" fromTop="19" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/d:xml/f:XmlTests.cs" caret="677" fromTop="23" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:XmlImporter.cs" caret="1434" fromTop="18" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdDb.cs" caret="32593" fromTop="23" />
     </RecentFiles>
     <RecentEdits>
-      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="6465" fromTop="26" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Sample.cs" caret="7920" fromTop="24" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Sample.cs" caret="7949" fromTop="26" />
-      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="8734" fromTop="34" />
-      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="5838" fromTop="20" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdDb.cs" caret="19100" fromTop="20" />
-      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="5882" fromTop="9" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Sample.cs" caret="6704" fromTop="29" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Sample.cs" caret="6297" fromTop="10" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Sample.cs" caret="6887" fromTop="37" />
-      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="7900" fromTop="36" />
-      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="8734" fromTop="38" />
-      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="7900" fromTop="28" />
-      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="8731" fromTop="37" />
-      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="7777" fromTop="25" />
-      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="8045" fromTop="28" />
-      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="8725" fromTop="41" />
-      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="6974" fromTop="34" />
-      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="8899" fromTop="38" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Data/f:DataProcessor.cs" caret="3910" fromTop="16" />
-      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="8899" fromTop="13" />
-      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="8899" fromTop="16" />
-      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="8961" fromTop="37" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Util.cs" caret="10820" fromTop="13" />
-      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Data/f:RpnCalculator.cs" caret="7274" fromTop="22" />
-      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="8899" fromTop="26" />
-      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="8956" fromTop="15" />
-      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="178" fromTop="6" />
-      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="874" fromTop="23" />
-      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/f:BasicTests.cs" caret="834" fromTop="23" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:XmlImporter.cs" caret="1738" fromTop="24" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdDbPool.cs" caret="6200" fromTop="13" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdDbPool.cs" caret="6586" fromTop="17" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdDbPool.cs" caret="6983" fromTop="24" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:XmlImporter.cs" caret="1281" fromTop="12" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:XmlImporter.cs" caret="5312" fromTop="25" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:XmlImporter.cs" caret="1628" fromTop="23" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Util.cs" caret="13870" fromTop="18" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Util.cs" caret="14134" fromTop="28" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Util.cs" caret="14393" fromTop="38" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Util.cs" caret="15012" fromTop="38" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Util.cs" caret="13571" fromTop="27" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:XmlImporter.cs" caret="2905" fromTop="13" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:XmlImporter.cs" caret="2764" fromTop="8" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:Util.cs" caret="14656" fromTop="14" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdDb.cs" caret="10949" fromTop="20" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/d:xml/f:XmlTests.cs" caret="691" fromTop="23" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/d:xml/f:XmlTests.cs" caret="2512" fromTop="44" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/d:xml/f:XmlTests.cs" caret="1029" fromTop="15" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/d:xml/f:XmlTests.cs" caret="2495" fromTop="29" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/d:xml/f:XmlTests.cs" caret="2316" fromTop="28" />
+      <File id="A0150DCC-374F-49EC-9D8A-64AB106C615F/d:core/d:xml/f:XmlTests.cs" caret="2155" fromTop="22" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:XmlImporter.cs" caret="1120" fromTop="8" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdDb.cs" caret="3571" fromTop="10" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdDb.cs" caret="10179" fromTop="18" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdDb.cs" caret="11241" fromTop="22" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdDb.cs" caret="21454" fromTop="12" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdDb.cs" caret="21765" fromTop="22" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdDb.cs" caret="32526" fromTop="20" />
+      <File id="02EBB351-0232-4D19-86D9-0B98E7621658/d:Core/f:RrdDb.cs" caret="32649" fromTop="25" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -86,30 +86,30 @@
   </UnitTestRunnerNUnit>
   <CompletionStatisticsManager>
     <ItemStatistics item="Default">
-      <Item value="static" priority="5" />
+      <Item value="static" priority="9" />
       <Item value="ConsolFuns`0" priority="42" />
-      <Item value="override" priority="26" />
+      <Item value="override" priority="27" />
       <Item value="ArcDef`0" priority="4" />
-      <Item value="foreach" priority="18" />
-      <Item value="string" priority="13" />
-      <Item value="in" priority="6" />
+      <Item value="foreach" priority="22" />
+      <Item value="string" priority="17" />
+      <Item value="in" priority="7" />
       <Item value="CONSOL_FUNS" priority="0" />
       <Item value="Int32`0" priority="0" />
-      <Item value="i" priority="11" />
+      <Item value="i" priority="12" />
       <Item value="Debug`0" priority="6" />
       <Item value="getLong`0" priority="0" />
       <Item value="Int64`0" priority="0" />
       <Item value="updater" priority="0" />
-      <Item value="false" priority="4" />
-      <Item value="int" priority="23" />
-      <Item value="throw" priority="14" />
-      <Item value="new" priority="109" />
+      <Item value="false" priority="5" />
+      <Item value="int" priority="24" />
+      <Item value="throw" priority="16" />
+      <Item value="new" priority="121" />
       <Item value="NotImplementedException" priority="7" />
       <Item value="FileInfo`0" priority="1" />
-      <Item value="MemoryStream`0" priority="2" />
+      <Item value="MemoryStream`0" priority="3" />
       <Item value="StringWriter`0" priority="0" />
       <Item value="StringBuilder" priority="1" />
-      <Item value="StreamReader`0" priority="1" />
+      <Item value="StreamReader`0" priority="2" />
       <Item value="StreamWriter`0" priority="1" />
       <Item value="StreamWriter" priority="0" />
       <Item value="Console`0" priority="2" />
@@ -122,23 +122,23 @@
       <Item value="IEnumerator" priority="3" />
       <Item value="DsDef`0" priority="4" />
       <Item value="null" priority="8" />
-      <Item value="if" priority="35" />
+      <Item value="if" priority="37" />
       <Item value="found" priority="1" />
       <Item value="dsDefs" priority="0" />
       <Item value="dsDef" priority="0" />
       <Item value="break" priority="4" />
       <Item value="Count`1" priority="1" />
-      <Item value="Length" priority="27" />
+      <Item value="Length" priority="30" />
       <Item value="StringBuilder`0" priority="1" />
-      <Item value="public" priority="65" />
+      <Item value="public" priority="67" />
       <Item value="DsTypes`0" priority="1" />
       <Item value="NotImplementedException`0" priority="0" />
-      <Item value="internal" priority="36" />
+      <Item value="internal" priority="44" />
       <Item value="InvalidOperationException`0" priority="1" />
-      <Item value="Dictionary" priority="5" />
+      <Item value="Dictionary" priority="7" />
       <Item value="MethodImplOptions`0" priority="3" />
       <Item value="Array`0" priority="0" />
-      <Item value="for" priority="9" />
+      <Item value="for" priority="12" />
       <Item value="PathTooLongException`0" priority="0" />
       <Item value="tokenCount" priority="1" />
       <Item value="j" priority="2" />
@@ -148,15 +148,15 @@
       <Item value="Generic" priority="0" />
       <Item value="Specialized" priority="1" />
       <Item value="OrderedDictionary`0" priority="1" />
-      <Item value="private" priority="32" />
+      <Item value="private" priority="33" />
       <Item value="pixelValues" priority="3" />
       <Item value="Double`0" priority="3" />
       <Item value="x" priority="10" />
-      <Item value="DateTime`0" priority="56" />
-      <Item value="long" priority="11" />
+      <Item value="DateTime`0" priority="59" />
+      <Item value="long" priority="13" />
       <Item value="name" priority="4" />
       <Item value="base" priority="10" />
-      <Item value="T`0" priority="5" />
+      <Item value="T`0" priority="6" />
       <Item value="IList" priority="0" />
       <Item value="KeyValuePair" priority="2" />
       <Item value="HashSet" priority="0" />
@@ -168,7 +168,7 @@
       <Item value="getDate`0" priority="0" />
       <Item value="Diagnostics" priority="1" />
       <Item value="true" priority="13" />
-      <Item value="Math`0" priority="1" />
+      <Item value="Math`0" priority="2" />
       <Item value="gc" priority="1" />
       <Item value="getTimestamp`0" priority="0" />
       <Item value="DateTime" priority="5" />
@@ -185,7 +185,7 @@
       <Item value="arg" priority="0" />
       <Item value="InvariantCultureIgnoreCase" priority="5" />
       <Item value="value" priority="16" />
-      <Item value="double" priority="33" />
+      <Item value="double" priority="39" />
       <Item value="ptsCount" priority="0" />
       <Item value="dsCount" priority="1" />
       <Item value="values" priority="22" />
@@ -198,15 +198,15 @@
       <Item value="object" priority="0" />
       <Item value="Monitor`0" priority="3" />
       <Item value="Exception`0" priority="0" />
-      <Item value="String`0" priority="9" />
+      <Item value="String`0" priority="11" />
       <Item value="StringComparison`0" priority="0" />
-      <Item value="r" priority="1" />
+      <Item value="r" priority="2" />
       <Item value="g" priority="1" />
       <Item value="HexNumber" priority="0" />
       <Item value="Environment`0" priority="3" />
       <Item value="Directory`0" priority="4" />
       <Item value="homeDirPath" priority="2" />
-      <Item value="return" priority="39" />
+      <Item value="return" priority="53" />
       <Item value="path1" priority="0" />
       <Item value="path2" priority="0" />
       <Item value="FormatException`0" priority="2" />
@@ -218,7 +218,7 @@
       <Item value="Constants`0" priority="3" />
       <Item value="index" priority="12" />
       <Item value="TextWriter`0" priority="6" />
-      <Item value="DataSource`0" priority="4" />
+      <Item value="DataSource`0" priority="5" />
       <Item value="dataSources" priority="1" />
       <Item value="ds" priority="2" />
       <Item value="printInfo`0" priority="0" />
@@ -226,15 +226,15 @@
       <Item value="numberFormat" priority="5" />
       <Item value="archives" priority="1" />
       <Item value="toXml`0" priority="0" />
-      <Item value="Archive`0" priority="4" />
+      <Item value="Archive`0" priority="6" />
       <Item value="cdpStatusBlocks" priority="1" />
-      <Item value="Util`0" priority="6" />
+      <Item value="Util`0" priority="8" />
       <Item value="dateFormat" priority="0" />
       <Item value="rowCount" priority="0" />
       <Item value="const" priority="27" />
       <Item value="debug" priority="0" />
-      <Item value="reader" priority="11" />
-      <Item value="Begin" priority="4" />
+      <Item value="reader" priority="13" />
+      <Item value="Begin" priority="5" />
       <Item value="file" priority="0" />
       <Item value="Encoding`0" priority="6" />
       <Item value="n" priority="0" />
@@ -248,8 +248,8 @@
       <Item value="endCal" priority="2" />
       <Item value="aDateTime" priority="1" />
       <Item value="SeekOrigin`0" priority="7" />
-      <Item value="FileStream`0" priority="2" />
-      <Item value="File`0" priority="17" />
+      <Item value="FileStream`0" priority="3" />
+      <Item value="File`0" priority="19" />
       <Item value="path" priority="8" />
       <Item value="readOnly" priority="3" />
       <Item value="FileMode`0" priority="2" />
@@ -269,7 +269,7 @@
       <Item value="MethodImpl" priority="1" />
       <Item value="TestInitialize" priority="0" />
       <Item value="cal" priority="13" />
-      <Item value="Assert`0" priority="27" />
+      <Item value="Assert`0" priority="36" />
       <Item value="TestMethod" priority="44" />
       <Item value="now" priority="1" />
       <Item value="TimeSpan`0" priority="1" />
@@ -277,14 +277,14 @@
       <Item value="setSubDayFieldsZero`0" priority="2" />
       <Item value="ref" priority="0" />
       <Item value="start" priority="5" />
-      <Item value="using" priority="4" />
+      <Item value="using" priority="8" />
       <Item value="jrrd" priority="0" />
       <Item value="startDate" priority="23" />
       <Item value="setSubHourFieldsZero`0" priority="1" />
       <Item value="endDate" priority="4" />
       <Item value="seconds" priority="0" />
       <Item value="Date`0" priority="0" />
-      <Item value="this" priority="0" />
+      <Item value="this" priority="2" />
       <Item value="changeMonth`0" priority="1" />
       <Item value="changeDay`0" priority="1" />
       <Item value="changeYear`0" priority="1" />
@@ -325,9 +325,9 @@
       <Item value="RrdDef`0" priority="4" />
       <Item value="RrdDef" priority="3" />
       <Item value="def" priority="25" />
-      <Item value="RrdDb`0" priority="8" />
+      <Item value="RrdDb`0" priority="10" />
       <Item value="RrdDb" priority="5" />
-      <Item value="db" priority="18" />
+      <Item value="db" priority="25" />
       <Item value="while" priority="0" />
       <Item value="ThreadStaticAttribute`0" priority="2" />
       <Item value="Sample`0" priority="1" />
@@ -340,7 +340,7 @@
       <Item value="OperatingSystem`0" priority="3" />
       <Item value="Unix" priority="0" />
       <Item value="RrdGraphConstants`0" priority="4" />
-      <Item value="Color`0" priority="3" />
+      <Item value="Color`0" priority="4" />
       <Item value="text" priority="1" />
       <Item value="Graphics`0" priority="6" />
       <Item value="FontFamily`0" priority="0" />
@@ -353,7 +353,7 @@
       <Item value="DateTimeOffset`0" priority="0" />
       <Item value="DateTimeOffset" priority="0" />
       <Item value="Compiled" priority="0" />
-      <Item value="Match`0" priority="0" />
+      <Item value="Match`0" priority="1" />
       <Item value="matcher" priority="0" />
       <Item value="Graphics" priority="0" />
       <Item value="GC`0" priority="1" />
@@ -399,7 +399,7 @@
       <Item value="ms" priority="5" />
       <Item value="type" priority="2" />
       <Item value="quality" priority="1" />
-      <Item value="MemoryStream" priority="0" />
+      <Item value="MemoryStream" priority="1" />
       <Item value="buffer" priority="2" />
       <Item value="imageFile" priority="0" />
       <Item value="brush" priority="0" />
@@ -409,7 +409,7 @@
       <Item value="GRID_STROKE" priority="2" />
       <Item value="date" priority="5" />
       <Item value="format" priority="0" />
-      <Item value="Robin`0" priority="0" />
+      <Item value="Robin`0" priority="2" />
       <Item value="graph" priority="3" />
       <Item value="RrdGraph" priority="1" />
       <Item value="RrdGraphDef`0" priority="1" />
@@ -440,19 +440,19 @@
       <Item value="dsName" priority="4" />
       <Item value="UriBuilder`0" priority="0" />
       <Item value="Close`0" priority="3" />
-      <Item value="archive" priority="13" />
+      <Item value="archive" priority="15" />
       <Item value="abstract" priority="1" />
       <Item value="virtual" priority="7" />
-      <Item value="v" priority="1" />
+      <Item value="v" priority="2" />
       <Item value="TreeNode" priority="0" />
-      <Item value="dataSource" priority="6" />
-      <Item value="node" priority="3" />
+      <Item value="dataSource" priority="9" />
+      <Item value="node" priority="5" />
       <Item value="ArchiveUserControl`0" priority="1" />
       <Item value="DataSourceUpdateMode`0" priority="0" />
       <Item value="sourceTextBox" priority="0" />
       <Item value="archiveTextBox" priority="1" />
       <Item value="e" priority="2" />
-      <Item value="else" priority="3" />
+      <Item value="else" priority="4" />
       <Item value="rightPanel" priority="2" />
       <Item value="UserControl`0" priority="0" />
       <Item value="is" priority="1" />
@@ -467,9 +467,9 @@
       <Item value="aControl" priority="0" />
       <Item value="SetUserControl`0" priority="0" />
       <Item value="Enum`0" priority="6" />
-      <Item value="typeof" priority="1" />
+      <Item value="typeof" priority="2" />
       <Item value="ConsolidationFunctionType`0" priority="0" />
-      <Item value="DataSourceType`0" priority="18" />
+      <Item value="DataSourceType`0" priority="19" />
       <Item value="AbandonedMutexException" priority="0" />
       <Item value="InvalidCastException`0" priority="0" />
       <Item value="PDPStatusBlock" priority="0" />
@@ -490,7 +490,7 @@
       <Item value="dsType" priority="2" />
       <Item value="primitiveDsType" priority="2" />
       <Item value="t" priority="0" />
-      <Item value="ConsolidationFunction`0" priority="24" />
+      <Item value="ConsolidationFunction`0" priority="25" />
       <Item value="average" priority="0" />
       <Item value="first" priority="1" />
       <Item value="last" priority="1" />
@@ -505,16 +505,16 @@
       <Item value="Create`0" priority="0" />
       <Item value="rrdDef" priority="1" />
       <Item value="factory" priority="3" />
-      <Item value="bool" priority="0" />
+      <Item value="bool" priority="2" />
       <Item value="Open`0" priority="0" />
-      <Item value="DataImporter`0" priority="0" />
+      <Item value="DataImporter`0" priority="1" />
       <Item value="rrdPath" priority="0" />
       <Item value="externalPath" priority="0" />
       <Item value="instance" priority="3" />
       <Item value="minValue" priority="1" />
       <Item value="maxValue" priority="1" />
       <Item value="arcDefs" priority="0" />
-      <Item value="result" priority="11" />
+      <Item value="result" priority="13" />
       <Item value="protected" priority="0" />
       <Item value="out" priority="2" />
       <Item value="timeToken" priority="0" />
@@ -550,23 +550,75 @@
       <Item value="MidpointRounding`0" priority="0" />
       <Item value="RrdGraph`0" priority="0" />
       <Item value="SAMPLE" priority="0" />
+      <Item value="nodes" priority="0" />
+      <Item value="XmlElement`0" priority="0" />
+      <Item value="XmlNode`0" priority="8" />
+      <Item value="Regex" priority="0" />
+      <Item value="RegexOptions`0" priority="0" />
+      <Item value="Regex`0" priority="0" />
+      <Item value="MatchCollection`0" priority="1" />
+      <Item value="matchCollection" priority="1" />
+      <Item value="m" priority="0" />
+      <Item value="list" priority="2" />
+      <Item value="var" priority="1" />
+      <Item value="class" priority="0" />
+      <Item value="Node`0" priority="0" />
+      <Item value="nodeList" priority="1" />
+      <Item value="List&lt;XmlNode&gt;" priority="0" />
+      <Item value="XmlNode" priority="1" />
+      <Item value="parent" priority="0" />
+      <Item value="trim" priority="1" />
+      <Item value="parentNode" priority="2" />
+      <Item value="match" priority="1" />
+      <Item value="XmlDocument`0" priority="1" />
+      <Item value="XmlDocument" priority="5" />
+      <Item value="root" priority="2" />
+      <Item value="xml" priority="0" />
+      <Item value="xmlString" priority="0" />
+      <Item value="xmlFile" priority="0" />
+      <Item value="GetChildValueAsLong`0" priority="0" />
+      <Item value="step" priority="0" />
+      <Item value="ArgumentException" priority="0" />
+      <Item value="childName" priority="0" />
+      <Item value="GetChildValueAsEnum`1" priority="0" />
+      <Item value="TimeStep" priority="1" />
+      <Item value="GetStartTime`0" priority="0" />
+      <Item value="AccumulatedValue" priority="0" />
+      <Item value="accumumatedValue" priority="0" />
+      <Item value="LastUpdateTime" priority="0" />
+      <Item value="lastValue" priority="0" />
+      <Item value="XML_INITIAL_BUFFER_CAPACITY" priority="0" />
+      <Item value="TextReader`0" priority="1" />
+      <Item value="TestMethod`0" priority="0" />
+      <Item value="XmlReader`0" priority="0" />
+      <Item value="xmlFilePath" priority="0" />
+      <Item value="document" priority="3" />
+      <Item value="ArgumentNullException" priority="0" />
+      <Item value="db2" priority="3" />
+      <Item value="ds2" priority="0" />
+      <Item value="a2" priority="0" />
+      <Item value="r1" priority="1" />
+      <Item value="r2" priority="1" />
+      <Item value="v1" priority="1" />
+      <Item value="v2" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Double">
-      <Item value="IsNaN`0" priority="2" />
-      <Item value="NaN" priority="16" />
+      <Item value="IsNaN`0" priority="3" />
+      <Item value="NaN" priority="18" />
       <Item value="PositiveInfinity" priority="0" />
       <Item value="NegativeInfinity" priority="0" />
       <Item value="MaxValue" priority="1" />
       <Item value="Parse`0" priority="3" />
-      <Item value="TryParse`0" priority="5" />
+      <Item value="TryParse`0" priority="6" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.String">
       <Item value="Equals`0" priority="8" />
       <Item value="GetHashCode`0" priority="0" />
-      <Item value="Length" priority="19" />
+      <Item value="Length" priority="21" />
       <Item value="Split`0" priority="2" />
       <Item value="length`0" priority="1" />
       <Item value="ToUpper`0" priority="1" />
+      <Item value="Trim`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Diagnostics.Debug">
       <Item value="Assert`0" priority="2" />
@@ -578,7 +630,7 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Int64">
       <Item value="MaxValue" priority="6" />
-      <Item value="Parse`0" priority="5" />
+      <Item value="Parse`0" priority="7" />
       <Item value="TryParse`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Nullable`1">
@@ -590,15 +642,16 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Type">
       <Item value="Name" priority="13" />
+      <Item value="IsEnum" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Int32">
-      <Item value="Parse`0" priority="8" />
+      <Item value="Parse`0" priority="10" />
       <Item value="MaxValue" priority="3" />
       <Item value="MinValue" priority="0" />
       <Item value="TryParse`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.IO.FileInfo">
-      <Item value="FullName" priority="3" />
+      <Item value="FullName" priority="5" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Text.StringBuilder">
       <Item value="ToString`0" priority="1" />
@@ -625,10 +678,10 @@
       <Item value="GetEnumerator`0" priority="5" />
       <Item value="Remove`0" priority="1" />
       <Item value="Sort`0" priority="0" />
-      <Item value="ToArray`0" priority="0" />
-      <Item value="Add`0" priority="3" />
+      <Item value="ToArray`0" priority="2" />
+      <Item value="Add`0" priority="5" />
       <Item value="Clear`0" priority="0" />
-      <Item value="Contains`0" priority="0" />
+      <Item value="Contains`0" priority="1" />
       <Item value="CopyTo`0" priority="0" />
       <Item value="RemoveAt`0" priority="0" />
       <Item value="SingleOrDefault`1" priority="0" />
@@ -653,7 +706,7 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.DateTime">
       <Item value="UtcNow" priority="3" />
-      <Item value="Now" priority="13" />
+      <Item value="Now" priority="14" />
       <Item value="Parse`0" priority="0" />
       <Item value="ParseExact`0" priority="0" />
       <Item value="MaxValue" priority="0" />
@@ -677,7 +730,7 @@
       <Item value="Minute" priority="9" />
       <Item value="Second" priority="10" />
       <Item value="AddDays`0" priority="15" />
-      <Item value="ToString`0" priority="1" />
+      <Item value="ToString`0" priority="2" />
       <Item value="AddMilliseconds`0" priority="1" />
       <Item value="Millisecond" priority="6" />
       <Item value="TimeOfDay" priority="2" />
@@ -690,6 +743,7 @@
       <Item value="AddYears`0" priority="3" />
       <Item value="DayOfWeek" priority="2" />
       <Item value="Add`0" priority="0" />
+      <Item value="GetTimestamp`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Char">
       <Item value="IsWhiteSpace`0" priority="0" />
@@ -716,7 +770,7 @@
       <Item value="Enter`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.String">
-      <Item value="Empty" priority="1" />
+      <Item value="Empty" priority="3" />
       <Item value="Format`0" priority="8" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Drawing.Color">
@@ -740,7 +794,7 @@
       <Item value="GetDirectories`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.IO.File">
-      <Item value="Create`0" priority="2" />
+      <Item value="Create`0" priority="3" />
       <Item value="OpenRead`0" priority="0" />
       <Item value="Exists`0" priority="3" />
       <Item value="Open`0" priority="1" />
@@ -751,6 +805,7 @@
       <Item value="Copy`0" priority="0" />
       <Item value="ReadAllBytes`0" priority="0" />
       <Item value="GetLastWriteTime`0" priority="0" />
+      <Item value="ReadAllText`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Threading.Thread">
       <Item value="CurrentThread" priority="2" />
@@ -761,7 +816,7 @@
       <Item value="Abort`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Double">
-      <Item value="ToString`0" priority="7" />
+      <Item value="ToString`0" priority="14" />
       <Item value="Equals`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.TimeSpan">
@@ -770,10 +825,12 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:robin.core.RrdInt">
       <Item value="get`0" priority="0" />
+      <Item value="ToString`0" priority="0" />
+      <Item value="Get`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Int64">
-      <Item value="ToString`0" priority="8" />
-      <Item value="ToDateTime`0" priority="2" />
+      <Item value="ToString`0" priority="13" />
+      <Item value="ToDateTime`0" priority="4" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.IO.TextWriter">
       <Item value="Write`0" priority="1" />
@@ -803,8 +860,10 @@
       <Item value="getDate`0" priority="1" />
       <Item value="getCanonicalPath`0" priority="0" />
       <Item value="getTimestamp`0" priority="0" />
-      <Item value="GetDateTime`0" priority="2" />
+      <Item value="GetDateTime`0" priority="3" />
       <Item value="ParseColor`0" priority="0" />
+      <Item value="Xml`0" priority="1" />
+      <Item value="Parsebool`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.IO.SeekOrigin">
       <Item value="Begin" priority="6" />
@@ -831,8 +890,8 @@
       <Item value="ReleaseReaderLock`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@Microsoft.VisualStudio.TestTools.UnitTesting.Assert">
-      <Item value="IsTrue`0" priority="2" />
-      <Item value="AreEqual`0" priority="23" />
+      <Item value="IsTrue`0" priority="3" />
+      <Item value="AreEqual`0" priority="31" />
       <Item value="Equals`0" priority="0" />
       <Item value="IsFalse`0" priority="0" />
       <Item value="IsNotNull`0" priority="2" />
@@ -840,7 +899,7 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Int32">
       <Item value="CompareTo`0" priority="0" />
-      <Item value="ToString`0" priority="0" />
+      <Item value="ToString`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:robin.tests.TimeParserTest">
       <Item value="setSubDayFieldsZero`0" priority="0" />
@@ -872,8 +931,8 @@
       <Item value="RemoveDatasource`0" priority="1" />
       <Item value="RemoveAllDatasources`0" priority="0" />
       <Item value="RemoveArchive`0" priority="0" />
-      <Item value="Step" priority="1" />
-      <Item value="StartTime" priority="1" />
+      <Item value="Step" priority="2" />
+      <Item value="StartTime" priority="2" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:robin.core.RrdDb">
       <Item value="close`0" priority="2" />
@@ -882,13 +941,20 @@
       <Item value="getDsNames`0" priority="1" />
       <Item value="getDatasources`0" priority="0" />
       <Item value="getArchives`0" priority="0" />
-      <Item value="Header" priority="2" />
-      <Item value="LastUpdateTime" priority="2" />
-      <Item value="DataSources" priority="1" />
+      <Item value="Header" priority="5" />
+      <Item value="LastUpdateTime" priority="4" />
+      <Item value="DataSources" priority="2" />
       <Item value="CreateSample`0" priority="1" />
-      <Item value="Archives" priority="5" />
+      <Item value="Archives" priority="6" />
       <Item value="FetchData`0" priority="1" />
       <Item value="CreateFetchRequest`0" priority="0" />
+      <Item value="dumpXml`0" priority="0" />
+      <Item value="ToXml`0" priority="0" />
+      <Item value="Equals`0" priority="0" />
+      <Item value="DataSourceNames" priority="1" />
+      <Item value="GetDatasource`0" priority="0" />
+      <Item value="GetArchive`0" priority="0" />
+      <Item value="GetDataSourceCount`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:robin.core.Sample">
       <Item value="setAndUpdate`0" priority="0" />
@@ -944,13 +1010,15 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Text.RegularExpressions.Regex">
       <Item value="Match`0" priority="0" />
+      <Item value="IsMatch`0" priority="0" />
+      <Item value="Matches`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Text.RegularExpressions.Match">
       <Item value="Success" priority="0" />
-      <Item value="Groups" priority="0" />
+      <Item value="Groups" priority="2" />
       <Item value="Value" priority="0" />
-      <Item value="Index" priority="1" />
-      <Item value="Length" priority="0" />
+      <Item value="Index" priority="4" />
+      <Item value="Length" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Drawing.Graphics">
       <Item value="FromImage`0" priority="2" />
@@ -1015,7 +1083,7 @@
       <Item value="Jpeg" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.IO.MemoryStream">
-      <Item value="Seek`0" priority="0" />
+      <Item value="Seek`0" priority="1" />
       <Item value="Length" priority="0" />
       <Item value="Read`0" priority="0" />
     </ItemStatistics>
@@ -1075,13 +1143,16 @@
       <Item value="getSteps`0" priority="0" />
       <Item value="getRows`0" priority="0" />
       <Item value="dump`0" priority="0" />
-      <Item value="ConsolidationFunction" priority="0" />
-      <Item value="Steps" priority="0" />
+      <Item value="ConsolidationFunction" priority="3" />
+      <Item value="Steps" priority="3" />
       <Item value="GetStartTime`0" priority="0" />
       <Item value="GetEndTime`0" priority="1" />
       <Item value="Step" priority="1" />
       <Item value="GetArcState`0" priority="0" />
-      <Item value="GetRobin`0" priority="0" />
+      <Item value="GetRobin`0" priority="2" />
+      <Item value="Rows" priority="1" />
+      <Item value="TimeStep" priority="1" />
+      <Item value="Xff" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Windows.Forms.TextBox">
       <Item value="Text" priority="1" />
@@ -1134,6 +1205,8 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:robin.core.RrdString">
       <Item value="get`0" priority="1" />
+      <Item value="ToString`0" priority="0" />
+      <Item value="Get`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@robin.core.DataSourceType">
       <Item value="GAUGE" priority="2" />
@@ -1159,15 +1232,21 @@
       <Item value="ToArray`1" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:robin.core.DataSource">
-      <Item value="Name" priority="0" />
-      <Item value="AccumulatedValue" priority="1" />
-      <Item value="LastValue" priority="1" />
-      <Item value="NanSeconds" priority="0" />
+      <Item value="Name" priority="3" />
+      <Item value="AccumulatedValue" priority="3" />
+      <Item value="LastValue" priority="3" />
+      <Item value="NanSeconds" priority="2" />
+      <Item value="Equals`0" priority="0" />
+      <Item value="Heartbeat" priority="1" />
+      <Item value="Index" priority="1" />
+      <Item value="MaxValue" priority="1" />
+      <Item value="MinValue" priority="1" />
+      <Item value="Type" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@robin.core.RrdDb">
       <Item value="Open`0" priority="17" />
       <Item value="Create`0" priority="9" />
-      <Item value="Import`0" priority="0" />
+      <Item value="Import`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:robin.data.Aggregates">
       <Item value="getAverage`0" priority="0" />
@@ -1178,7 +1257,12 @@
       <Item value="FromRrdToolString`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:robin.core.Header">
-      <Item value="Step" priority="0" />
+      <Item value="Step" priority="2" />
+      <Item value="Equals`0" priority="0" />
+      <Item value="Info" priority="1" />
+      <Item value="LastUpdateTime" priority="1" />
+      <Item value="ArchiveCount" priority="1" />
+      <Item value="DataSourceCount" priority="2" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@robin.core.ArcDef">
       <Item value="FromRrdToolString`0" priority="0" />
@@ -1187,7 +1271,60 @@
       <Item value="Float" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:robin.core.Robin">
-      <Item value="GetValue`0" priority="1" />
+      <Item value="GetValue`0" priority="2" />
+      <Item value="GetValues`0" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Text.RegularExpressions.RegexOptions">
+      <Item value="Compiled" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Drawing.Color">
+      <Item value="R" priority="0" />
+      <Item value="B" priority="0" />
+      <Item value="A" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlElement">
+      <Item value="OuterXml" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Text.RegularExpressions.Group">
+      <Item value="Value" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlNode">
+      <Item value="SelectNodes`0" priority="0" />
+      <Item value="Value" priority="3" />
+      <Item value="Name" priority="2" />
+      <Item value="FirstChild" priority="7" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlNodeList">
+      <Item value="Count" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlDocument">
+      <Item value="LoadXml`0" priority="0" />
+      <Item value="Load`0" priority="0" />
+      <Item value="Name" priority="0" />
+      <Item value="DocumentElement" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@robin.core.Util+Xml">
+      <Item value="GetChildValueAsEnum`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlWriter">
+      <Item value="WriteStartElement`0" priority="6" />
+      <Item value="WriteElementString`0" priority="6" />
+      <Item value="WriteComment`0" priority="1" />
+      <Item value="WriteEndElement`0" priority="5" />
+      <Item value="Flush`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.core.RrdDouble">
+      <Item value="ToString`0" priority="0" />
+      <Item value="Get`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Xml.XmlWriter">
+      <Item value="Create`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:robin.core.RrdLong">
+      <Item value="Get`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.TextReader">
+      <Item value="ReadToEnd`0" priority="0" />
     </ItemStatistics>
   </CompletionStatisticsManager>
 </Configuration>
