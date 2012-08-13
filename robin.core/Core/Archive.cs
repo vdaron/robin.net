@@ -229,7 +229,7 @@ namespace robin.core
 			return buffer.ToString();
 		}
 
-		public void archive(int dsIndex, double value, long numStepUpdates)
+		internal void ArchiveValue(int dsIndex, double value, long numStepUpdates)
 		{
 			Robin robin = robins[dsIndex];
 			ArcState state = states[dsIndex];
@@ -437,7 +437,7 @@ namespace robin.core
 			writer.WriteElementString("cf", consolFun.ToString());
 			writer.WriteComment(TimeStep + " seconds");
 			writer.WriteElementString("pdp_per_row", steps.Get().ToString());
-			writer.WriteElementString("xff", xff.Get().ToString("E"));
+			writer.WriteElementString("xff", Util.FormatDouble(xff.Get()));
 			writer.WriteStartElement("cdp_prep");
 			foreach (ArcState state in states)
 			{
@@ -453,7 +453,7 @@ namespace robin.core
 				writer.WriteStartElement("row");
 				foreach (Robin robin in robins)
 				{
-					writer.WriteElementString("v", robin.GetValue(i).ToString("E"));
+					writer.WriteElementString("v", Util.FormatDouble(robin.GetValue(i)));
 				}
 				writer.WriteEndElement(); // row
 			}

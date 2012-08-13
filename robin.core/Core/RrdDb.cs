@@ -661,7 +661,7 @@ namespace robin.core
 			buffer.Append(header.Dump());
 			foreach (DataSource datasource in datasources)
 			{
-				buffer.Append(datasource.Dump());
+				buffer.Append(datasource.ToString());
 			}
 			foreach (Archive archive in archives)
 			{
@@ -675,7 +675,7 @@ namespace robin.core
 			int dsIndex = GetDataSourceIndex(datasource.Name);
 			foreach (Archive archive in archives)
 			{
-				archive.archive(dsIndex, value, numUpdates);
+				archive.ArchiveValue(dsIndex, value, numUpdates);
 			}
 		}
 

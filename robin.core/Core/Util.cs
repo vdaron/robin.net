@@ -121,6 +121,18 @@ namespace robin.core
 			return Double.IsNaN(x) ? y : Double.IsNaN(y) ? x : x + y;
 		}
 
+		/// <summary>
+		/// Return the week number corresponding to the secified date
+		/// </summary>
+		/// <param name="date"></param>
+		/// <returns>Week number</returns>
+		public static int GetWeekNumber(DateTime date)
+		{
+			CultureInfo ciCurr = CultureInfo.CurrentCulture;
+			int weekNum = ciCurr.Calendar.GetWeekOfYear(date, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
+			return weekNum;
+		}
+
 		internal static String FormatDouble(double x, String nanString, bool forceExponents)
 		{
 			if (Double.IsNaN(x))
@@ -129,14 +141,14 @@ namespace robin.core
 			}
 			if (forceExponents)
 			{
-				return x.ToString("E");
+				return x.ToString("0.0000000000e+00",CultureInfo.InvariantCulture.NumberFormat);
 			}
 			return x.ToString();
 		}
 
 		internal static String FormatDouble(double x, bool forceExponents)
 		{
-			return FormatDouble(x, "" + Double.NaN, forceExponents);
+			return FormatDouble(x, "NaN", forceExponents);
 		}
 
 		/// <summary>

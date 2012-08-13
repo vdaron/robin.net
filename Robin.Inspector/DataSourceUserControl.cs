@@ -31,7 +31,7 @@ namespace Robin.Inspector
 
 		private void ReloadInfos()
 		{
-			sourceTextBox.Text = dataSource.Dump();
+			sourceTextBox.Text = dataSource.ToString();
 		}
 	}
 }

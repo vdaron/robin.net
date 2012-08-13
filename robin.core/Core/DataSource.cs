@@ -102,7 +102,7 @@ namespace robin.core
 		public string Name
 		{
 			get { return primitiveDsName ?? (primitiveDsName = dsName.Get()); }
-			set
+			internal set
 			{
 				if (value.Length > RrdPrimitive.STRING_LENGTH)
 				{
@@ -134,7 +134,7 @@ namespace robin.core
 				}
 				return primitiveDsType.Value;
 			}
-			set
+			internal set
 			{
 				if (!DsDef.ValidDataSourceType(value))
 				{
@@ -162,7 +162,7 @@ namespace robin.core
 		public long Heartbeat
 		{
 			get { return heartbeat.Get(); }
-			set
+			internal set
 			{
 				if (value < 1)
 				{
@@ -284,16 +284,6 @@ namespace robin.core
 
 		#endregion
 
-		public String Dump()
-		{
-			return "== DATASOURCE ==\n" +
-			       "DS:" + dsName.Get() + ":" + dsType.Get() + ":" +
-			       heartbeat.Get() + ":" + minValue.Get() + ":" +
-			       maxValue.Get() + "\nlastValue:" + lastValue.Get() +
-			       " nanSeconds:" + nanSeconds.Get() +
-			       " accumValue:" + accumValue.Get() + "\n";
-		}
-
 		internal void Process(long newTime, double newValue)
 		{
 			Header header = parentDb.Header;
@@ -411,9 +401,9 @@ namespace robin.core
 			// IMPORTANT:
 			// if datasource name ends with "!", we'll send zeros instead of NaNs
 			// this might be handy from time to time
-			if (Double.IsNaN(totalValue) && dsName.Get().EndsWith(DsDef.FORCE_ZEROS_FOR_NANS_SUFFIX))
+			if (Double.IsNaN(totalValue) && Name.EndsWith(DsDef.FORCE_ZEROS_FOR_NANS_SUFFIX))
 			{
-				totalValue = 0D;
+				totalValue = 0;
 			}
 			return totalValue;
 		}
@@ -424,11 +414,11 @@ namespace robin.core
 			writer.WriteElementString("name", dsName.Get());
 			writer.WriteElementString("type", dsType.Get());
 			writer.WriteElementString("minimal_heartbeat", heartbeat.Get().ToString());
-			writer.WriteElementString("min", minValue.Get().ToString());
-			writer.WriteElementString("max", maxValue.Get().ToString());
+			writer.WriteElementString("min", Util.FormatDouble(minValue.Get()));
+			writer.WriteElementString("max", Util.FormatDouble(maxValue.Get()));
 			writer.WriteComment("PDP Status");
-			writer.WriteElementString("last_ds", (double.IsNaN(lastValue.Get()) ? "UNKN" : lastValue.Get().ToString("E")));
-			writer.WriteElementString("value", accumValue.Get().ToString());
+			writer.WriteElementString("last_ds", (double.IsNaN(lastValue.Get()) ? "U" : Util.FormatDouble(lastValue.Get())));
+			writer.WriteElementString("value", Util.FormatDouble(accumValue.Get()));
 			writer.WriteElementString("unknown_sec", nanSeconds.Get().ToString());
 			writer.WriteEndElement(); // ds
 		}
@@ -515,8 +505,8 @@ namespace robin.core
 		public override String ToString()
 		{
 			return GetType().Name + "@" + GetHashCode().ToString("X") + "[parentDb=" + parentDb
-			       + ",dsName=" + dsName + ",dsType=" + dsType + ",heartbeat=" + heartbeat
-			       + ",minValue=" + minValue + ",maxValue=" + maxValue + "]";
+			       + ",dsName=" + Name + ",dsType=" + Type + ",heartbeat=" + Heartbeat
+			       + ",minValue=" + Util.FormatDouble(MinValue) + ",maxValue=" + Util.FormatDouble(MaxValue) + "]";
 		}
 	}
 }

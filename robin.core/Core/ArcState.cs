@@ -129,7 +129,7 @@ namespace robin.core
 		internal void AppendXml(XmlWriter writer)
 		{
 			writer.WriteStartElement("ds");
-			writer.WriteElementString("value", accumumatedValue.Get().ToString("E"));
+			writer.WriteElementString("value", Util.FormatDouble(accumumatedValue.Get()));
 			writer.WriteElementString("unknown_datapoints", nanSteps.Get().ToString());
 			writer.WriteEndElement(); // ds
 		}
