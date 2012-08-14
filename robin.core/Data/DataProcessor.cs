@@ -767,7 +767,7 @@ namespace robin.data
 
 		private void CalculateCDef(CDef cDef)
 		{
-			var calc = new RpnCalculator(cDef.GetRpnExpression(), cDef.Name, this);
+			var calc = new RpnCalculator(cDef.RpnExpression, cDef.Name, this);
 			cDef.Values = calc.CalculateValues();
 		}
 

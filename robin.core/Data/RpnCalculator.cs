@@ -503,25 +503,25 @@ namespace robin.data
 							Push(timeStep);
 							break;
 						case TKN_YEAR:
-							Push(GetDField(Pop()).Year);
+							Push(GetDateField(Pop()).Year);
 							break;
 						case TKN_MONTH:
-							Push(GetDField(Pop()).Month);
+							Push(GetDateField(Pop()).Month);
 							break;
 						case TKN_DATE:
-							Push(GetDField(Pop()).Day);
+							Push(GetDateField(Pop()).Day);
 							break;
 						case TKN_HOUR:
-							Push(GetDField(Pop()).Hour);
+							Push(GetDateField(Pop()).Hour);
 							break;
 						case TKN_MINUTE:
-							Push(GetDField(Pop()).Minute);
+							Push(GetDateField(Pop()).Minute);
 							break;
 						case TKN_SECOND:
-							Push(GetDField(Pop()).Second);
+							Push(GetDateField(Pop()).Second);
 							break;
 						case TKN_WEEK:
-							Push(Util.GetWeekNumber(GetDField(Pop())));
+							Push(Util.GetWeekNumber(GetDateField(Pop())));
 							break;
 						case TKN_SIGN:
 							x1 = Pop();
@@ -546,7 +546,7 @@ namespace robin.data
 			return calculatedValues;
 		}
 
-		private static DateTime GetDField(double timestamp)
+		private static DateTime GetDateField(double timestamp)
 		{
 			return Util.GetDateTime((long) (timestamp*1000));
 		}
