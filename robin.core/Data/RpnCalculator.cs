@@ -521,9 +521,7 @@ namespace robin.data
 							Push(GetDField(Pop()).Second);
 							break;
 						case TKN_WEEK:
-							Thread.CurrentThread.CurrentCulture.Calendar.GetWeekOfYear(GetDField(Pop()),
-							                                                           CalendarWeekRule.FirstDay,
-							                                                           DayOfWeek.Sunday);
+							Push(Util.GetWeekNumber(GetDField(Pop())));
 							break;
 						case TKN_SIGN:
 							x1 = Pop();
