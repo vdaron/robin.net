@@ -23,17 +23,12 @@ namespace robin.data
 {
 	internal class CDef : Source
 	{
-		private readonly String rpnExpression;
-
 		internal CDef(String name, String rpnExpression)
 			: base(name)
 		{
-			this.rpnExpression = rpnExpression;
+			RpnExpression = rpnExpression;
 		}
 
-		internal String GetRpnExpression()
-		{
-			return rpnExpression;
-		}
+		internal string RpnExpression { get; private set; }
 	}
 }
