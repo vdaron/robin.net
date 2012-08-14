@@ -117,11 +117,9 @@ namespace robin.core
 		[MethodImpl(MethodImplOptions.Synchronized)]
 		public static RrdBackendFactory GetFactory(String name)
 		{
-			RrdBackendFactory factory = factories[name];
-			if (factory != null)
-			{
-				return factory;
-			}
+			if(factories.ContainsKey(name))
+				return factories[name];
+
 			throw new RrdException("No backend factory found with the name specified [" + name + "]");
 		}
 

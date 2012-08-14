@@ -106,6 +106,9 @@ namespace robin.core
 		{
 			rrdDef.Validate();
 			String path = rrdDef.Path;
+			if(factory.Exists(rrdDef.Path))
+				throw new RrdException(String.Format("File '{0}' already eixsts",rrdDef.Path));
+
 			backend = factory.Open(path, false);
 			try
 			{

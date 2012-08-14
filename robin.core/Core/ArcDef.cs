@@ -99,8 +99,8 @@ namespace robin.core
 			if (!Enum.TryParse(tokens[1], true, out consolFun))
 				throw rrdException;
 
-			double xff;
-			if (!double.TryParse(tokens[2],NumberStyles.Float,CultureInfo.InvariantCulture.NumberFormat, out xff))
+			double xff = Util.ParseDouble(tokens[2]);
+			if(double.IsNaN(xff))
 			{
 				throw rrdException;
 			}

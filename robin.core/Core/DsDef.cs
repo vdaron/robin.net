@@ -121,13 +121,15 @@ namespace robin.core
 			double minValue = Double.NaN;
 			if (!tokens[4].Equals("U", StringComparison.InvariantCultureIgnoreCase))
 			{
-				if (!double.TryParse(tokens[4], NumberStyles.Float, CultureInfo.InvariantCulture.NumberFormat, out minValue))
+				minValue = Util.ParseDouble(tokens[4]);
+				if(double.IsNaN(minValue))
 					throw rrdException;
 			}
 			double maxValue = Double.NaN;
 			if (!tokens[5].Equals("U", StringComparison.InvariantCultureIgnoreCase))
 			{
-				if (!double.TryParse(tokens[5], NumberStyles.Float, CultureInfo.InvariantCulture.NumberFormat, out maxValue))
+				maxValue = Util.ParseDouble(tokens[5]);
+				if (double.IsNaN(maxValue))
 					throw rrdException;
 			}
 			return  new DsDef(dsName,dsType,dsHeartbeat,minValue,maxValue);

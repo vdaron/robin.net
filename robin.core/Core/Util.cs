@@ -432,8 +432,7 @@ namespace robin.core
 				XmlNode node = parent.SelectSingleNode(name);
 				if (node != null)
 				{
-					double v;
-					return double.TryParse(node.FirstChild.Value, out v) ? v : double.NaN;
+					return ParseDouble(node.FirstChild.Value);
 				}
 				return double.NaN;
 			}

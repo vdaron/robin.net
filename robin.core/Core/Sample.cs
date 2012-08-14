@@ -197,11 +197,7 @@ namespace robin.core
 				}
 				else
 				{
-					double v;
-					if (double.TryParse(tokens[i], NumberStyles.Float, CultureInfo.InvariantCulture.NumberFormat, out  v))
-					{
-						values[i - 1] = v;
-					}
+					values[i - 1] = Util.ParseDouble(tokens[i]);
 				}
 			}
 			return this;
