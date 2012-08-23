@@ -230,7 +230,7 @@ namespace robin.core
 			var buffer = new StringBuilder("");
 			for (int row = 0; row < RowCount; row++)
 			{
-				buffer.Append(Timestamps[row]);
+				buffer.AppendFormat("{0} ({1})",Timestamps[row],Timestamps[row].ToDateTime());
 				buffer.Append(":  ");
 				for (int dsIndex = 0; dsIndex < ColumnCount; dsIndex++)
 				{

@@ -217,10 +217,11 @@ namespace robin.core
 
 		public String Dump()
 		{
-			var buffer = new StringBuilder("== ARCHIVE ==\n");
-			buffer.Append("RRA:").Append(consolFun.Get()).Append(":").Append(xff.Get()).Append(":").Append(steps.Get()).
-				Append(":").Append(rows.Get()).Append("\n");
-			buffer.Append("interval [").Append(GetStartTime()).Append(", ").Append(GetEndTime()).Append("]" + "\n");
+			var buffer = new StringBuilder("== ARCHIVE ==");
+			buffer.AppendLine();
+			buffer.Append("RRA:").Append(consolFun.Get()).Append(":").Append(Util.FormatDouble(Xff)).Append(":").Append(Steps).
+				Append(":").Append(Rows).AppendLine();
+			buffer.Append("interval [").Append(GetStartTime().ToDateTime()).Append(", ").Append(GetEndTime().ToDateTime()).AppendLine("]");
 			for (int i = 0; i < robins.Length; i++)
 			{
 				buffer.Append(states[i].Dump());
@@ -463,9 +464,9 @@ namespace robin.core
 
 		public override String ToString()
 		{
-			return "Archive@" + GetHashCode().ToString("X") + "[parentDb=" + parentDb + ",consolFun=" + consolFun + ",xff=" + xff +
+			return "Archive@" + GetHashCode().ToString("X") + "[parentDb=" + parentDb + ",consolFun=" + consolFun + ",xff=" + Util.FormatDouble(Xff) +
 			       ",steps=" +
-			       steps + ",rows=" + rows + ",robins=" + robins + ",states=" + states + "]";
+			       Steps + ",rows=" + Rows + ",robins=" + robins + ",states=" + states + "]";
 		}
 	}
 }
