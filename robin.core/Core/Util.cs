@@ -45,7 +45,6 @@ namespace robin.core
 		private const String PATTERN = "0.0000000000E00";
 		// directory under $USER_HOME used for demo graphs storing
 		private const String JROBIN_DIR = "jrobin-demo";
-		private static DateTime Epoch = new DateTime(1970, 1, 1);
 
 		/// <summary>
 		/// Converts an array of long primitives to an array of doubles.
@@ -70,7 +69,7 @@ namespace robin.core
 		/// <returns></returns>
 		public static long GetCurrentTime()
 		{
-			return (long) (DateTime.Now - Epoch).TotalSeconds;
+			return DateTime.UtcNow.GetTimestamp();
 		}
 
 		/// <summary>
@@ -170,7 +169,7 @@ namespace robin.core
 		/// <returns></returns>
 		public static DateTime GetDateTime(long timestamp)
 		{
-			return Epoch.AddSeconds(timestamp);
+			return timestamp.ToDateTime();
 		}
 
 		/// <summary>
@@ -194,7 +193,7 @@ namespace robin.core
 		/// <returns></returns>
 		public static long GetTimestamp(int year, int month, int day, int hour, int min)
 		{
-			return GetTimestamp(new DateTime(year, month, day, hour, min, 0));
+			return GetTimestamp(new DateTime(year, month, day, hour, min, 0,DateTimeKind.Utc));
 		}
 
 		/// <summary>

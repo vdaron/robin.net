@@ -57,7 +57,7 @@ public class TimeParserTest {
 		// happens on the next, you'll get spurious failures, which would be really annoying and hard
 		// to replicate.  Initial tests show that most tests take ~100ms, so if it's within 10 seconds
 		// of midnight, wait for 30 seconds (and print a message saing why)
-		DateTime now = DateTime.Now;
+		DateTime now = DateTime.UtcNow;
 		if(now.Hour == 23 && now.Minute == 59 && now.Second > 50) {
 			Thread.Sleep(30000);
 		}
@@ -144,11 +144,11 @@ public class TimeParserTest {
 	[TestMethod]
 	public void test24HourClockHourTodayStartEndTime()
 	{
-		DateTime startDate = DateTime.Now;
+		DateTime startDate = DateTime.UtcNow;
 		startDate = clearTime(startDate);
 		startDate = startDate.AddHours(8);//8am
 
-		DateTime endDate = DateTime.Now;
+		DateTime endDate = DateTime.UtcNow;
 		endDate = clearTime(endDate);
 		endDate = endDate.AddHours(16);//4pm
 		
@@ -165,7 +165,7 @@ public class TimeParserTest {
 	// */
 	[TestMethod]
 	public void testMidnightToday() {
-		DateTime startDate = DateTime.Now;
+		DateTime startDate = DateTime.UtcNow;
 		startDate = clearTime(startDate);
 
 	   long[] result = this.parseTimes("midnight", "16");
@@ -180,7 +180,7 @@ public class TimeParserTest {
 	// */
 	[TestMethod]
 	public void testNoonToday() {
-		DateTime startDate = DateTime.Now;
+		DateTime startDate = DateTime.UtcNow;
 		startDate = clearTime(startDate);
 		startDate = startDate.AddHours(12); // noon
 		
@@ -197,11 +197,11 @@ public class TimeParserTest {
 	// */
 	[TestMethod]
 	public void testAMPMClockHourTodayStartEndTime() {
-		DateTime startDate = DateTime.Now;
+		DateTime startDate = DateTime.UtcNow;
 		startDate = clearTime(startDate);
 		startDate = startDate.AddHours(8);//8am
 
-		DateTime endDate = DateTime.Now;
+		DateTime endDate = DateTime.UtcNow;
 		endDate = clearTime(endDate);
 		endDate = endDate.AddHours(16);//4pm
 		
@@ -211,7 +211,6 @@ public class TimeParserTest {
 
 		Assert.AreEqual(startDate.GetTimestamp(), start);
 		Assert.AreEqual(endDate.GetTimestamp(), end);
-
 	}
 
 	//**
@@ -220,11 +219,11 @@ public class TimeParserTest {
 	// */
 	[TestMethod]
 	public void testTodayTime() {
-		DateTime startDate = DateTime.Now;
+		DateTime startDate = DateTime.UtcNow;
 		startDate = clearTime(startDate);
 		startDate = startDate.AddHours(9);//9am
 
-		DateTime endDate = DateTime.Now;
+		DateTime endDate = DateTime.UtcNow;
 		endDate = clearTime(endDate);
 		endDate = endDate.AddHours(17);//5pm
 		
@@ -244,12 +243,12 @@ public class TimeParserTest {
 	//TODO: This test is failing the first day of the month
 	[TestMethod]
 	public void testYesterdayTime() {
-		DateTime startDate = DateTime.Now;
+		DateTime startDate = DateTime.UtcNow;
 		startDate = clearTime(startDate);
 		startDate = startDate.AddHours(9);//9am
 		startDate = startDate.AddDays(-1);
 
-		DateTime endDate = DateTime.Now;
+		DateTime endDate = DateTime.UtcNow;
 		endDate = clearTime(endDate);
 		endDate = endDate.AddHours(17);//5pm
 		endDate = endDate.AddDays(-1);
@@ -269,12 +268,12 @@ public class TimeParserTest {
 	// */
 	[TestMethod]
 	public void testTomorrowTime() {
-		DateTime startDate = DateTime.Now;
+		DateTime startDate = DateTime.UtcNow;
 		startDate = clearTime(startDate);
 		startDate = startDate.AddHours(9);//9am
 		startDate = startDate.AddDays(1);
 
-		DateTime endDate = DateTime.Now;
+		DateTime endDate = DateTime.UtcNow;
 		endDate = clearTime(endDate);
 		endDate = endDate.AddHours(17);//5pm
 		endDate = endDate.AddDays(1);
@@ -297,10 +296,10 @@ public class TimeParserTest {
 	[TestMethod]
 	public void testSimpleNegativeOffset()
 	{
-		DateTime startDate = DateTime.Now;
+		DateTime startDate = DateTime.UtcNow;
 		startDate = startDate.AddHours(-1);
 
-		DateTime endDate = DateTime.Now;
+		DateTime endDate = DateTime.UtcNow;
 
 		long[] result = this.parseTimes("-1h", "now");
 		long start = result[0]*1000;
@@ -315,10 +314,10 @@ public class TimeParserTest {
 	// */
 	[TestMethod]
 	public void testRelativeStartOffsetEnd() {
-		DateTime startDate = DateTime.Now;
+		DateTime startDate = DateTime.UtcNow;
 		startDate = startDate.AddHours(-3);
 
-		DateTime endDate = DateTime.Now;
+		DateTime endDate = DateTime.UtcNow;
 		endDate = endDate.AddHours(-1);
 
 	   //End is 1 hour ago; start is 2 hours before that
@@ -336,10 +335,10 @@ public class TimeParserTest {
 	// */
 	[TestMethod]
 	public void testRelativeStartOffsetEndAbbreviatedEnd() {
-		DateTime startDate = DateTime.Now;
+		DateTime startDate = DateTime.UtcNow;
 		startDate = startDate.AddHours(-3);
 
-		DateTime endDate = DateTime.Now;
+		DateTime endDate = DateTime.UtcNow;
 		endDate = endDate.AddHours(-1);
 
 
@@ -357,10 +356,10 @@ public class TimeParserTest {
 	// */
 	[TestMethod]
 	public void testRelativeEndOffsetStart() {
-		DateTime startDate = DateTime.Now;
+		DateTime startDate = DateTime.UtcNow;
 		startDate = startDate.AddHours(-4);
 
-		DateTime endDate = DateTime.Now;
+		DateTime endDate = DateTime.UtcNow;
 		endDate = endDate.AddHours(-2);
 
 	   long[] result = this.parseTimes("-4h", "start+2h");
@@ -377,10 +376,10 @@ public class TimeParserTest {
 	// */
 	[TestMethod]
 	public void testRelativeEndOffsetStartAbbreviatedStart() {
-		DateTime startDate = DateTime.Now;
+		DateTime startDate = DateTime.UtcNow;
 		startDate = startDate.AddHours(-4);
 
-		DateTime endDate = DateTime.Now;
+		DateTime endDate = DateTime.UtcNow;
 		endDate = endDate.AddHours(-2);
 
 	   long[] result = this.parseTimes("-4h", "s+2h");
@@ -396,14 +395,14 @@ public class TimeParserTest {
 	// */
 	[TestMethod]
 	public void testHourMinuteSyntax() {
-		
-		DateTime startDate = DateTime.Now;
+
+		DateTime startDate = DateTime.UtcNow;
 		int seconds = startDate.Second;
 		startDate = clearTime(startDate);
 		startDate = startDate.AddHours(8);
 		startDate = startDate.AddMinutes(30);
 
-		DateTime endDate = DateTime.Now;
+		DateTime endDate = DateTime.UtcNow;
 		endDate = clearTime(endDate);
 		endDate = endDate.AddHours(16);
 		endDate = endDate.AddMinutes(45);
@@ -483,12 +482,12 @@ public class TimeParserTest {
 	[TestMethod]
 	public void testNamedMonthsNoYear()
 	{
-		DateTime startDate = DateTime.Now;
+		DateTime startDate = DateTime.UtcNow;
 		startDate = clearTime(startDate);
 		startDate = changeMonth(startDate, 3);
 		startDate = changeDay(startDate,1);
 
-		DateTime endDate = DateTime.Now;
+		DateTime endDate = DateTime.UtcNow;
 		endDate = clearTime(endDate);
 		endDate = changeMonth(endDate, 11);
 		endDate = changeDay(endDate, 15);
@@ -511,13 +510,13 @@ public class TimeParserTest {
 	 */
 	[TestMethod]
 	public void testNamedMonthsTwoDigitYear() {
-		DateTime startDate = DateTime.Now;
+		DateTime startDate = DateTime.UtcNow;
 		startDate = clearTime(startDate);
 		startDate = changeMonth(startDate, 2);
 		startDate = changeDay(startDate, 2);
 		startDate = changeYear(startDate, 1980);
 
-		DateTime endDate = DateTime.Now;
+		DateTime endDate = DateTime.UtcNow;
 		endDate = clearTime(endDate);
 		endDate = changeMonth(endDate, 10);
 		endDate = changeDay(endDate, 16);
@@ -542,13 +541,13 @@ public class TimeParserTest {
 	[TestMethod]
 	public void testNamedMonthsFourDigitYear()
 	{
-		DateTime startDate = DateTime.Now;
+		DateTime startDate = DateTime.UtcNow;
 		startDate = clearTime(startDate);
 		startDate = changeMonth(startDate, 4);
 		startDate = changeDay(startDate, 6);
 		startDate = changeYear(startDate, 1980);
 
-		DateTime endDate = DateTime.Now;
+		DateTime endDate = DateTime.UtcNow;
 		endDate = clearTime(endDate);
 		endDate = changeMonth(endDate, 9);
 		endDate = changeDay(endDate, 17);
@@ -569,12 +568,12 @@ public class TimeParserTest {
 	 */
 	[TestMethod]
 	public void testDayOfWeekTimeSpec() {
-		DateTime startDate = DateTime.Now;
+		DateTime startDate = DateTime.UtcNow;
 		startDate = clearTime(startDate);
 		startDate = changeHour(startDate,12);
 		startDate = changeDayOfWeek(startDate, DayOfWeek.Thursday);
 
-		DateTime endDate = DateTime.Now;
+		DateTime endDate = DateTime.UtcNow;
 		endDate = clearTime(endDate);
 		endDate = changeHour(endDate, 18);
 		endDate = changeDayOfWeek(endDate, DayOfWeek.Friday);
@@ -592,9 +591,9 @@ public class TimeParserTest {
 	 */
 	[TestMethod]
 	public void testTimeOffsets1() {
-		DateTime startDate = DateTime.Now;
+		DateTime startDate = DateTime.UtcNow;
 		startDate = startDate.AddMinutes(-1);
-		DateTime endDate= DateTime.Now;
+		DateTime endDate = DateTime.UtcNow;
 		endDate = endDate.AddSeconds(-10);
 		
 	   long[] result = this.parseTimes("now - 1minute", "now-10 seconds");
@@ -613,9 +612,9 @@ public class TimeParserTest {
 	 */
 	[TestMethod]
 	public void testTimeOffsets2() {
-		DateTime startDate = DateTime.Now;
+		DateTime startDate = DateTime.UtcNow;
 		startDate = startDate.AddDays(-1);
-		DateTime endDate = DateTime.Now;
+		DateTime endDate = DateTime.UtcNow;
 		endDate = endDate.AddHours(-3);
 
 		
@@ -632,11 +631,11 @@ public class TimeParserTest {
 	 */
 	[TestMethod]
 	public void testTimeOffsets3() {
-		DateTime startDate = DateTime.Now;
+		DateTime startDate = DateTime.UtcNow;
 		startDate = changeMonth(startDate,6);
 		startDate = changeDay(startDate, 12);
 
-		DateTime endDate = DateTime.Now;
+		DateTime endDate = DateTime.UtcNow;
 		endDate = changeMonth(endDate, 7);
 		endDate = changeDay(endDate, 12);
 		endDate = endDate.AddDays(-21);
@@ -657,7 +656,7 @@ public class TimeParserTest {
 	[TestMethod]
 	public void testTimeOffsets4() {
 
-		DateTime endDate = DateTime.Now;
+		DateTime endDate = DateTime.UtcNow;
 		endDate = changeYear(endDate, 1980);
 		endDate = changeMonth(endDate, 7);
 		endDate = changeDay(endDate, 12);
@@ -679,7 +678,7 @@ public class TimeParserTest {
 	[TestMethod]
 	public void complexTest1() {
 
-		DateTime startDate = DateTime.Now;
+		DateTime startDate = DateTime.UtcNow;
 		startDate = startDate.AddDays(-1);
 		startDate = changeHour(startDate, 9);
 		startDate = clearMinutesSecondsAndMiliseconds(startDate);
@@ -696,7 +695,7 @@ public class TimeParserTest {
 	[TestMethod]
 	public void complexTest2() {
 
-		DateTime startDate = DateTime.Now;
+		DateTime startDate = DateTime.UtcNow;
 		startDate = startDate.AddHours(-5);
 		startDate = startDate.AddMinutes(-45);
 
@@ -712,7 +711,7 @@ public class TimeParserTest {
 	[TestMethod]
 	public void complexTest3() {
 
-		DateTime startDate = DateTime.Now;
+		DateTime startDate = DateTime.UtcNow;
 		startDate = startDate.AddMonths(-5);
 		startDate = startDate.AddDays(-7-2);
 

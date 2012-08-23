@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using robin.core;
 using System.IO;
+using robin.data;
 
 namespace robin.tests.core
 {
@@ -176,7 +178,7 @@ namespace robin.tests.core
 
 				FetchRequest req = db.CreateFetchRequest(ConsolidationFunction.AVERAGE, 920804400, 920809200);
 				FetchData data = db.FetchData(req);
-
+				
 				Assert.AreEqual(920804400, data.Timestamps[0]); // We have this additional that is not present 
 				Assert.AreEqual(double.NaN, data.Values[0][0]); // in the tutorial, but it looks correct
 
@@ -234,6 +236,87 @@ namespace robin.tests.core
 			if (File.Exists(SAMPLE))
 				File.Delete(SAMPLE);
 		}
+
+		[TestMethod]
+		public void TestCounter2()
+		{
+			DateTime start = new DateTime(2012, 08, 22);
+
+			RrdDef def = new RrdDef(SAMPLE,start.GetTimestamp(),60);
+			def.AddDatasource(DsDef.FromRrdToolString("DS:speed:COUNTER:60:U:U")); // Step : every minute
+			def.AddArchive(ConsolidationFunction.AVERAGE, 0, 5, 12 * 24 * 30);   // Archive average every 5 minutes during 30 days
+			def.AddArchive(ConsolidationFunction.AVERAGE, 0, 5 * 12, 24 * 30);   // Archive average every hour during 30 days
+
+			start = start.AddSeconds(40);
+			using (RrdDb db = RrdDb.Create(def))
+			{
+				Sample sample = db.CreateSample();
+				for (int i = 1; i < 60 * 24 * 3; i++) // add 3 days of samples
+				{
+					sample.Set(start.AddMinutes(i), 100*i);
+					sample.Update();
+				}
+
+				FetchRequest request = db.CreateFetchRequest(ConsolidationFunction.AVERAGE,
+				                                             start.AddHours(3).GetTimestamp(),
+				                                             start.AddHours(13).GetTimestamp(),
+				                                             3600);
+				FetchData data = request.FetchData();
+				Assert.AreEqual(3600, data.MatchingArchive.TimeStep);
+				Assert.AreEqual(60, data.MatchingArchive.Steps);
+				Assert.AreEqual(12, data.RowCount);
+
+				start = new DateTime(2012, 08, 22);
+				FetchRequest r2 = db.CreateFetchRequest(ConsolidationFunction.AVERAGE,
+															start.AddHours(3).GetTimestamp(),
+															start.AddHours(13).GetTimestamp(),
+															300);
+				FetchData data2 = r2.FetchData();
+				Debug.WriteLine(data2.Dump());
+				Assert.AreEqual(300, data2.MatchingArchive.TimeStep);
+				Assert.AreEqual(5, data2.MatchingArchive.Steps);
+				Assert.AreEqual(121, data2.RowCount);
+				
+
+			}
+		}
+
+		[TestMethod]
+		public void TestDataProcessor()
+		{
+			DateTime start = new DateTime(2012, 08, 22);
+
+			RrdDef def = new RrdDef(SAMPLE, start.GetTimestamp(), 60);
+			def.AddDatasource("speed",DataSourceType.COUNTER,120,double.NaN,double.NaN); // Step : every minute
+			def.AddArchive(ConsolidationFunction.AVERAGE, 0, 5, 12 * 24 * 30);   // Archive average every 5 minutes during 30 days
+			def.AddArchive(ConsolidationFunction.AVERAGE, 0, 5 * 12, 24 * 30);   // Archive average every hour during 30 days
+
+			start = start.AddSeconds(40);
+			using (RrdDb db = RrdDb.Create(def))
+			{
+				Sample sample = db.CreateSample();
+				for (int i = 1; i < 60 * 24 * 3; i++) // add 3 days of samples
+				{
+					sample.Set(start.AddMinutes(i), 100 * i);
+					sample.Update();
+				}
+			}
+
+			DataProcessor dataProcessor = new DataProcessor(start.AddHours(3), start.AddHours(13));
+			dataProcessor.FetchRequestResolution = 3600;
+			dataProcessor.AddDatasource("speed", SAMPLE, "speed", ConsolidationFunction.AVERAGE);
+			dataProcessor.AddDatasource("speedByHour", "speed, STEP, *");
+
+			dataProcessor.ProcessData();
+
+			double[] vals = dataProcessor.GetValues("speedByHour");
+			Assert.AreEqual(12, vals.Length);
+			for (int i = 0; i < vals.Length; i++)
+			{
+				Assert.AreEqual(6000,((int)vals[i]));
+			}
+		}
+
 	}
 }
 

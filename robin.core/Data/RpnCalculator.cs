@@ -96,7 +96,7 @@ namespace robin.data
 			timestamps = dataProcessor.GetTimestamps();
 			timeStep = timestamps[1] - timestamps[0];
 			calculatedValues = new double[timestamps.Length];
-			String[] st = rpnExpression.Split(new[] {", "}, StringSplitOptions.None);
+			String[] st = rpnExpression.Split(',');
 			tokens = new Token[st.Length];
 			for (int i = 0; i < st.Length; i++)
 			{

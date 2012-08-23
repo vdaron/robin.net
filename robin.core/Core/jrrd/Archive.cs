@@ -111,7 +111,7 @@ namespace robin.core.jrrd
 
 		internal DataChunk LoadData(DataChunk chunk)
 		{
-			DateTime end = DateTime.Now;
+			DateTime end = DateTime.UtcNow;
 			DateTime start = end.AddDays(-1);
 
 			LoadData(chunk, start.GetTimestamp(), end.GetTimestamp());
@@ -276,7 +276,7 @@ namespace robin.core.jrrd
 					timer++;
 
 					s.Write("\t\t\t<!-- ");
-					s.Write(DateTime.Now.ToString(dateFormat));
+					s.Write(DateTime.UtcNow.ToString(dateFormat));
 					s.Write(" / ");
 					s.Write(now);
 					s.Write(" --> ");

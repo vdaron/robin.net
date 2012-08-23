@@ -115,12 +115,19 @@ namespace robin.core
 			get { return values; }
 			set
 			{
-				if (value.Length > values.Length)
+				if(value == null)
 				{
-					throw new RrdException("Invalid number of values specified (found " + value.Length + ", only " + dsNames.Length +
-								  " allowed)");
+					ClearCurrentValues();
 				}
-				Array.Copy(value, 0, values, 0, value.Length);
+				else
+				{
+					if (value.Length > values.Length)
+					{
+						throw new RrdException("Invalid number of values specified (found " + value.Length + ", only " + dsNames.Length +
+						                       " allowed)");
+					}
+					value.CopyTo(values,0);
+				}
 			}
 		}
 
@@ -204,6 +211,30 @@ namespace robin.core
 		}
 
 		/// <summary>
+		/// Set timestamp and data souce values
+		/// </summary>
+		/// <param name="timeStamp">Timestamp</param>
+		/// <param name="vals">Datasource values</param>
+		/// <returns></returns>
+		public Sample Set(long timeStamp, params double [] vals)
+		{
+			Time = timeStamp;
+			Values = vals;
+			return this;
+		}
+
+		/// <summary>
+		/// Set timestamp and data souce values
+		/// </summary>
+		/// <param name="timeStamp">Timestamp</param>
+		/// <param name="vals">Datasource values</param>
+		/// <returns></returns>
+		public Sample Set(DateTime timeStamp, params double[] vals)
+		{
+			return Set(timeStamp.GetTimestamp(), vals);
+		}
+
+		/// <summary>
 		/// Stores sample in the corresponding RRD. If the update operation succeedes,
 		/// all datasource values in the sample will be set to Double.NaN (unknown) values.
 		/// </summary>
@@ -234,7 +265,6 @@ namespace robin.core
 			{
 				Set(timeAndValue);
 				Update();
-
 			}
 		}
 
@@ -261,7 +291,7 @@ namespace robin.core
 
 		public override String ToString()
 		{
-			return GetType().Name + "@" + "[parentDb=" + parentDb + ",time=" + new DateTime(0, 0, 0, 0, 0, (int) time) +
+			return GetType().Name + "@" + "[parentDb=" + parentDb + ",time=" + time.ToDateTime() +
 			       ",dsNames=[" + PrintList(dsNames) + "],values=[" + PrintList(values) + "]]";
 		}
 
